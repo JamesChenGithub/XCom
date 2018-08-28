@@ -1,0 +1,14 @@
+get_filename_component(XCOM_BASE_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+file(GLOB XC_API_HEADER ${XCOM_BASE_CMAKE_DIR}/inc/*.h)
+file(GLOB XC_API_SOURCE ${XCOM_BASE_CMAKE_DIR}/src/*.cpp)
+
+set(XCOM_BASE_SRC
+		${XC_API_HEADER}
+		${XC_API_SOURCE}
+		)
+
+set(XCOM_BASE_INC
+		${XC_API_CMAKE_DIR}
+		)
+
