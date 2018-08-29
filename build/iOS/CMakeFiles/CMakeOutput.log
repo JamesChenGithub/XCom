@@ -1,0 +1,126 @@
+The target system is: Darwin - 11.4 - 
+The host system is: Darwin - 17.6.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang 
+Build flags: -miphoneos-version-min=8.0;;-fobjc-abi-version=2;-fobjc-arc;
+Id flags:  
+
+The output was:
+0
+=== BUILD TARGET CompilerIdC OF PROJECT CompilerIdC WITH THE DEFAULT CONFIGURATION (Debug) ===
+
+Check dependencies
+
+Write auxiliary files
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+chmod 0755 /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/CompilerIdC-all-target-headers.hmap
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/CompilerIdC-generated-files.hmap
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/CompilerIdC-project-headers.hmap
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/CompilerIdC.hmap
+/bin/mkdir -p /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Objects-normal/arm64
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Objects-normal/arm64/CompilerIdC.LinkFileList
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/CompilerIdC-own-target-headers.hmap
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/CompilerIdC-all-non-framework-target-headers.hmap
+
+Create product structure
+/bin/mkdir -p /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.xctest
+
+CompileC CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Objects-normal/arm64/CMakeCCompilerId.o CMakeCCompilerId.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC
+    export LANG=en_US.US-ASCII
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin:/Users/alexichen/anaconda/bin:/usr/local/go/bin:/Users/alexichen/gosrc/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3@global/bin:/Users/alexichen/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/alexichen/.rvm/bin:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/FFMPEG/ffmpeg_bin/bin:/usr/local/mysql/bin:/Users/alexichen/Library/Android/sdk/tools:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/Library/Android/sdk/ndk-bundle"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk -fstrict-aliasing -Wdeprecated-declarations -miphoneos-version-min=11.4 -g -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -I/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/CompilerIdC.hmap -I/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/include -I/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/DerivedSources/arm64 -I/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/DerivedSources -F/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -MMD -MT dependencies -MF /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Objects-normal/arm64/CMakeCCompilerId.d --serialize-diagnostics /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Objects-normal/arm64/CMakeCCompilerId.dia -c /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CMakeCCompilerId.c -o /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Objects-normal/arm64/CMakeCCompilerId.o
+
+Ld CompilerIdC.xctest/CompilerIdC normal arm64
+    cd /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC
+    export IPHONEOS_DEPLOYMENT_TARGET=11.4
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin:/Users/alexichen/anaconda/bin:/usr/local/go/bin:/Users/alexichen/gosrc/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3@global/bin:/Users/alexichen/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/alexichen/.rvm/bin:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/FFMPEG/ffmpeg_bin/bin:/usr/local/mysql/bin:/Users/alexichen/Library/Android/sdk/tools:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/Library/Android/sdk/ndk-bundle"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch arm64 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk -L/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC -F/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -filelist /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Objects-normal/arm64/CompilerIdC.LinkFileList -miphoneos-version-min=11.4 -dead_strip -Xlinker -object_path_lto -Xlinker /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Objects-normal/arm64/CompilerIdC_lto.o -framework XCTest -Xlinker -dependency_info -Xlinker /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Objects-normal/arm64/CompilerIdC_dependency_info.dat -o /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.xctest/CompilerIdC
+
+GenerateDSYMFile CompilerIdC.xctest.dSYM CompilerIdC.xctest/CompilerIdC
+    cd /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin:/Users/alexichen/anaconda/bin:/usr/local/go/bin:/Users/alexichen/gosrc/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3@global/bin:/Users/alexichen/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/alexichen/.rvm/bin:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/FFMPEG/ffmpeg_bin/bin:/usr/local/mysql/bin:/Users/alexichen/Library/Android/sdk/tools:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/Library/Android/sdk/ndk-bundle"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.xctest/CompilerIdC -o /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.xctest.dSYM
+
+PhaseScriptExecution Run\ Script CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+    cd /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC
+    /bin/sh -c /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.build/Debug-iphoneos/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+GCC_VERSION=com.apple.compilers.llvm.clang.1_0
+CURRENT_ARCH=arm64
+
+Touch CompilerIdC.xctest
+    cd /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin:/Users/alexichen/anaconda/bin:/usr/local/go/bin:/Users/alexichen/gosrc/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3@global/bin:/Users/alexichen/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/alexichen/.rvm/bin:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/FFMPEG/ffmpeg_bin/bin:/usr/local/mysql/bin:/Users/alexichen/Library/Android/sdk/tools:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/Library/Android/sdk/ndk-bundle"
+    /usr/bin/touch -c /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.xctest
+
+** BUILD SUCCEEDED **
+
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.xctest/CompilerIdC"
+
+The C compiler identification is AppleClang, found in "/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdC/CompilerIdC.xctest/CompilerIdC"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ 
+Build flags: -miphoneos-version-min=8.0;;-fvisibility=hidden;-fvisibility-inlines-hidden;-fobjc-abi-version=2;-fobjc-arc;
+Id flags:  
+
+The output was:
+0
+=== BUILD TARGET CompilerIdCXX OF PROJECT CompilerIdCXX WITH THE DEFAULT CONFIGURATION (Debug) ===
+
+Check dependencies
+
+Write auxiliary files
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/CompilerIdCXX-all-target-headers.hmap
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/CompilerIdCXX-project-headers.hmap
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/CompilerIdCXX-generated-files.hmap
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/CompilerIdCXX.hmap
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/CompilerIdCXX-all-non-framework-target-headers.hmap
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+chmod 0755 /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+/bin/mkdir -p /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Objects-normal/arm64
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Objects-normal/arm64/CompilerIdCXX.LinkFileList
+write-file /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/CompilerIdCXX-own-target-headers.hmap
+
+Create product structure
+/bin/mkdir -p /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.xctest
+
+CompileC CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Objects-normal/arm64/CMakeCXXCompilerId.o CMakeCXXCompilerId.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX
+    export LANG=en_US.US-ASCII
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin:/Users/alexichen/anaconda/bin:/usr/local/go/bin:/Users/alexichen/gosrc/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3@global/bin:/Users/alexichen/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/alexichen/.rvm/bin:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/FFMPEG/ffmpeg_bin/bin:/usr/local/mysql/bin:/Users/alexichen/Library/Android/sdk/tools:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/Library/Android/sdk/ndk-bundle"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -miphoneos-version-min=11.4 -g -fvisibility-inlines-hidden -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -I/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/CompilerIdCXX.hmap -I/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/include -I/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/DerivedSources/arm64 -I/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/DerivedSources -F/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -MMD -MT dependencies -MF /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Objects-normal/arm64/CMakeCXXCompilerId.d --serialize-diagnostics /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Objects-normal/arm64/CMakeCXXCompilerId.dia -c /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CMakeCXXCompilerId.cpp -o /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Objects-normal/arm64/CMakeCXXCompilerId.o
+
+Ld CompilerIdCXX.xctest/CompilerIdCXX normal arm64
+    cd /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX
+    export IPHONEOS_DEPLOYMENT_TARGET=11.4
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin:/Users/alexichen/anaconda/bin:/usr/local/go/bin:/Users/alexichen/gosrc/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3@global/bin:/Users/alexichen/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/alexichen/.rvm/bin:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/FFMPEG/ffmpeg_bin/bin:/usr/local/mysql/bin:/Users/alexichen/Library/Android/sdk/tools:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/Library/Android/sdk/ndk-bundle"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch arm64 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk -L/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX -F/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -filelist /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Objects-normal/arm64/CompilerIdCXX.LinkFileList -miphoneos-version-min=11.4 -dead_strip -Xlinker -object_path_lto -Xlinker /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Objects-normal/arm64/CompilerIdCXX_lto.o -framework XCTest -Xlinker -dependency_info -Xlinker /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Objects-normal/arm64/CompilerIdCXX_dependency_info.dat -o /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.xctest/CompilerIdCXX
+
+GenerateDSYMFile CompilerIdCXX.xctest.dSYM CompilerIdCXX.xctest/CompilerIdCXX
+    cd /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin:/Users/alexichen/anaconda/bin:/usr/local/go/bin:/Users/alexichen/gosrc/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3@global/bin:/Users/alexichen/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/alexichen/.rvm/bin:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/FFMPEG/ffmpeg_bin/bin:/usr/local/mysql/bin:/Users/alexichen/Library/Android/sdk/tools:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/Library/Android/sdk/ndk-bundle"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.xctest/CompilerIdCXX -o /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.xctest.dSYM
+
+PhaseScriptExecution Run\ Script CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+    cd /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX
+    /bin/sh -c /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+GCC_VERSION=com.apple.compilers.llvm.clang.1_0
+CURRENT_ARCH=arm64
+
+Touch CompilerIdCXX.xctest
+    cd /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin:/Users/alexichen/anaconda/bin:/usr/local/go/bin:/Users/alexichen/gosrc/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3/bin:/Users/alexichen/.rvm/gems/ruby-2.2.3@global/bin:/Users/alexichen/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/alexichen/.rvm/bin:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/FFMPEG/ffmpeg_bin/bin:/usr/local/mysql/bin:/Users/alexichen/Library/Android/sdk/tools:/Users/alexichen/Library/Android/sdk/platform-tools:/Users/alexichen/Library/Android/sdk/ndk-bundle"
+    /usr/bin/touch -c /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.xctest
+
+** BUILD SUCCEEDED **
+
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.xctest/CompilerIdCXX"
+
+The CXX compiler identification is AppleClang, found in "/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/3.11.0/CompilerIdCXX/CompilerIdCXX.xctest/CompilerIdCXX"
+

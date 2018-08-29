@@ -1,14 +1,21 @@
-get_filename_component(XCOM_BASE_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(BASE_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+message("base设置 : ${BASE_CMAKE_DIR}")
 
-file(GLOB XC_API_HEADER ${XCOM_BASE_CMAKE_DIR}/inc/*.h)
-file(GLOB XC_API_SOURCE ${XCOM_BASE_CMAKE_DIR}/src/*.cpp)
 
-set(XCOM_BASE_SRC
-		${XC_API_HEADER}
-		${XC_API_SOURCE}
-		)
 
-set(XCOM_BASE_INC
+set(BASE_INC
 		${XC_API_CMAKE_DIR}
 		)
+
+message("BASE_INC : ${BASE_INC}")
+
+file(GLOB BASE_HEADER ${BASE_CMAKE_DIR}/*.h)
+file(GLOB BASE_SOURCE ${BASE_CMAKE_DIR}/*.cpp)
+
+set(BASE_SRC
+		${BASE_HEADER}
+		${BASE_SOURCE}
+		)
+
+
 

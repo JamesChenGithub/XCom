@@ -1,0 +1,3 @@
+/Users/alexichen/UnixSpace/XCom/build/macOS/CMakeFiles/xcom.dir
+/Users/alexichen/UnixSpace/XCom/build/macOS/CMakeFiles/ALL_BUILD.dir
+/Users/alexichen/UnixSpace/XCom/build/macOS/CMakeFiles/ZERO_CHECK.dir

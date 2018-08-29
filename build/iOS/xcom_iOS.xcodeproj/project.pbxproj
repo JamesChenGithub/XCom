@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		2194E0320D364BC8A2149F8E /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1F5414784E1C4249B2BC8A33 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				5C7ACFF1ACF04BA3AF2A0BFB /* CMake Rules */,
+			);
+			dependencies = (
+				2A93BA633DED437CA7210BBF /* PBXTargetDependency */,
+				B0A227D5585F48809314AD0C /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		B3ACA561F0C743559FE105E2 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5E77E89D0B514421AE2BDB43 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				D0716C8BD6A44A27A3EFDADA /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		3293572FC3CF40B09671EE46 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */ = {isa = PBXBuildFile; fileRef = DDE2B8EBA01F4B1197C9DC3C /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */; };
+		3361E256CF0E4393A9FD1D05 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */ = {isa = PBXBuildFile; fileRef = 4974C0C0643F42CBB96B72F7 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */; };
+		627CB26070954C9087E7777F /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = CE1A12D237214462BD80D4F6 /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */; };
+		719B48476C6F4FD1A693ADEB /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */ = {isa = PBXBuildFile; fileRef = 04240B48103C45B295708AD6 /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */; };
+		934485AEABCC42CBB20EEA89 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */ = {isa = PBXBuildFile; fileRef = 493FC4289A6E4622922918DD /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */; };
+		A226B84B388B40918E2D9B6C /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */ = {isa = PBXBuildFile; fileRef = B88A51ED6DFF4CD2805B4F1A /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */; };
+		C7F32A456F41482D8CE35DD2 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */ = {isa = PBXBuildFile; fileRef = 4DC317C2B70244BB9C2405AD /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */; };
+		D9029B7694314DE8B76D883C /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */ = {isa = PBXBuildFile; fileRef = D186C4BF65BF4849A85845EA /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */; };
+		E99063E1B9A844FFBD9762D8 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */ = {isa = PBXBuildFile; fileRef = 83D1448E937C410DA1AFDF03 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		1F72660BCA744D66BE79437B /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		5235F0D594E44850B0A37473 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		67E5D065280E4EAA9283C4BF /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		9DC7E6598BA64D8F9A87498D /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		2F0BFD3361B64BCE89A9C906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B1B8834203D4EB39AE71970 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3ACA561F0C743559FE105E2;
+			remoteInfo = ZERO_CHECK;
+		};
+		40EBF314571C4C5BB8DA2F0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B1B8834203D4EB39AE71970 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C226870905C04CE3A1221D97;
+			remoteInfo = xcom;
+		};
+		7A177DF135A14D8B98F656AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B1B8834203D4EB39AE71970 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3ACA561F0C743559FE105E2;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04240B48103C45B295708AD6 /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_string_util.h; path = util/string/xc_string_util.h; sourceTree = SOURCE_ROOT; };
+		1691A8C1579A4DB6BE7637CD /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		493FC4289A6E4622922918DD /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = xc_time.cpp; path = util/time/xc_time.cpp; sourceTree = SOURCE_ROOT; };
+		4974C0C0643F42CBB96B72F7 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = xc_string.cpp; path = base/xc_string.cpp; sourceTree = SOURCE_ROOT; };
+		4DC317C2B70244BB9C2405AD /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_assert.h; path = base/xc_assert.h; sourceTree = SOURCE_ROOT; };
+		6BAE3188519D4E5998409C0C /* xcom */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libxcom.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		83D1448E937C410DA1AFDF03 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_time.h; path = util/time/xc_time.h; sourceTree = SOURCE_ROOT; };
+		B88A51ED6DFF4CD2805B4F1A /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_string.h; path = base/xc_string.h; sourceTree = SOURCE_ROOT; };
+		CE1A12D237214462BD80D4F6 /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D186C4BF65BF4849A85845EA /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_sys_def.h; path = base/xc_sys_def.h; sourceTree = SOURCE_ROOT; };
+		DDE2B8EBA01F4B1197C9DC3C /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_type_def.h; path = base/xc_type_def.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		44658E353B8047B5B077309E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BAE3188519D4E5998409C0C /* xcom */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BE9802D1F5C4E139232A1AF /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				9EA1C1711CD444679641FC20 /* CMake Rules */,
+				1691A8C1579A4DB6BE7637CD /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		9EA1C1711CD444679641FC20 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		A1758F0892884F7E936DE50B /* xcom */ = {
+			isa = PBXGroup;
+			children = (
+				D09A28F094B54D2298DE767C /* Header Files */,
+				FA8A69E34D864631B492B68E /* Source Files */,
+				CE1A12D237214462BD80D4F6 /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */,
+			);
+			name = xcom;
+			sourceTree = "<group>";
+		};
+		B59E71CDC4BB4123A198A626 = {
+			isa = PBXGroup;
+			children = (
+				A1758F0892884F7E936DE50B /* xcom */,
+				8BE9802D1F5C4E139232A1AF /* ALL_BUILD */,
+				44658E353B8047B5B077309E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D09A28F094B54D2298DE767C /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DC317C2B70244BB9C2405AD /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */,
+				B88A51ED6DFF4CD2805B4F1A /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */,
+				D186C4BF65BF4849A85845EA /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */,
+				DDE2B8EBA01F4B1197C9DC3C /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */,
+				04240B48103C45B295708AD6 /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */,
+				83D1448E937C410DA1AFDF03 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		FA8A69E34D864631B492B68E /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				4974C0C0643F42CBB96B72F7 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */,
+				493FC4289A6E4622922918DD /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C226870905C04CE3A1221D97 /* xcom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3C2202DCDAF4C6F94A59F07 /* Build configuration list for PBXNativeTarget "xcom" */;
+			buildPhases = (
+				88F0432D7D244451A9CFEA1D /* Sources */,
+				FD8E6DDD7D9F401983A5EB78 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B5E6DF5A0EF462B89A4820A /* PBXTargetDependency */,
+			);
+			name = xcom;
+			productName = xcom;
+			productReference = 6BAE3188519D4E5998409C0C /* xcom */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B1B8834203D4EB39AE71970 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0940;
+			};
+			buildConfigurationList = 2A3C8053747F442993E95201 /* Build configuration list for PBXProject "xcom_iOS" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				9DC7E6598BA64D8F9A87498D /* Debug */,
+				5235F0D594E44850B0A37473 /* Release */,
+				67E5D065280E4EAA9283C4BF /* MinSizeRel */,
+				1F72660BCA744D66BE79437B /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = B59E71CDC4BB4123A198A626;
+			projectDirPath = /Users/alexichen/UnixSpace/XCom/xcom;
+			projectRoot = "";
+			targets = (
+				2194E0320D364BC8A2149F8E /* ALL_BUILD */,
+				B3ACA561F0C743559FE105E2 /* ZERO_CHECK */,
+				C226870905C04CE3A1221D97 /* xcom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C7ACFF1ACF04BA3AF2A0BFB /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/alexichen/UnixSpace/XCom/build/iOS -f /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		B5EF7C2E48B64E158634699C = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		C7A8B56906D0403F82E28186 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		D0716C8BD6A44A27A3EFDADA /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/alexichen/UnixSpace/XCom/build/iOS -f /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		FD8E6DDD7D9F401983A5EB78 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/alexichen/UnixSpace/XCom/build/iOS -f /Users/alexichen/UnixSpace/XCom/build/iOS/CMakeScripts/xcom_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88F0432D7D244451A9CFEA1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3361E256CF0E4393A9FD1D05 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */,
+				934485AEABCC42CBB20EEA89 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A93BA633DED437CA7210BBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C226870905C04CE3A1221D97 /* xcom */;
+			targetProxy = 40EBF314571C4C5BB8DA2F0F /* PBXContainerItemProxy */;
+		};
+		4B5E6DF5A0EF462B89A4820A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3ACA561F0C743559FE105E2 /* ZERO_CHECK */;
+			targetProxy = 7A177DF135A14D8B98F656AE /* PBXContainerItemProxy */;
+		};
+		B0A227D5585F48809314AD0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3ACA561F0C743559FE105E2 /* ZERO_CHECK */;
+			targetProxy = 2F0BFD3361B64BCE89A9C906 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0141EE6B5E454C5E80E10919 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "armv7 armv7s arm64";
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk;
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS/build;
+			};
+			name = MinSizeRel;
+		};
+		02ECD27538FC4FC5A220F7D7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		11C2FBDD5461475DB2753779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		18AD4E383BC5441D82F607E2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3266B5ACC38A4E9AADA4A4DD /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (armv7,armv7s,arm64);
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "-miphoneos-version-min=8.0  -fvisibility=hidden -fvisibility-inlines-hidden -fobjc-abi-version=2 -fobjc-arc  -miphoneos-version-min=8.0  -fvisibility=hidden -fvisibility-inlines-hidden -fobjc-abi-version=2 -fobjc-arc  -DNDEBUG     -fomit-frame-pointer -ffast-math   '-std=gnu++11'   -Wfatal-errors";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = xcom;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		45EBD26692B14CB48C3671E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "armv7 armv7s arm64";
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk;
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS/build;
+			};
+			name = Release;
+		};
+		46FA477C521A4129BFD9F5A2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "armv7 armv7s arm64";
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk;
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS/build;
+			};
+			name = RelWithDebInfo;
+		};
+		5143231604C642E0A78A2941 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		5E8FBFEE664E4196AF2E5529 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (armv7,armv7s,arm64);
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "-miphoneos-version-min=8.0  -fvisibility=hidden -fvisibility-inlines-hidden -fobjc-abi-version=2 -fobjc-arc  -miphoneos-version-min=8.0  -fvisibility=hidden -fvisibility-inlines-hidden -fobjc-abi-version=2 -fobjc-arc  -DNDEBUG        -fomit-frame-pointer -ffast-math   '-std=gnu++11'   -Wfatal-errors";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = xcom;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		8901EF21B9ED46F98887C771 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		8F562759BF654979876EEDCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		98E66EAB67DE4BF8AE1C1413 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (armv7,armv7s,arm64);
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "-miphoneos-version-min=8.0  -fvisibility=hidden -fvisibility-inlines-hidden -fobjc-abi-version=2 -fobjc-arc     '-std=gnu++11'   -Wfatal-errors";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = xcom;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		A72BA6E800C0441B8EED065B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (armv7,armv7s,arm64);
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "-miphoneos-version-min=8.0  -fvisibility=hidden -fvisibility-inlines-hidden -fobjc-abi-version=2 -fobjc-arc  -miphoneos-version-min=8.0  -fvisibility=hidden -fvisibility-inlines-hidden -fobjc-abi-version=2 -fobjc-arc  -DNDEBUG     -fomit-frame-pointer -ffast-math   '-std=gnu++11'   -Wfatal-errors";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = xcom;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		CAE4D94B172941CD8E4F03E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		E7516947F8A94E9C921C96EB /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		FB103889DE6D4D9DA48E8BC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "armv7 armv7s arm64";
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk;
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/iOS/build;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F5414784E1C4249B2BC8A33 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAE4D94B172941CD8E4F03E5 /* Debug */,
+				5143231604C642E0A78A2941 /* Release */,
+				E7516947F8A94E9C921C96EB /* MinSizeRel */,
+				02ECD27538FC4FC5A220F7D7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2A3C8053747F442993E95201 /* Build configuration list for PBXProject "xcom_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB103889DE6D4D9DA48E8BC3 /* Debug */,
+				45EBD26692B14CB48C3671E9 /* Release */,
+				0141EE6B5E454C5E80E10919 /* MinSizeRel */,
+				46FA477C521A4129BFD9F5A2 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5E77E89D0B514421AE2BDB43 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11C2FBDD5461475DB2753779 /* Debug */,
+				8F562759BF654979876EEDCF /* Release */,
+				8901EF21B9ED46F98887C771 /* MinSizeRel */,
+				18AD4E383BC5441D82F607E2 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C3C2202DCDAF4C6F94A59F07 /* Build configuration list for PBXNativeTarget "xcom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98E66EAB67DE4BF8AE1C1413 /* Debug */,
+				A72BA6E800C0441B8EED065B /* Release */,
+				3266B5ACC38A4E9AADA4A4DD /* MinSizeRel */,
+				5E8FBFEE664E4196AF2E5529 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B1B8834203D4EB39AE71970 /* Project object */;
+}

@@ -1,0 +1,16 @@
+get_filename_component(STRING_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+message("string设置 : ${STRING_CMAKE_DIR}")
+
+set(STRING_INC
+		${STRING_CMAKE_DIR}
+		)
+
+message("STRING_INC : ${STRING_INC}")
+
+file(GLOB STRING_HEADER ${STRING_CMAKE_DIR}/*.h)
+file(GLOB STRING_SOURCE ${STRING_CMAKE_DIR}/*.cpp)
+
+set(STRING_SRC
+		${STRING_HEADER}
+		${STRING_HEADER}
+		)

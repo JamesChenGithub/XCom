@@ -1,35 +1,28 @@
-get_filename_component(XLIVE_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(UTIL_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+message("util 设置：${UTIL_CMAKE_DIR}")
 
+include(${UTIL_CMAKE_DIR}/string/string.cmake)
+include(${UTIL_CMAKE_DIR}/time/time.cmake)
 
-include(${XLIVE_CMAKE_DIR}/xc_api/xc_api.cmake)
-include(${XLIVE_CMAKE_DIR}/comm/comm.cmake)
+set(UTIL_INC
+	${UTIL_CMAKE_DIR}
+	${STRING_INC}
+	${TIME_INC}
+	)
 
+message("UTIL_INC : ${UTIL_INC}")
 
-set(XLIVE_INC
-		${XLIVE_CMAKE_DIR}
-		${XC_API_INC}
-		${COMM_INC}
+set(UTIL_INCLUDE
+	${UTIL_CMAKE_DIR}/string/*.h
+	${UTIL_CMAKE_DIR}/time/*.h
+	)
+
+file(GLOB UTIL_HEADER ${UTIL_CMAKE_DIR}/*.h)
+file(GLOB UTIL_SOURCE ${UTIL_CMAKE_DIR}/*.cpp)
+
+set(UTIL_SRC
+		${STRING_SRC}
+		${TIME_SRC}
+		#${UTIL_HEADER}
+		#${UTIL_SOURCE}
 		)
-
-set(XLIVE_INCLUDE
-		${XLIVE_CMAKE_DIR}/xlive_callback.h
-		${XLIVE_CMAKE_DIR}/xlive_comm.h
-		${XLIVE_CMAKE_DIR}/xlive_xcast.h
-		${XLIVE_CMAKE_DIR}/xlive_string.h
-		${XLIVE_CMAKE_DIR}/xlive_log.h
-		${XLIVE_CMAKE_DIR}/xlive_version.h
-		${XLIVE_CMAKE_DIR}/xlive.h
-		)
-
-file(GLOB XLIVE_HEADER ${XLIVE_CMAKE_DIR}/*.h)
-file(GLOB PLATFORMS_HEADER ${PLATFORMS_CMAKE_DIR}/xlive_mainthread.h)
-file(GLOB XLIVE_SOURCE ${XLIVE_CMAKE_DIR}/*.cpp)
-
-set(XLIVE_SRC
-		${COMM_SRC}
-		${XC_API_SRC}
-		${XLIVE_HEADER}
-		${PLATFORMS_HEADER}
-		${XLIVE_SOURCE}
-		)
-
