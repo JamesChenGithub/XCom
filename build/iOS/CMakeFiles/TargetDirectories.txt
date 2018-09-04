@@ -1,3 +1,0 @@
-/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/xcom.dir
-/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/ALL_BUILD.dir
-/Users/alexichen/UnixSpace/XCom/build/iOS/CMakeFiles/ZERO_CHECK.dir

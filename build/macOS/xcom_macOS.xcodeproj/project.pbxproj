@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		16E7B64B95ED41E3A0D57408 /* ALL_BUILD */ = {
+		393313A5B77E4BA98A935368 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 029FF264118A41D983ABD0F6 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = 11186C168E614B57AEB7E5EA /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
-				A82227C73124453C90CE060D /* CMake Rules */,
+				7E85F836B975409290878158 /* CMake Rules */,
 			);
 			dependencies = (
-				B0E3AB9B41DD4639B3EA1ADA /* PBXTargetDependency */,
-				C8A4A9249A914BB285387752 /* PBXTargetDependency */,
+				B7ADCF91A85E479FB6341991 /* PBXTargetDependency */,
+				098C3674957048E19EDFF48A /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
 		};
-		1BF829BD4BFF490E8B944D85 /* ZERO_CHECK */ = {
+		B56F2A99017B438281F27708 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 54443E556F7F425BAF9A6531 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 256E4635302F4E16B4473C32 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
-				780CA4BE23D448BEAF2AFDC9 /* CMake Rules */,
+				81C68F6DB18143C0BF783CAC /* CMake Rules */,
 			);
 			dependencies = (
 			);
@@ -34,231 +34,253 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0568B6570B2F4C4C87C28011 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */ = {isa = PBXBuildFile; fileRef = 65B96A40D940464B8F0421F7 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */; };
-		0AE15CC435264B1691414CB9 /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 59FD4A2D4E6F4C8AB209463D /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */; };
-		15293F0E15484D23A7F3A439 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */ = {isa = PBXBuildFile; fileRef = 5FA193895426439E866FE50E /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */; };
-		5B679D5A33C947649A4F588A /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */ = {isa = PBXBuildFile; fileRef = 0F9C5CB092814D59824923CA /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */; };
-		75E81E38C9374876BF5AF326 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */ = {isa = PBXBuildFile; fileRef = CEC9C976C53F4CF58F668F84 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */; };
-		96D3F0A43DE84A678B7F8F2F /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */ = {isa = PBXBuildFile; fileRef = 9172513A90E942CA86FA204D /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */; };
-		ABFEF514D74F4DAE8416CA11 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */ = {isa = PBXBuildFile; fileRef = 1599BED18678415AA0590C27 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */; };
-		D6ECDA2559FA4DA88E001437 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */ = {isa = PBXBuildFile; fileRef = 413FD3506AE746AC86A88DA8 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */; };
-		E9BC697C7B4140BEB1FBC928 /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */ = {isa = PBXBuildFile; fileRef = 03404ECC51414A82B9524BCB /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */; };
+		02795D3A0B234F8BB1813590 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */ = {isa = PBXBuildFile; fileRef = C3FC683DB62F43EABCB82BED /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */; };
+		05752B093A8C42E59B7ACE43 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */ = {isa = PBXBuildFile; fileRef = BF55ACFA51BA44D395EB55EF /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */; };
+		18A846461C484087A183C83B /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection.cpp */ = {isa = PBXBuildFile; fileRef = 76B030CDA420409C8E888B2C /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection.cpp */; };
+		18E0418FD65642D6B3908F38 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_value.cpp */ = {isa = PBXBuildFile; fileRef = A37BBB3C7A8A41EFAF935C88 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_value.cpp */; };
+		192FD3D3708D4FB8994B2E93 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_pump_default.cpp */ = {isa = PBXBuildFile; fileRef = 8973C0FFD5C84A13B0181BC3 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_pump_default.cpp */; };
+		209AA1DEFB6B438CB59B80AC /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/thread/tthread.cpp */ = {isa = PBXBuildFile; fileRef = 50525BF367AE4EEAB83ABBAF /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/thread/tthread.cpp */; };
+		249D2A05BBCE4320B6AEAB90 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */ = {isa = PBXBuildFile; fileRef = C413B640A0F442E6A0FF2B7C /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */; };
+		2831DA4AB2C2444E8C69C163 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tlazy_instance.cpp */ = {isa = PBXBuildFile; fileRef = B91D29E9393C4AD69AEF5A34 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tlazy_instance.cpp */; };
+		39EB4172CEF14098B8E15DE9 /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */ = {isa = PBXBuildFile; fileRef = 417EB593ED664BC68A6F48D2 /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */; };
+		6B72AC0A3B8E437791B46D28 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */ = {isa = PBXBuildFile; fileRef = AF408ADF476A43ABB07F3EB8 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */; };
+		78AC688FA8D849B880122A2B /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */ = {isa = PBXBuildFile; fileRef = 18B013BCFB5148D8896BCEFD /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */; };
+		7EAD2654A7AC49368BE4A827 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_reader.cpp */ = {isa = PBXBuildFile; fileRef = 9BDAD2239E13461D800113D7 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_reader.cpp */; };
+		80A5154956804685895B56B7 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_loop.cpp */ = {isa = PBXBuildFile; fileRef = 66412050F41A49859DD8F70D /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_loop.cpp */; };
+		90AFAA2097DD44DFB2835818 /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 064CB352499B4DBC905ED7DD /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */; };
+		B451501392FA4ABCBFF74D57 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection_operation.cpp */ = {isa = PBXBuildFile; fileRef = DC6FC50763204CD78BD3EC95 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection_operation.cpp */; };
+		C0F8734EABD444268F4E8EE9 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_loop_libevent.cpp */ = {isa = PBXBuildFile; fileRef = D11FAD1C01B84AF7BB6296D1 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_loop_libevent.cpp */; };
+		C56A88B95C8A4AB7AD40ADD1 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/trun_loop.cpp */ = {isa = PBXBuildFile; fileRef = FB6ECDC39BD6414DA729C37C /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/trun_loop.cpp */; };
+		C6B59D8F4DD44B3085F71BB9 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_writer.cpp */ = {isa = PBXBuildFile; fileRef = F65239E320C2499EA91D1D1D /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_writer.cpp */; };
+		CB8E3D0E86EB4C3BBA91D675 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */ = {isa = PBXBuildFile; fileRef = 55D79BE642D741EBB3B86105 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */; };
+		E38CBF0FEFF94C00BED0B151 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/time/ttime.cpp */ = {isa = PBXBuildFile; fileRef = CFEE632E60D442E79F999CD4 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/time/ttime.cpp */; };
+		E725BE8BCDB44A308EBEB175 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tresponse.cpp */ = {isa = PBXBuildFile; fileRef = 52AC9C1E260447509186AF01 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tresponse.cpp */; };
+		EC0A74C41A3B4756B9FBA842 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/thread/tdispatch.cpp */ = {isa = PBXBuildFile; fileRef = E9C6325A843C4C1C9583926F /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/thread/tdispatch.cpp */; };
+		ED20237EE05047B68911632E /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection_operation_queue.cpp */ = {isa = PBXBuildFile; fileRef = 4D0AD9D254AF4135AE998602 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection_operation_queue.cpp */; };
+		F1CD7890B80C450E9C437686 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/trequest.cpp */ = {isa = PBXBuildFile; fileRef = 9D5429B0D9FA42729F4D734F /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/trequest.cpp */; };
+		F48A8F66626D4EEA8C4318F6 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */ = {isa = PBXBuildFile; fileRef = 94D41750FC8449D4BCE61351 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		0C5424E759EE4EE4955C306D /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		11478C96FB46471D9CD463A8 /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		36C9D22EA6774C9ABBE1F07C /* MinSizeRel */ = {
+		1307DB6E300E4BF0971373B0 /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
-		E826A63D6E344D2B97425B58 /* Debug */ = {
+		9A01CF2545DA43B38C7A9AB9 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		A92EA1B9124541DE80C525C1 /* Debug */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Debug;
 		};
+		C5B7733C6F594A779DE325CE /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		670B123D9C5F4907A3C3AB50 /* PBXContainerItemProxy */ = {
+		3FDC65275F90416087AC358A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E1CB9161DB4E498792DAF721 /* Project object */;
+			containerPortal = A97E37B360994B7EBB9ED498 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1BF829BD4BFF490E8B944D85;
+			remoteGlobalIDString = B56F2A99017B438281F27708;
 			remoteInfo = ZERO_CHECK;
 		};
-		781D937034A848DD8E54EC6D /* PBXContainerItemProxy */ = {
+		47569DB84DCD4F0194E0F96B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E1CB9161DB4E498792DAF721 /* Project object */;
+			containerPortal = A97E37B360994B7EBB9ED498 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1BF829BD4BFF490E8B944D85;
-			remoteInfo = ZERO_CHECK;
-		};
-		FA4F72D42B2D4C8DB13B5A59 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E1CB9161DB4E498792DAF721 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 49502C963808443790AFA5A0;
+			remoteGlobalIDString = 8F180651ECAD43E590042750;
 			remoteInfo = xcom;
+		};
+		E457C2191EC94C8E83E76F00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A97E37B360994B7EBB9ED498 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B56F2A99017B438281F27708;
+			remoteInfo = ZERO_CHECK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03404ECC51414A82B9524BCB /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_string_util.h; path = util/string/xc_string_util.h; sourceTree = SOURCE_ROOT; };
-		03C7932AD0B248C5BAFAEEC0 /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		0F9C5CB092814D59824923CA /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_type_def.h; path = base/xc_type_def.h; sourceTree = SOURCE_ROOT; };
-		1599BED18678415AA0590C27 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = xc_time.cpp; path = util/time/xc_time.cpp; sourceTree = SOURCE_ROOT; };
-		413FD3506AE746AC86A88DA8 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_time.h; path = util/time/xc_time.h; sourceTree = SOURCE_ROOT; };
-		59FD4A2D4E6F4C8AB209463D /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		5FA193895426439E866FE50E /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = xc_string.cpp; path = base/xc_string.cpp; sourceTree = SOURCE_ROOT; };
-		65B96A40D940464B8F0421F7 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_assert.h; path = base/xc_assert.h; sourceTree = SOURCE_ROOT; };
-		9172513A90E942CA86FA204D /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_string.h; path = base/xc_string.h; sourceTree = SOURCE_ROOT; };
-		CEC9C976C53F4CF58F668F84 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_sys_def.h; path = base/xc_sys_def.h; sourceTree = SOURCE_ROOT; };
-		E3F05D1728AB4DCB8C66965B /* xcom */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libxcom.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		064CB352499B4DBC905ED7DD /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		18B013BCFB5148D8896BCEFD /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = xc_string.cpp; path = base/xc_string.cpp; sourceTree = SOURCE_ROOT; };
+		3FF88B8D5F584072BFA2E859 /* xcom */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libxcom.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		417EB593ED664BC68A6F48D2 /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_string_util.h; path = util/string/xc_string_util.h; sourceTree = SOURCE_ROOT; };
+		4D0AD9D254AF4135AE998602 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection_operation_queue.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tconnection_operation_queue.cpp; path = 3rd/curl/tconnection_operation_queue.cpp; sourceTree = SOURCE_ROOT; };
+		50525BF367AE4EEAB83ABBAF /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/thread/tthread.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tthread.cpp; path = 3rd/thread/tthread.cpp; sourceTree = SOURCE_ROOT; };
+		52AC9C1E260447509186AF01 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tresponse.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tresponse.cpp; path = 3rd/curl/tresponse.cpp; sourceTree = SOURCE_ROOT; };
+		55D79BE642D741EBB3B86105 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = xc_time.cpp; path = util/time/xc_time.cpp; sourceTree = SOURCE_ROOT; };
+		66412050F41A49859DD8F70D /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_loop.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tmessage_loop.cpp; path = 3rd/message_loop/tmessage_loop.cpp; sourceTree = SOURCE_ROOT; };
+		76B030CDA420409C8E888B2C /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tconnection.cpp; path = 3rd/curl/tconnection.cpp; sourceTree = SOURCE_ROOT; };
+		8973C0FFD5C84A13B0181BC3 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_pump_default.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tmessage_pump_default.cpp; path = 3rd/message_loop/tmessage_pump_default.cpp; sourceTree = SOURCE_ROOT; };
+		94D41750FC8449D4BCE61351 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_string.h; path = base/xc_string.h; sourceTree = SOURCE_ROOT; };
+		9BDAD2239E13461D800113D7 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_reader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = json_reader.cpp; path = 3rd/json/json_reader.cpp; sourceTree = SOURCE_ROOT; };
+		9D5429B0D9FA42729F4D734F /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/trequest.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = trequest.cpp; path = 3rd/curl/trequest.cpp; sourceTree = SOURCE_ROOT; };
+		A37BBB3C7A8A41EFAF935C88 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_value.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = json_value.cpp; path = 3rd/json/json_value.cpp; sourceTree = SOURCE_ROOT; };
+		AF408ADF476A43ABB07F3EB8 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_assert.h; path = base/xc_assert.h; sourceTree = SOURCE_ROOT; };
+		B91D29E9393C4AD69AEF5A34 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tlazy_instance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tlazy_instance.cpp; path = 3rd/message_loop/tlazy_instance.cpp; sourceTree = SOURCE_ROOT; };
+		BF55ACFA51BA44D395EB55EF /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_time.h; path = util/time/xc_time.h; sourceTree = SOURCE_ROOT; };
+		C3FC683DB62F43EABCB82BED /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_type_def.h; path = base/xc_type_def.h; sourceTree = SOURCE_ROOT; };
+		C413B640A0F442E6A0FF2B7C /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xc_sys_def.h; path = base/xc_sys_def.h; sourceTree = SOURCE_ROOT; };
+		CFEE632E60D442E79F999CD4 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/time/ttime.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ttime.cpp; path = 3rd/time/ttime.cpp; sourceTree = SOURCE_ROOT; };
+		D11FAD1C01B84AF7BB6296D1 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_loop_libevent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tmessage_loop_libevent.cpp; path = 3rd/message_loop/tmessage_loop_libevent.cpp; sourceTree = SOURCE_ROOT; };
+		DC6FC50763204CD78BD3EC95 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection_operation.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tconnection_operation.cpp; path = 3rd/curl/tconnection_operation.cpp; sourceTree = SOURCE_ROOT; };
+		DCD132860F0943BDBE236732 /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		E9C6325A843C4C1C9583926F /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/thread/tdispatch.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tdispatch.cpp; path = 3rd/thread/tdispatch.cpp; sourceTree = SOURCE_ROOT; };
+		F65239E320C2499EA91D1D1D /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_writer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = json_writer.cpp; path = 3rd/json/json_writer.cpp; sourceTree = SOURCE_ROOT; };
+		FB6ECDC39BD6414DA729C37C /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/trun_loop.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = trun_loop.cpp; path = 3rd/message_loop/trun_loop.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		446314B4428340CAA52097DB /* Products */ = {
+		07E0863E588444BF93A917B0 = {
 			isa = PBXGroup;
 			children = (
-				E3F05D1728AB4DCB8C66965B /* xcom */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		704C0CC7E1E74E42BA80FFC1 /* Header Files */ = {
-			isa = PBXGroup;
-			children = (
-				65B96A40D940464B8F0421F7 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */,
-				9172513A90E942CA86FA204D /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */,
-				CEC9C976C53F4CF58F668F84 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */,
-				0F9C5CB092814D59824923CA /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */,
-				03404ECC51414A82B9524BCB /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */,
-				413FD3506AE746AC86A88DA8 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */,
-			);
-			name = "Header Files";
-			sourceTree = "<group>";
-		};
-		7829916185EF4FCFB89598C3 /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				D50865DCF07D4736996815B6 /* CMake Rules */,
-				03C7932AD0B248C5BAFAEEC0 /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
-			sourceTree = "<group>";
-		};
-		953415B6EA1744F79D0B7F91 = {
-			isa = PBXGroup;
-			children = (
-				F81B71C0ED584E60A8DA2C19 /* xcom */,
-				7829916185EF4FCFB89598C3 /* ALL_BUILD */,
-				446314B4428340CAA52097DB /* Products */,
+				EA9B89CA4F8F49A38751D8A2 /* xcom */,
+				44EC64A8A1CF48EBBF4F5675 /* ALL_BUILD */,
+				EFBE8DE82D834C6FA82F766F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9CB995EB86E74202B0C17FD2 /* Source Files */ = {
+		24527F4CC2B44055A87D9DF7 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				5FA193895426439E866FE50E /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */,
-				1599BED18678415AA0590C27 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */,
+				76B030CDA420409C8E888B2C /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection.cpp */,
+				DC6FC50763204CD78BD3EC95 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection_operation.cpp */,
+				4D0AD9D254AF4135AE998602 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection_operation_queue.cpp */,
+				9D5429B0D9FA42729F4D734F /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/trequest.cpp */,
+				52AC9C1E260447509186AF01 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tresponse.cpp */,
+				9BDAD2239E13461D800113D7 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_reader.cpp */,
+				A37BBB3C7A8A41EFAF935C88 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_value.cpp */,
+				F65239E320C2499EA91D1D1D /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_writer.cpp */,
+				B91D29E9393C4AD69AEF5A34 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tlazy_instance.cpp */,
+				66412050F41A49859DD8F70D /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_loop.cpp */,
+				D11FAD1C01B84AF7BB6296D1 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_loop_libevent.cpp */,
+				8973C0FFD5C84A13B0181BC3 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_pump_default.cpp */,
+				FB6ECDC39BD6414DA729C37C /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/trun_loop.cpp */,
+				E9C6325A843C4C1C9583926F /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/thread/tdispatch.cpp */,
+				50525BF367AE4EEAB83ABBAF /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/thread/tthread.cpp */,
+				CFEE632E60D442E79F999CD4 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/time/ttime.cpp */,
+				18B013BCFB5148D8896BCEFD /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */,
+				55D79BE642D741EBB3B86105 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
 		};
-		D50865DCF07D4736996815B6 /* CMake Rules */ = {
+		44EC64A8A1CF48EBBF4F5675 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				D2B491EA4ED34343B2C8AF73 /* CMake Rules */,
+				DCD132860F0943BDBE236732 /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		836F6386695547C2A2ED05C7 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF408ADF476A43ABB07F3EB8 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_assert.h */,
+				94D41750FC8449D4BCE61351 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.h */,
+				C413B640A0F442E6A0FF2B7C /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_sys_def.h */,
+				C3FC683DB62F43EABCB82BED /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_type_def.h */,
+				417EB593ED664BC68A6F48D2 /* /Users/alexichen/UnixSpace/XCom/xcom/util/string/xc_string_util.h */,
+				BF55ACFA51BA44D395EB55EF /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		D2B491EA4ED34343B2C8AF73 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		F81B71C0ED584E60A8DA2C19 /* xcom */ = {
+		EA9B89CA4F8F49A38751D8A2 /* xcom */ = {
 			isa = PBXGroup;
 			children = (
-				704C0CC7E1E74E42BA80FFC1 /* Header Files */,
-				9CB995EB86E74202B0C17FD2 /* Source Files */,
-				59FD4A2D4E6F4C8AB209463D /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */,
+				836F6386695547C2A2ED05C7 /* Header Files */,
+				24527F4CC2B44055A87D9DF7 /* Source Files */,
+				064CB352499B4DBC905ED7DD /* /Users/alexichen/UnixSpace/XCom/xcom/CMakeLists.txt */,
 			);
 			name = xcom;
+			sourceTree = "<group>";
+		};
+		EFBE8DE82D834C6FA82F766F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FF88B8D5F584072BFA2E859 /* xcom */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49502C963808443790AFA5A0 /* xcom */ = {
+		8F180651ECAD43E590042750 /* xcom */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90A294F2643A4AFEA213662C /* Build configuration list for PBXNativeTarget "xcom" */;
+			buildConfigurationList = 6898A3812A7A45D3A42D1393 /* Build configuration list for PBXNativeTarget "xcom" */;
 			buildPhases = (
-				777E26BE3B9746D6A4841A65 /* Sources */,
-				C831CBBDE0684F1483975DD5 /* CMake PostBuild Rules */,
+				21D5DBEEC8A44142A83BDD05 /* Sources */,
+				86621177311B4EF18A9C42E7 /* CMake PostBuild Rules */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F067875A09B4476797D2CB46 /* PBXTargetDependency */,
+				E274AD5D656C40AEAA43004E /* PBXTargetDependency */,
 			);
 			name = xcom;
 			productName = xcom;
-			productReference = E3F05D1728AB4DCB8C66965B /* xcom */;
+			productReference = 3FF88B8D5F584072BFA2E859 /* xcom */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E1CB9161DB4E498792DAF721 /* Project object */ = {
+		A97E37B360994B7EBB9ED498 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 0940;
 			};
-			buildConfigurationList = 79E2256A64464D628C7EFD61 /* Build configuration list for PBXProject "xcom_macOS" */;
+			buildConfigurationList = 9A3B66B68FF046DC886CA6B9 /* Build configuration list for PBXProject "xcom_macOS" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				E826A63D6E344D2B97425B58 /* Debug */,
-				11478C96FB46471D9CD463A8 /* Release */,
-				36C9D22EA6774C9ABBE1F07C /* MinSizeRel */,
-				0C5424E759EE4EE4955C306D /* RelWithDebInfo */,
+				A92EA1B9124541DE80C525C1 /* Debug */,
+				9A01CF2545DA43B38C7A9AB9 /* Release */,
+				1307DB6E300E4BF0971373B0 /* MinSizeRel */,
+				C5B7733C6F594A779DE325CE /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 953415B6EA1744F79D0B7F91;
+			mainGroup = 07E0863E588444BF93A917B0;
 			projectDirPath = /Users/alexichen/UnixSpace/XCom/xcom;
 			projectRoot = "";
 			targets = (
-				16E7B64B95ED41E3A0D57408 /* ALL_BUILD */,
-				1BF829BD4BFF490E8B944D85 /* ZERO_CHECK */,
-				49502C963808443790AFA5A0 /* xcom */,
+				393313A5B77E4BA98A935368 /* ALL_BUILD */,
+				B56F2A99017B438281F27708 /* ZERO_CHECK */,
+				8F180651ECAD43E590042750 /* xcom */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		780CA4BE23D448BEAF2AFDC9 /* CMake Rules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "CMake Rules";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/alexichen/UnixSpace/XCom/build/macOS -f /Users/alexichen/UnixSpace/XCom/build/macOS/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
-			showEnvVarsInLog = 0;
-		};
-		8BD215526BB2433CBF449C69 = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# shell script goes here
-exit 0";
-			showEnvVarsInLog = 0;
-		};
-		A82227C73124453C90CE060D /* CMake Rules */ = {
+		7E85F836B975409290878158 /* CMake Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,7 +291,29 @@ exit 0";
 			shellScript = "make -C /Users/alexichen/UnixSpace/XCom/build/macOS -f /Users/alexichen/UnixSpace/XCom/build/macOS/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
 			showEnvVarsInLog = 0;
 		};
-		C12C38331B6E42C180D45228 = {
+		81C68F6DB18143C0BF783CAC /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/alexichen/UnixSpace/XCom/build/macOS -f /Users/alexichen/UnixSpace/XCom/build/macOS/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		86621177311B4EF18A9C42E7 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/alexichen/UnixSpace/XCom/build/macOS -f /Users/alexichen/UnixSpace/XCom/build/macOS/CMakeScripts/xcom_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		CDDD7DF179A4486AA3976B6A = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,281 +328,71 @@ exit 0";
 exit 0";
 			showEnvVarsInLog = 0;
 		};
-		C831CBBDE0684F1483975DD5 /* CMake PostBuild Rules */ = {
+		D737557CE9DC4E24880BCB3F = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			name = "CMake PostBuild Rules";
+			inputPaths = (
+			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "make -C /Users/alexichen/UnixSpace/XCom/build/macOS -f /Users/alexichen/UnixSpace/XCom/build/macOS/CMakeScripts/xcom_postBuildPhase.make$CONFIGURATION all";
+			shellScript = "# shell script goes here
+exit 0";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		777E26BE3B9746D6A4841A65 /* Sources */ = {
+		21D5DBEEC8A44142A83BDD05 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15293F0E15484D23A7F3A439 /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */,
-				ABFEF514D74F4DAE8416CA11 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */,
+				18A846461C484087A183C83B /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection.cpp */,
+				B451501392FA4ABCBFF74D57 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection_operation.cpp */,
+				ED20237EE05047B68911632E /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tconnection_operation_queue.cpp */,
+				F1CD7890B80C450E9C437686 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/trequest.cpp */,
+				E725BE8BCDB44A308EBEB175 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/tresponse.cpp */,
+				7EAD2654A7AC49368BE4A827 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_reader.cpp */,
+				18E0418FD65642D6B3908F38 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_value.cpp */,
+				C6B59D8F4DD44B3085F71BB9 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/json/json_writer.cpp */,
+				2831DA4AB2C2444E8C69C163 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tlazy_instance.cpp */,
+				80A5154956804685895B56B7 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_loop.cpp */,
+				C0F8734EABD444268F4E8EE9 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_loop_libevent.cpp */,
+				192FD3D3708D4FB8994B2E93 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/tmessage_pump_default.cpp */,
+				C56A88B95C8A4AB7AD40ADD1 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop/trun_loop.cpp */,
+				EC0A74C41A3B4756B9FBA842 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/thread/tdispatch.cpp */,
+				209AA1DEFB6B438CB59B80AC /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/thread/tthread.cpp */,
+				E38CBF0FEFF94C00BED0B151 /* /Users/alexichen/UnixSpace/XCom/xcom/3rd/time/ttime.cpp */,
+				78AC688FA8D849B880122A2B /* /Users/alexichen/UnixSpace/XCom/xcom/base/xc_string.cpp */,
+				CB8E3D0E86EB4C3BBA91D675 /* /Users/alexichen/UnixSpace/XCom/xcom/util/time/xc_time.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B0E3AB9B41DD4639B3EA1ADA /* PBXTargetDependency */ = {
+		098C3674957048E19EDFF48A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 49502C963808443790AFA5A0 /* xcom */;
-			targetProxy = FA4F72D42B2D4C8DB13B5A59 /* PBXContainerItemProxy */;
+			target = B56F2A99017B438281F27708 /* ZERO_CHECK */;
+			targetProxy = 3FDC65275F90416087AC358A /* PBXContainerItemProxy */;
 		};
-		C8A4A9249A914BB285387752 /* PBXTargetDependency */ = {
+		B7ADCF91A85E479FB6341991 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1BF829BD4BFF490E8B944D85 /* ZERO_CHECK */;
-			targetProxy = 781D937034A848DD8E54EC6D /* PBXContainerItemProxy */;
+			target = 8F180651ECAD43E590042750 /* xcom */;
+			targetProxy = 47569DB84DCD4F0194E0F96B /* PBXContainerItemProxy */;
 		};
-		F067875A09B4476797D2CB46 /* PBXTargetDependency */ = {
+		E274AD5D656C40AEAA43004E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1BF829BD4BFF490E8B944D85 /* ZERO_CHECK */;
-			targetProxy = 670B123D9C5F4907A3C3AB50 /* PBXContainerItemProxy */;
+			target = B56F2A99017B438281F27708 /* ZERO_CHECK */;
+			targetProxy = E457C2191EC94C8E83E76F00 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		05488C69884E440581C28877 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Release;
-		};
-		06ED053D6B9C441BB95A4FC8 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time);
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;MACOSX_DEPLOYMENT_TARGET = 10.8;
-				OTHER_CPLUSPLUSFLAGS = "-std=c++11 -stdlib=libc++        -DNDEBUG '-std=gnu++11'   -Wfatal-errors";
-				OTHER_LIBTOOLFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = xcom;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		08B025829C314C45842B63D0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		13BE79C4969342D8BB533CB1 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS/build;
-			};
-			name = MinSizeRel;
-		};
-		1A59D242E1A643588C35E3DB /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		1D8A0273513B4589B7620009 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Release;
-		};
-		38064F6ACD2243F6B06E0358 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		5C910E25CB1D4DE28550FFF0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS/build;
-			};
-			name = Debug;
-		};
-		5F43EBB2EC5842BCBD6C12E1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS/build;
-			};
-			name = Release;
-		};
-		62180B8CC9274F95A95864D7 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		6AE1A07A54284065A722B24C /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time);
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;MACOSX_DEPLOYMENT_TARGET = 10.8;
-				OTHER_CPLUSPLUSFLAGS = "-std=c++11 -stdlib=libc++     -DNDEBUG '-std=gnu++11'   -Wfatal-errors";
-				OTHER_LIBTOOLFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = xcom;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		6D65C6ADBC984D2C947CA3D0 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS/build;
-			};
-			name = RelWithDebInfo;
-		};
-		88A2C68069294E7D8543FCAD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		B30563A2A2A6442D8559571C /* Release */ = {
+		0379844C58A2409C8947940A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -569,7 +403,7 @@ exit 0";
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time);
+				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time,/Users/alexichen/UnixSpace/XCom/xcom/3rd,/Users/alexichen/UnixSpace/XCom/xcom/3rd/time,/Users/alexichen/UnixSpace/XCom/xcom/3rd/thread,/Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop,/Users/alexichen/UnixSpace/XCom/xcom/3rd/curl,/Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/include);
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CPLUSPLUSFLAGS = "-std=c++11 -stdlib=libc++     -DNDEBUG '-std=gnu++11'   -Wfatal-errors";
@@ -583,7 +417,112 @@ exit 0";
 			};
 			name = Release;
 		};
-		D48D00E96DD945259923377A /* Debug */ = {
+		0B9F0B60A928452FA32B449F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		168E24B1A95C43F282ADA0D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		2D7EE7EA37E649D4BDC3A336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		45A611E709D04FCA9396834A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time,/Users/alexichen/UnixSpace/XCom/xcom/3rd,/Users/alexichen/UnixSpace/XCom/xcom/3rd/time,/Users/alexichen/UnixSpace/XCom/xcom/3rd/thread,/Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop,/Users/alexichen/UnixSpace/XCom/xcom/3rd/curl,/Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/include);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CPLUSPLUSFLAGS = "-std=c++11 -stdlib=libc++     -DNDEBUG '-std=gnu++11'   -Wfatal-errors";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = xcom;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		4E83337ACB9A4C318357B7C0 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		52F0973877F748D4A3A723BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -594,7 +533,7 @@ exit 0";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time);
+				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time,/Users/alexichen/UnixSpace/XCom/xcom/3rd,/Users/alexichen/UnixSpace/XCom/xcom/3rd/time,/Users/alexichen/UnixSpace/XCom/xcom/3rd/thread,/Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop,/Users/alexichen/UnixSpace/XCom/xcom/3rd/curl,/Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/include);
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CPLUSPLUSFLAGS = "-std=c++11 -stdlib=libc++    '-std=gnu++11'   -Wfatal-errors";
@@ -608,7 +547,7 @@ exit 0";
 			};
 			name = Debug;
 		};
-		E54054CF6DBC4561B890492E /* MinSizeRel */ = {
+		52F1107C0A4C40A3BCD012F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -626,56 +565,181 @@ exit 0";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
 			};
+			name = Debug;
+		};
+		643D6D6BC65645D7877AF5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS/build;
+			};
+			name = Debug;
+		};
+		6A0DE6AB912C425E9FC5BB86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS/build;
+			};
+			name = Release;
+		};
+		750AB65793364634924100B9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS/build;
+			};
+			name = RelWithDebInfo;
+		};
+		B568E8D9BD1549E2ACA90ABA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C33681E6D71B4B2A901F7FA4 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS/build;
+			};
 			name = MinSizeRel;
+		};
+		ECBFDB7EAFB843C892A28CB7 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		EE7D4F56A00F44D1A28B46D6 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alexichen/UnixSpace/XCom/xcom,/Users/alexichen/UnixSpace/XCom/xcom/util,/Users/alexichen/UnixSpace/XCom/xcom/util/string,/Users/alexichen/UnixSpace/XCom/xcom/util/time,/Users/alexichen/UnixSpace/XCom/xcom/3rd,/Users/alexichen/UnixSpace/XCom/xcom/3rd/time,/Users/alexichen/UnixSpace/XCom/xcom/3rd/thread,/Users/alexichen/UnixSpace/XCom/xcom/3rd/message_loop,/Users/alexichen/UnixSpace/XCom/xcom/3rd/curl,/Users/alexichen/UnixSpace/XCom/xcom/3rd/curl/include);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CPLUSPLUSFLAGS = "-std=c++11 -stdlib=libc++        -DNDEBUG '-std=gnu++11'   -Wfatal-errors";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = xcom;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		FE6A0619597A4F93AD1ADD39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alexichen/UnixSpace/XCom/build/macOS;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		029FF264118A41D983ABD0F6 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		11186C168E614B57AEB7E5EA /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				88A2C68069294E7D8543FCAD /* Debug */,
-				05488C69884E440581C28877 /* Release */,
-				E54054CF6DBC4561B890492E /* MinSizeRel */,
-				62180B8CC9274F95A95864D7 /* RelWithDebInfo */,
+				52F1107C0A4C40A3BCD012F8 /* Debug */,
+				FE6A0619597A4F93AD1ADD39 /* Release */,
+				0B9F0B60A928452FA32B449F /* MinSizeRel */,
+				4E83337ACB9A4C318357B7C0 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		54443E556F7F425BAF9A6531 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		256E4635302F4E16B4473C32 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				08B025829C314C45842B63D0 /* Debug */,
-				1D8A0273513B4589B7620009 /* Release */,
-				1A59D242E1A643588C35E3DB /* MinSizeRel */,
-				38064F6ACD2243F6B06E0358 /* RelWithDebInfo */,
+				168E24B1A95C43F282ADA0D6 /* Debug */,
+				2D7EE7EA37E649D4BDC3A336 /* Release */,
+				ECBFDB7EAFB843C892A28CB7 /* MinSizeRel */,
+				B568E8D9BD1549E2ACA90ABA /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		79E2256A64464D628C7EFD61 /* Build configuration list for PBXProject "xcom_macOS" */ = {
+		6898A3812A7A45D3A42D1393 /* Build configuration list for PBXNativeTarget "xcom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5C910E25CB1D4DE28550FFF0 /* Debug */,
-				5F43EBB2EC5842BCBD6C12E1 /* Release */,
-				13BE79C4969342D8BB533CB1 /* MinSizeRel */,
-				6D65C6ADBC984D2C947CA3D0 /* RelWithDebInfo */,
+				52F0973877F748D4A3A723BF /* Debug */,
+				0379844C58A2409C8947940A /* Release */,
+				45A611E709D04FCA9396834A /* MinSizeRel */,
+				EE7D4F56A00F44D1A28B46D6 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		90A294F2643A4AFEA213662C /* Build configuration list for PBXNativeTarget "xcom" */ = {
+		9A3B66B68FF046DC886CA6B9 /* Build configuration list for PBXProject "xcom_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D48D00E96DD945259923377A /* Debug */,
-				B30563A2A2A6442D8559571C /* Release */,
-				6AE1A07A54284065A722B24C /* MinSizeRel */,
-				06ED053D6B9C441BB95A4FC8 /* RelWithDebInfo */,
+				643D6D6BC65645D7877AF5FD /* Debug */,
+				6A0DE6AB912C425E9FC5BB86 /* Release */,
+				C33681E6D71B4B2A901F7FA4 /* MinSizeRel */,
+				750AB65793364634924100B9 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E1CB9161DB4E498792DAF721 /* Project object */;
+	rootObject = A97E37B360994B7EBB9ED498 /* Project object */;
 }

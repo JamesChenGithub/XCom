@@ -1,8 +1,6 @@
 get_filename_component(BASE_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 message("base设置 : ${BASE_CMAKE_DIR}")
 
-
-
 set(BASE_INC
 		${XC_API_CMAKE_DIR}
 		)

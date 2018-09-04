@@ -6,6 +6,7 @@ message("xcom设置 : ${XCOM_CMAKE_DIR}")
 include(${XCOM_CMAKE_DIR}/base/base.cmake)
 #include(${XCOM_CMAKE_DIR}/log/log.cmake)
 include(${XCOM_CMAKE_DIR}/util/util.cmake)
+include(${XCOM_CMAKE_DIR}/3rd/3rd.cmake)
 #include(${XCOM_CMAKE_DIR}/platform/platform.cmake)
 
 # 3. 添加子目录的文件到INC
@@ -13,17 +14,17 @@ set(XCOM_INC
 		${XCOM_CMAKE_DIR}
 		${BASE_INC}
 		${UTIL_INC}
+		${3RD_INC}
 		)
 
 message("设置XCOM_INC : ${XCOM_INC}")
 
 # 4. 添加子目录INCLUDE
 set(XCOM_INCLUDE
+		${3RD_INCLUDE}
 		${UTIL_INCLUDE}
 		${BASE_HEADER}
 		)
-
-#${XCOM_CMAKE_DIR}/base/*.h
 
 # 5. 设置当前目录的源代码
 file(GLOB XCOM_HEADER ${XCOM_CMAKE_DIR}/*.h)
@@ -33,6 +34,7 @@ file(GLOB XCOM_SOURCE ${XCOM_CMAKE_DIR}/*.cpp)
 set(XCOM_SRC
 		${BASE_SRC}
 		${UTIL_SRC}
+		${3RD_SRC}
 		#${XCOM_HEADER}
 		#${XCOM_SOURCE}
 		)
