@@ -11,7 +11,7 @@
 
 namespace xcom
 {
-    static const int xc_string_per_size = 64;
+    static const int xc_string_per_size = 32;
     static char *xc_string_alloc(int &size)
     {
         char *ret = (char *)malloc(xc_string_per_size);

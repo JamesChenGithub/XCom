@@ -37,11 +37,11 @@ namespace xcom
         xc_string operator + (const char *str);
         xc_string& operator += (const xc_string &xcstr);
         xc_string& operator += (const char *str);
-        bool operator==(const xc_string &xcstr);
-        bool operator==(const char *str);
-        bool operator !=(const xc_string &xcstr);
+        bool operator == (const xc_string &xcstr);
+        bool operator == (const char *str);
+        bool operator != (const xc_string &xcstr);
         bool operator != (const char *str);
-        char operator[](int position);
+        char operator [] (int position);
         friend std::ostream& operator << (std::ostream &os, const xc_string& str);
     };
 }

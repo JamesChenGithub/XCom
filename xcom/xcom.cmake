@@ -35,7 +35,7 @@ set(XCOM_SRC
 		${BASE_SRC}
 		${UTIL_SRC}
 		${3RD_SRC}
-		#${XCOM_HEADER}
-		#${XCOM_SOURCE}
+		${XCOM_HEADER}
+		${XCOM_SOURCE}
 		)
 

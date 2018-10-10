@@ -36,6 +36,6 @@ set(3RD_SRC
 		${MSG_LOOP_SRC}
 		${CURL_SRC}
 		${JSON_SRC}
-		#${UTIL_HEADER}
-		#${UTIL_SOURCE}
+		#${3RD_HEADER}
+		#${3RD_SOURCE}
 		)

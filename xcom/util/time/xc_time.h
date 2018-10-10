@@ -9,7 +9,7 @@ extern "C" {
     
     uint64_t    xc_get_tick_count();                        // ms
     int64_t     xc_get_tick_span(uint64_t _old_tick);       // ms
-    uint64_t    xc_timeMs();
+    uint64_t    xc_time_ms();                               // ms
     uint64_t    xc_clock_app_monotonic();                   // ms
     
 #ifdef __cplusplus
