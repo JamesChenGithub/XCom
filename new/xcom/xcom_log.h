@@ -8,6 +8,13 @@
 extern "C" {
 #endif
     
+    typedef void (*xcom_log_hook_callback)(const char *str);
+    
+    enum xcom_log_mode{
+        xcom_log_mode_async = 0,
+        xcom_log_mode_sync,
+    };
+    
     enum xcom_log_level
     {
         xcom_log_level_none,     // 关掉日志
