@@ -5,7 +5,6 @@
 //  Created by AlexiChen on 2018/10/10.
 //  Copyright © 2018年 AlexiChen. All rights reserved.
 //
-
 #ifndef xcom_logger_pri_h
 #define xcom_logger_pri_h
 
@@ -13,6 +12,7 @@
 #include "xcom_log.h"
 #include "xcom_logger_struct.h"
 
+#if XCOM_LOG_ENABLE
 namespace xcom {
     class XLogPri {
     public:
@@ -46,4 +46,5 @@ namespace xcom {
     };
 };
 
+#endif
 #endif /* xcom_logger_pri_hpp */

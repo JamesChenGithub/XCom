@@ -21,4 +21,10 @@
 #include "xcom_log.h"
 #include "xcom_tick.h"
 
+#if XCOM_LOG_ENABLE
+#include "xcom_logger.h"
+#endif
+
+
+
 #endif /* xcom_h */

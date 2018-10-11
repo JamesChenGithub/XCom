@@ -5,9 +5,9 @@
 //  Created by AlexiChen on 2018/10/10.
 //  Copyright © 2018年 AlexiChen. All rights reserved.
 //
-
 #include "xcom_logger_pri.h"
 
+#if XCOM_LOG_ENABLE
 namespace xcom
 {
     void xcom_console_hook(xcom_log_info &info, const char *log)
@@ -158,3 +158,4 @@ namespace xcom
 //    }
     
 }
+#endif

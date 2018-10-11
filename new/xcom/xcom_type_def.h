@@ -16,20 +16,20 @@ extern "C" {
 #if defined(WIN32)
     
 #if defined(XC_IMPLEMENTATION)
-#define xcom_export __declspec(dllexport)
+    #define xcom_export __declspec(dllexport)
 #else
-#define xcom_export __declspec(dllimport)
+    #define xcom_export __declspec(dllimport)
 #endif /* defined(XC_IMPLEMENTATION) */
     
 #else /* defined(WIN32) */
 #if defined(XC_IMPLEMENTATION)
-#if ((defined(__GNUC__) && (__GNUC__ >= 4)) || defined(__clang__))
-#define xcom_export __attribute__((visibility("default")))
+    #if ((defined(__GNUC__) && (__GNUC__ >= 4)) || defined(__clang__))
+        #define xcom_export __attribute__((visibility("default")))
+    #else
+        #define xcom_export
+    #endif
 #else
-#define xcom_export
-#endif
-#else
-#define xcom_export
+    #define xcom_export
 #endif /* defined(XC_IMPLEMENTATION) */
 #endif
     
@@ -54,6 +54,8 @@ extern "C" {
 #define xcom_required
     
 #define xcom_optional
+    
+#define xcom_extern
     
 #ifdef __cplusplus
 }

@@ -25,23 +25,14 @@ extern "C" {
         xcom_log_level_verbose,  // 所有信息
     };
     
-#if XCOM_LOG_DISABLE
     
-#define xcom_log_error(fmt, ...)
-#define xcom_log_warn(fmt, ...)
-#define xcom_log_info(fmt, ...)
-#define xcom_log_debug(fmt, ...)
-#define xcom_log_verbose(fmt, ...)
-#define xcom_log(fmt, ...)
-    
-#else
-    
+#if XCOM_LOG_ENABLE
     extern void extern_xcom_log(xcom_log_level level, const char *filename , const char *funcname, int line, const char *format, ...);
     
 #if XCOM_OS_WIN
-#define __FILENAME__ (strrchr(__FILE__, '\\') + 1)
+    #define __FILENAME__ (strrchr(__FILE__, '\\') + 1)
 #else
-#define __FILENAME__ (strrchr(__FILE__, '/') + 1)
+    #define __FILENAME__ (strrchr(__FILE__, '/') + 1)
 #endif
     
 #define xcom_log_error(fmt, ...)    extern_xcom_log(xcom_log_level_error, __FILENAME__, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
@@ -50,6 +41,16 @@ extern "C" {
 #define xcom_log_debug(fmt, ...)    extern_xcom_log(xcom_log_level_debug, __FILENAME__, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
 #define xcom_log_verbose(fmt, ...)  extern_xcom_log(xcom_log_level_verbose, __FILENAME__, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
 #define xcom_log          xcom_log_debug
+    
+#else
+    
+#define xcom_log_error(fmt, ...)
+#define xcom_log_warn(fmt, ...)
+#define xcom_log_info(fmt, ...)
+#define xcom_log_debug(fmt, ...)
+#define xcom_log_verbose(fmt, ...)
+#define xcom_log(fmt, ...)
+    
     
 #endif
     

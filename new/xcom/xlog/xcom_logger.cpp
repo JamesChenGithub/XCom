@@ -9,7 +9,9 @@
 #include "xcom_logger.h"
 #include "xcom_logger_pri.h"
 
+#if XCOM_LOG_ENABLE
 namespace xcom {
+    
     XLog::XLog()
     {
     }
@@ -25,6 +27,11 @@ namespace xcom {
         return instance;
     }
     
+    void XLog::openLog(xcom_log_mode mode, const char *dir, const char *prefix)
+    {
+        XLogPri::sharedInstance().openLog(mode, dir, prefix);
+    }
+    
     void XLog::appendLog(xcom_log_level level, const char *file, const char *func, int line, const char *format, ...)
     {
         va_list valist;
@@ -34,21 +41,9 @@ namespace xcom {
     }
     
     
-    void XLog::setLogHook(const xcom_log_hook_callback &hook)
-    {
-        XLogPri::sharedInstance().setLogHook(hook);
-    }
-    
-    void XLog::setConsoleLogCallback(const xcom_log_hook_callback &callback)
-    {
-        XLogPri::sharedInstance().setConsoleLogCallback(callback);
-    }
     
     
-    void XLog::openLog(xcom_log_mode mode, const char *dir, const char *prefix)
-    {
-        XLogPri::sharedInstance().openLog(mode, dir, prefix);
-    }
+    
     
     void XLog::closeLog()
     {
@@ -70,4 +65,16 @@ namespace xcom {
     {
         return XLogPri::sharedInstance().getLogLevel();
     }
+    
+    void XLog::setLogHook(const xcom_log_hook_callback &hook)
+    {
+        XLogPri::sharedInstance().setLogHook(hook);
+    }
+    
+    void XLog::setConsoleLogCallback(const xcom_log_hook_callback &callback)
+    {
+        XLogPri::sharedInstance().setConsoleLogCallback(callback);
+    }
+    
 }
+#endif

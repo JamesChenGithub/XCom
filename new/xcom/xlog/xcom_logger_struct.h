@@ -5,10 +5,10 @@
 //  Created by AlexiChen on 2018/10/10.
 //  Copyright © 2018年 AlexiChen. All rights reserved.
 //
-
 #ifndef xcom_logger_struct_h
 #define xcom_logger_struct_h
 
+#if XCOM_LOG_ENABLE
 
 #include <sys/time.h>
 #include <time.h>
@@ -37,5 +37,6 @@ public:
         return "";
     }
 };
+#endif
 
 #endif /* xcom_logger_struct_h */
