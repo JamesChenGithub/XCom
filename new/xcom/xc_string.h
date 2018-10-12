@@ -13,7 +13,7 @@
 #include <cstring>
 #include <cctype>
 
-namespace xcom
+namespace XCom_NameSpace
 {
     class xc_string
     {

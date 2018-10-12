@@ -3,6 +3,7 @@
 
 // disable log
 #define XCOM_LOG_ENABLE     1
+#define XCom_NameSpace      xcom
 
 
 #endif /*XCOM_CONFIG_H*/

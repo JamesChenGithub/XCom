@@ -49,17 +49,39 @@ extern "C" {
 #endif /* !__cplusplus */
 #endif
     
+    
+#if defined(__GNUC__)
+#define xcom_weak_func     __attribute__((weak))
+#elif defined(_MSC_VER) && !defined(_LIB)
+#define xcom_weak_func /*__declspec(selectany)*/
+#else
+#define xcom_weak_func
+#endif
+    
 
     
+#ifndef xcom_not_used
+#ifdef __GNUC__
+#define xcom_not_used __attribute__ ((unused))
+#else
+#define xcom_not_used
+#endif
+#endif
+    
+
+
 #define xcom_required
     
 #define xcom_optional
     
-#define xcom_extern
+#define xcom_extern extern
+    
+
     
 #ifdef __cplusplus
 }
 #endif
+
 
 #endif /*XCOM_TYPE_DEF_H*/
 

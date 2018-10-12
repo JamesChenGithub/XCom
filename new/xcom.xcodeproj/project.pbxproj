@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		923E30FC216EF77300AF0B1C /* xcom_xlog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923E30FA216EF77300AF0B1C /* xcom_xlog.cpp */; };
-		92650113216F069900F764A3 /* xcom_log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92650112216F069900F764A3 /* xcom_log.cpp */; };
+		927F4DDE216F6D870089C074 /* xcom_log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927F4DD4216F6D870089C074 /* xcom_log.cpp */; };
+		927F4DDF216F6D870089C074 /* xcom_xlog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927F4DD5216F6D870089C074 /* xcom_xlog.cpp */; };
+		927F4DE5216F6F310089C074 /* xcom_xlog_core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927F4DE3216F6F310089C074 /* xcom_xlog_core.cpp */; };
+		927F4DE8216F82160089C074 /* xcom_path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927F4DE7216F82150089C074 /* xcom_path.cpp */; };
+		927F4DEF216F84680089C074 /* xcom_tick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927F4DED216F84680089C074 /* xcom_tick.cpp */; };
+		927F4DF1216F85940089C074 /* xcom_tick_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927F4DF0216F85940089C074 /* xcom_tick_util.cpp */; };
 		9285BA56216E388F00C04422 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9285BA55216E388F00C04422 /* main.cpp */; };
-		9285BA62216E426900C04422 /* xcom_logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9285BA60216E426900C04422 /* xcom_logger.cpp */; };
 		9285BA66216E452600C04422 /* xc_string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9285BA65216E452600C04422 /* xc_string.cpp */; };
-		9285BA6B216E481F00C04422 /* xcom_logger_pri.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9285BA69216E481F00C04422 /* xcom_logger_pri.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,10 +30,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		923E30FA216EF77300AF0B1C /* xcom_xlog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_xlog.cpp; sourceTree = "<group>"; };
-		923E30FB216EF77300AF0B1C /* xcom_xlog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xcom_xlog.h; sourceTree = "<group>"; };
-		92650112216F069900F764A3 /* xcom_log.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_log.cpp; sourceTree = "<group>"; };
-		92650114216F278A00F764A3 /* xcom_logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_logger.h; sourceTree = "<group>"; };
+		927F4DD2216F6D870089C074 /* xcom_xlog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_xlog.h; sourceTree = "<group>"; };
+		927F4DD4216F6D870089C074 /* xcom_log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_log.cpp; sourceTree = "<group>"; };
+		927F4DD5216F6D870089C074 /* xcom_xlog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_xlog.cpp; sourceTree = "<group>"; };
+		927F4DD8216F6D870089C074 /* xcom_xlog_struct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_xlog_struct.h; sourceTree = "<group>"; };
+		927F4DE3216F6F310089C074 /* xcom_xlog_core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_xlog_core.cpp; sourceTree = "<group>"; };
+		927F4DE4216F6F310089C074 /* xcom_xlog_core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_xlog_core.h; sourceTree = "<group>"; };
+		927F4DE6216F82150089C074 /* xcom_path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_path.h; sourceTree = "<group>"; };
+		927F4DE7216F82150089C074 /* xcom_path.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_path.cpp; sourceTree = "<group>"; };
+		927F4DED216F84680089C074 /* xcom_tick.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_tick.cpp; sourceTree = "<group>"; };
+		927F4DEE216F84680089C074 /* xcom_tick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xcom_tick.h; sourceTree = "<group>"; };
+		927F4DF0216F85940089C074 /* xcom_tick_util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_tick_util.cpp; sourceTree = "<group>"; };
+		927F4DF2216F8CD20089C074 /* xcom_util_bootrun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_util_bootrun.h; sourceTree = "<group>"; };
 		9285BA45216E385100C04422 /* xcom */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = xcom; sourceTree = BUILT_PRODUCTS_DIR; };
 		9285BA4F216E386F00C04422 /* xcom_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_log.h; sourceTree = "<group>"; };
 		9285BA50216E386F00C04422 /* xcom_const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_const.h; sourceTree = "<group>"; };
@@ -39,15 +49,9 @@
 		9285BA52216E386F00C04422 /* xcom_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_config.h; sourceTree = "<group>"; };
 		9285BA54216E386F00C04422 /* xcom_type_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_type_def.h; sourceTree = "<group>"; };
 		9285BA55216E388F00C04422 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		9285BA57216E38E800C04422 /* xcom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xcom.h; sourceTree = "<group>"; };
-		9285BA58216E396700C04422 /* xcom_tick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_tick.h; sourceTree = "<group>"; };
-		9285BA5A216E3A8300C04422 /* xtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xtypes.h; sourceTree = "<group>"; };
-		9285BA60216E426900C04422 /* xcom_logger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_logger.cpp; sourceTree = "<group>"; };
-		9285BA63216E44A900C04422 /* xcom_logger_struct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xcom_logger_struct.h; sourceTree = "<group>"; };
+		9285BA58216E396700C04422 /* xcom_tick_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_tick_util.h; sourceTree = "<group>"; };
 		9285BA64216E452600C04422 /* xc_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xc_string.h; sourceTree = "<group>"; };
 		9285BA65216E452600C04422 /* xc_string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xc_string.cpp; sourceTree = "<group>"; };
-		9285BA69216E481F00C04422 /* xcom_logger_pri.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_logger_pri.cpp; sourceTree = "<group>"; };
-		9285BA6A216E481F00C04422 /* xcom_logger_pri.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xcom_logger_pri.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		927F4DD0216F6D870089C074 /* xcom_log */ = {
+			isa = PBXGroup;
+			children = (
+				927F4DD1216F6D870089C074 /* include */,
+				927F4DD3216F6D870089C074 /* src */,
+			);
+			path = xcom_log;
+			sourceTree = "<group>";
+		};
+		927F4DD1216F6D870089C074 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				927F4DD2216F6D870089C074 /* xcom_xlog.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		927F4DD3216F6D870089C074 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				927F4DE3216F6F310089C074 /* xcom_xlog_core.cpp */,
+				927F4DE4216F6F310089C074 /* xcom_xlog_core.h */,
+				927F4DD4216F6D870089C074 /* xcom_log.cpp */,
+				927F4DD5216F6D870089C074 /* xcom_xlog.cpp */,
+				927F4DD8216F6D870089C074 /* xcom_xlog_struct.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		9285BA3C216E385100C04422 = {
 			isa = PBXGroup;
 			children = (
@@ -80,35 +113,24 @@
 		9285BA47216E385100C04422 /* xcom */ = {
 			isa = PBXGroup;
 			children = (
+				927F4DF2216F8CD20089C074 /* xcom_util_bootrun.h */,
+				927F4DE7216F82150089C074 /* xcom_path.cpp */,
+				927F4DE6216F82150089C074 /* xcom_path.h */,
+				927F4DD0216F6D870089C074 /* xcom_log */,
 				9285BA65216E452600C04422 /* xc_string.cpp */,
 				9285BA64216E452600C04422 /* xc_string.h */,
-				9285BA5C216E419100C04422 /* xlog */,
-				9285BA5A216E3A8300C04422 /* xtypes.h */,
-				9285BA58216E396700C04422 /* xcom_tick.h */,
-				9285BA57216E38E800C04422 /* xcom.h */,
+				9285BA58216E396700C04422 /* xcom_tick_util.h */,
+				927F4DF0216F85940089C074 /* xcom_tick_util.cpp */,
 				9285BA52216E386F00C04422 /* xcom_config.h */,
 				9285BA50216E386F00C04422 /* xcom_const.h */,
 				9285BA4F216E386F00C04422 /* xcom_log.h */,
 				9285BA51216E386F00C04422 /* xcom_sys_def.h */,
 				9285BA54216E386F00C04422 /* xcom_type_def.h */,
 				9285BA55216E388F00C04422 /* main.cpp */,
+				927F4DED216F84680089C074 /* xcom_tick.cpp */,
+				927F4DEE216F84680089C074 /* xcom_tick.h */,
 			);
 			path = xcom;
-			sourceTree = "<group>";
-		};
-		9285BA5C216E419100C04422 /* xlog */ = {
-			isa = PBXGroup;
-			children = (
-				92650114216F278A00F764A3 /* xcom_logger.h */,
-				9285BA60216E426900C04422 /* xcom_logger.cpp */,
-				9285BA63216E44A900C04422 /* xcom_logger_struct.h */,
-				9285BA69216E481F00C04422 /* xcom_logger_pri.cpp */,
-				9285BA6A216E481F00C04422 /* xcom_logger_pri.h */,
-				923E30FB216EF77300AF0B1C /* xcom_xlog.h */,
-				923E30FA216EF77300AF0B1C /* xcom_xlog.cpp */,
-				92650112216F069900F764A3 /* xcom_log.cpp */,
-			);
-			path = xlog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,12 +189,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9285BA6B216E481F00C04422 /* xcom_logger_pri.cpp in Sources */,
-				9285BA62216E426900C04422 /* xcom_logger.cpp in Sources */,
+				927F4DE5216F6F310089C074 /* xcom_xlog_core.cpp in Sources */,
+				927F4DF1216F85940089C074 /* xcom_tick_util.cpp in Sources */,
+				927F4DDE216F6D870089C074 /* xcom_log.cpp in Sources */,
+				927F4DDF216F6D870089C074 /* xcom_xlog.cpp in Sources */,
 				9285BA56216E388F00C04422 /* main.cpp in Sources */,
-				92650113216F069900F764A3 /* xcom_log.cpp in Sources */,
+				927F4DE8216F82160089C074 /* xcom_path.cpp in Sources */,
+				927F4DEF216F84680089C074 /* xcom_tick.cpp in Sources */,
 				9285BA66216E452600C04422 /* xc_string.cpp in Sources */,
-				923E30FC216EF77300AF0B1C /* xcom_xlog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

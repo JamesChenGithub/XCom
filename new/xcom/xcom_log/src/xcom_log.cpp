@@ -6,13 +6,13 @@
 //  Copyright © 2018年 AlexiChen. All rights reserved.
 //
 #include "xcom_log.h"
-#include "xcom_logger.h"
+#include "xcom_xlog.h"
 
 #if XCOM_LOG_ENABLE
 #ifdef __cplusplus
 extern "C" {
 #endif
-    void extern_xcom_log(xcom_log_level level, const char *filename , const char *funcname, int line, const char *format, ...)
+    void extern_xcom_log_append(xcom_log_level level, const char *filename , const char *funcname, int line, const char *format, ...)
     {
         va_list valist;
         va_start(valist, format);

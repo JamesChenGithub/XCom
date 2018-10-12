@@ -10,7 +10,8 @@
 #include <iomanip>
 #include <iostream>
 #include <sstream>
-#include "xcom.h"
+
+#include "xcom_log.h"
 
 //extern void extern_xcom_log(xcom_log_level level, const char *filename , const char *funcname, int line, const char *format, ...)
 //{

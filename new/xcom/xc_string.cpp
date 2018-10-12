@@ -9,7 +9,7 @@
 #include "xc_string.h"
 
 
-namespace xcom
+namespace XCom_NameSpace
 {
     static const int xc_string_per_size = 32;
     static char *xc_string_alloc(int &size)
