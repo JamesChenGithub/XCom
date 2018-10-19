@@ -59,12 +59,13 @@ int main(int argc, const char * argv[])
 //    }
     
     {
-        xcom_var var;
+        xcom_data var;
+        
         var["enable"] = true;
         
         bool enable = var["enable"];
         
-        std::cout << (enable ? "true" : "false") <<  var.val_str() << std::endl;
+        std::cout << (enable ? "true" : "false") <<  var.to_json() << std::endl;
     }
     
     getchar();

@@ -9,20 +9,74 @@
 #ifndef xcom_data_hpp
 #define xcom_data_hpp
 
-#include <stdio.h>
+#include <string>
+#include <map>
+#include <vector>
+#include <sstream>
 
-namespace xcom {
-    
-    typedef struct xcom_var  xcom_var_t;
-    class xcast_data
+
+//namespace xcom {
+
+    struct xcom_var;
+    class xcom_data
     {
-    private:
+    public:
+        // basic declare
+        xcom_data();
+        ~xcom_data();
+        
+        xcom_data(const xcom_data *val);
+        xcom_data(const xcom_data &val);
+        xcom_data(xcom_data &&val);
+        
+        xcom_data &operator = (const xcom_data &value);
+        xcom_data &operator = (xcom_data &&value);
         
     public:
-        xcom_var_t *_value;
-        bool _child;
+        // basic type delc
+        #define XCOM_DATA_DELC(T, VT, VAL) \
+        xcom_data(T value);\
+        operator T() const;  \
+        T VT##_val() const;  \
+        xcom_data &operator = (T value); \
+        bool operator == (const T value) const; \
+
+        XCOM_DATA_DELC(bool, bool, false)
+        XCOM_DATA_DELC(int8_t, int8, 0)
+        XCOM_DATA_DELC(uint8_t, uint8, 0)
+        XCOM_DATA_DELC(int16_t, int16, 0)
+        XCOM_DATA_DELC(uint16_t, uint16, 0)
+        XCOM_DATA_DELC(int32_t, int32, 0)
+        XCOM_DATA_DELC(uint32_t, uint32, 0)
+        XCOM_DATA_DELC(int64_t, int64, 0)
+        XCOM_DATA_DELC(uint64_t, uint64, 0)
+        XCOM_DATA_DELC(float, float, 0.0)
+        XCOM_DATA_DELC(double, double, 0.0)
+        XCOM_DATA_DELC(void *, ref, NULL)
+        
+    public:
+        // string delc
+        xcom_data(const char *value);
+        operator const char *() const;
+        const char * string_val() const;
+        xcom_data &operator = (const char *value);
+        bool operator == (const char* value) const;
+        
+    public:
+        // dict delc
+        xcom_data operator[](const char *key);
+        bool contains(const char *key);
+        
+    public:
+        // tool
+        const char *to_json();
+        
+    private:
+        xcom_var *_core = NULL;
+        void reset_core();
+        xcom_data(xcom_var &&var);
     };
     
-}
+//}
 
 #endif /* xcom_data_hpp */

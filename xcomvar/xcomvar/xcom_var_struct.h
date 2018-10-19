@@ -18,8 +18,8 @@ extern "C" {
     {
     public:
         xcom_var_value  *obj = nullptr;
-    private:
         xcom_var_type   type = xcom_vtype_null;
+    private:
         int             retaincount = 0;
         bool            child;
     public:
@@ -41,7 +41,7 @@ extern "C" {
             return this->type != xcom_vtype_##VT  ?  VAL : this->obj->VT##_val == value;\
         }
         
-//        XCOM_VAR_FUNC(bool, bool, false)
+        XCOM_VAR_FUNC(bool, bool, false)
         XCOM_VAR_FUNC(int8_t, int8, 0)
         XCOM_VAR_FUNC(uint8_t, uint8, 0)
         XCOM_VAR_FUNC(int16_t, int16, 0)
@@ -54,20 +54,7 @@ extern "C" {
         XCOM_VAR_FUNC(double, double, 0.0)
         XCOM_VAR_FUNC(void *, ref, NULL)
         
-        
-        inline xcom_var(bool value):xcom_var() { this->type = xcom_vtype_bool;  this->obj->bool_val = value; }
-        inline operator bool() {return this->obj && this->type == xcom_vtype_bool ? this->obj->bool_val : false; }
-        inline bool bool_val() const {return this->obj ? this->obj->bool_val : false; }
-        inline xcom_var &operator = (bool value) {
-            this->type = xcom_vtype_bool;
-            this->obj->reset();
-            this->obj->bool_val = value;
-            return *this;
-        }
-        inline bool operator == (const bool value) const {
-            return this->type != xcom_vtype_bool  ?  false : this->obj->bool_val == value;
-        }
-        
+        xcom_var(const xcom_var *val) : xcom_var() { if(val) { this->type = val->type; *(this->obj) = *(val->obj); } }
         xcom_var(const xcom_var &val) : xcom_var() { this->type = val.type;  *(this->obj) = *(val.obj);}
         xcom_var(xcom_var &&val) : xcom_var() { this->type = val.type;  this->obj = std::move(val.obj); val.type = xcom_vtype_null; val.obj = nullptr;}
         
@@ -100,7 +87,7 @@ extern "C" {
         inline xcom_var &operator= (const std::string &str) {this->type = xcom_vtype_string; this->obj->reset(); this->obj->string_val = str; return *this; }
         
         bool operator == (const char *cstr) const {
-            return this->type != xcom_vtype_string  ?  false : this->obj->string_val == std::string(cstr);
+            return this->type != xcom_vtype_string && cstr ?  false : this->obj->string_val == std::string(cstr);
         }
         bool operator == (const std::string str) const {
             return this->type != xcom_vtype_string  ?  false : this->obj->string_val == str;
@@ -108,9 +95,9 @@ extern "C" {
         
     public:
         /* dict */
-        xcom_var operator[](const char *key) {
+        xcom_var* operator[](const char *key) {
             if (!key || !*key)
-                return xcom_var();
+                return nullptr;
             
             if (this->type != xcom_vtype_dict)
                 init_vdict();
@@ -120,7 +107,7 @@ extern "C" {
             
             xcom_var_ptr ptr = get(key);
             printf("xcom_var_ptr get ptr = %p  str : %s\n", ptr, ptr->val_str());
-            return *ptr;
+            return ptr;
         }
         bool contains(const char *key)
         {
