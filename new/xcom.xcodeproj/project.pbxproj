@@ -15,6 +15,8 @@
 		927F4DF1216F85940089C074 /* xcom_tick_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927F4DF0216F85940089C074 /* xcom_tick_util.cpp */; };
 		9285BA56216E388F00C04422 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9285BA55216E388F00C04422 /* main.cpp */; };
 		9285BA66216E452600C04422 /* xc_string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9285BA65216E452600C04422 /* xc_string.cpp */; };
+		92B3690B21704E6D00A6ABAF /* xcom_mmap_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92B3690A21704E6D00A6ABAF /* xcom_mmap_file.cpp */; };
+		92F482592179E6F800D237B5 /* xcom_var_struct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92F482572179E6F800D237B5 /* xcom_var_struct.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +54,10 @@
 		9285BA58216E396700C04422 /* xcom_tick_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_tick_util.h; sourceTree = "<group>"; };
 		9285BA64216E452600C04422 /* xc_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xc_string.h; sourceTree = "<group>"; };
 		9285BA65216E452600C04422 /* xc_string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xc_string.cpp; sourceTree = "<group>"; };
+		92B3690921704E6D00A6ABAF /* xcom_mmap_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_mmap_file.h; sourceTree = "<group>"; };
+		92B3690A21704E6D00A6ABAF /* xcom_mmap_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_mmap_file.cpp; sourceTree = "<group>"; };
+		92F482572179E6F800D237B5 /* xcom_var_struct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_var_struct.cpp; sourceTree = "<group>"; };
+		92F482582179E6F800D237B5 /* xcom_var_struct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_var_struct.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,10 @@
 		9285BA47216E385100C04422 /* xcom */ = {
 			isa = PBXGroup;
 			children = (
+				92F482572179E6F800D237B5 /* xcom_var_struct.cpp */,
+				92F482582179E6F800D237B5 /* xcom_var_struct.h */,
+				92B3690A21704E6D00A6ABAF /* xcom_mmap_file.cpp */,
+				92B3690921704E6D00A6ABAF /* xcom_mmap_file.h */,
 				927F4DF2216F8CD20089C074 /* xcom_util_bootrun.h */,
 				927F4DE7216F82150089C074 /* xcom_path.cpp */,
 				927F4DE6216F82150089C074 /* xcom_path.h */,
@@ -190,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				927F4DE5216F6F310089C074 /* xcom_xlog_core.cpp in Sources */,
+				92B3690B21704E6D00A6ABAF /* xcom_mmap_file.cpp in Sources */,
 				927F4DF1216F85940089C074 /* xcom_tick_util.cpp in Sources */,
 				927F4DDE216F6D870089C074 /* xcom_log.cpp in Sources */,
 				927F4DDF216F6D870089C074 /* xcom_xlog.cpp in Sources */,
@@ -197,6 +208,7 @@
 				927F4DE8216F82160089C074 /* xcom_path.cpp in Sources */,
 				927F4DEF216F84680089C074 /* xcom_tick.cpp in Sources */,
 				9285BA66216E452600C04422 /* xc_string.cpp in Sources */,
+				92F482592179E6F800D237B5 /* xcom_var_struct.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

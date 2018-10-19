@@ -20,11 +20,18 @@
 #include <fstream>
 #include <thread>
 
+#include "xcom_mmap_file.h"
+
 namespace XCom_NameSpace
 {
     const static uint32_t kXCom_XLog_MaxSize = 50 * 1024 * 1024;
     const static size_t kXCom_XLog_BufferSize = 32 * 1024;
     const static int kXCom_XLog_MaxNum = 10;
+    
+    const unsigned int kXCom_XLog_BufferBlockLength = 150 * 1024;
+    const long kMaxLogAliveTime = 10 * 24 * 60 * 60;    // 10 days in second
+    
+    
     
     
     class Logger
@@ -40,6 +47,9 @@ namespace XCom_NameSpace
         xcom_log_mode           m_log_mode;
         std::atomic_bool        m_print_console;
         std::atomic_bool        m_log_closed;
+        
+    private:
+        xcom_mmap_file          m_mmap_file;
         
     private:
         // 用于外部导出日志
@@ -112,7 +122,7 @@ namespace XCom_NameSpace
     private:
         void create_log_directory(const char *dir);
         void delete_time_out_mmap();
-        void create_mmap_file();
+        void create_mmap_file(const char *dir, const char *prefix);
         void flush_mmap_file_atexit();
     };
 }

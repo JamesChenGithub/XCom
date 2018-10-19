@@ -66,7 +66,7 @@ namespace XCom_NameSpace {
 //
 //        __make_logfilename(tv, txv_cache_logdir, txv_logfileprefix.c_str(), LOG_EXT, logcachefilepath, 1024);
 //
-//        TXCPath path(logcachefilepath);
+//        xcom_path path(logcachefilepath);
 //        if (path.exists() && __openlogfile(txv_cache_logdir)) {
 //            __writefile(data, len, txv_logfile);
 //            if (kAppednerAsync == txv_mode) {
@@ -150,10 +150,10 @@ namespace XCom_NameSpace {
     static void __del_timeout_file(const std::string &log_path) {
 //        time_t now_time = time(NULL);
 //        
-//        TXCPath path(log_path);
+//        xcom_path path(log_path);
 //        
 //        if (path.exists() && path.is_directory()) {
-//            std::vector<TXCPath> files = path.childs();
+//            std::vector<xcom_path> files = path.childs();
 //            for(int i = 0; i < files.size(); ++i){
 //                time_t fileModifyTime = files[i].last_modified_time();
 //                
@@ -203,6 +203,8 @@ namespace XCom_NameSpace {
             return;
         }
         std::lock_guard<std::mutex> lock(m_open_mutex);
+        m_log_dir = dir;
+        
         
         // 1. 创建目录
         //mkdir(dir, S_IRWXU|S_IRWXG|S_IRWXO);
@@ -215,7 +217,7 @@ namespace XCom_NameSpace {
         this->delete_time_out_mmap();
       
         // 3. 获取mmap文件, 将上一次未保存的mmap文件写文件
-        this->create_mmap_file();
+        this->create_mmap_file(dir, nameprefix);
         
         // 4. 异常退出时，写文件
         this->flush_mmap_file_atexit();
@@ -254,8 +256,79 @@ namespace XCom_NameSpace {
     {
         
     }
-    void Logger::create_mmap_file()
+    
+    bool xcom_open_mmap_file(const char *filepath, unsigned int size, xcom_mmap_file &mmap_file) {
+        
+        if (NULL == filepath || 0 == strnlen(filepath, 128) || 0 == size) {
+            return false;
+        }
+        
+        if (mmap_file.is_open()) {
+            mmap_file.close();
+            return false;
+        }
+        
+        xcom_mmap_file_params param;
+        param.path = filepath;
+        param.flags = xcom_mmap_file_params::xcom_mmap_mode::xcom_mmap_mode_read_write;
+        
+        xcom_path path(filepath);
+        bool file_exist = path.exists();
+        if (!file_exist) {
+            param.newFileSize = size;
+        }
+        
+        mmap_file.open(param);
+        
+        bool is_open = mmap_file.is_open();
+        
+        if (!file_exist && is_open) {
+            
+            //Extending a file with ftruncate, thus creating a big hole, and then filling the hole by mod-ifying a shared mmap() can lead to SIGBUS when no space left
+            //the boost library uses ftruncate, so we pre-allocate the file's backing store by writing zero.
+            FILE *file = fopen(filepath, "rb+");
+            if (NULL == file) {
+                mmap_file.close();
+                remove(filepath);
+                return false;
+            }
+            
+            char *zero_data = new char[size];
+            memset(zero_data, 0, size);
+            
+            if (size != fwrite(zero_data, sizeof(char), size, file)) {
+                mmap_file.close();
+                fclose(file);
+                remove(filepath);
+                delete[] zero_data;
+                return false;
+            }
+            fclose(file);
+            delete[] zero_data;
+        }
+        
+        return is_open;
+    }
+    
+    void Logger::create_mmap_file(const char *dir, const char *prefix)
     {
+        char mmap_file_path[512] = {0};
+        snprintf(mmap_file_path, sizeof(mmap_file_path), "%s/%s.mmap2", m_log_dir.c_str(), prefix);
+        
+        bool use_mmap = false;
+        if (xcom_open_mmap_file(mmap_file_path, kXCom_XLog_BufferBlockLength, m_mmap_file)) {
+//            txv_log_buff = new TXCLogBuffer(txv_mmap_file.data(), kBufferBlockLength, true);
+//            use_mmap = true;
+        } else {
+//            char *buffer = new char[kBufferBlockLength];
+//            txv_log_buff = new TXCLogBuffer(buffer, kBufferBlockLength, true);
+            use_mmap = false;
+        }
+        
+        if (NULL == txv_log_buff->GetData().Ptr()) {
+            if (use_mmap && txv_mmap_file.is_open()) txf_close_mmap_file(txv_mmap_file);
+            return;
+        }
         
     }
     void Logger::flush_mmap_file_atexit()
