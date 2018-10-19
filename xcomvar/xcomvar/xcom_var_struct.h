@@ -6,88 +6,14 @@
 #include <vector>
 #include <sstream>
 
+#include "xcom_var_type.h"
+#include "xcom_var_value.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
-    //======================================
-    typedef enum {
-        xcom_vtype_null      = 0,
-        xcom_vtype_bool      = 'b',
-        xcom_vtype_int8      = 'Y',
-        xcom_vtype_uint8     = 'y',
-        xcom_vtype_int16     = 'n',
-        xcom_vtype_uint16    = 'N',
-        xcom_vtype_int32     = 'i',
-        xcom_vtype_uint32    = 'I',
-        xcom_vtype_int64     = 'x',
-        xcom_vtype_uint64    = 'X',
-        xcom_vtype_float     = 'f',
-        xcom_vtype_double    = 'D',
-        xcom_vtype_string    = 'c',
-        xcom_vtype_bytes     = 'm',
-//        xcom_vtype_ptr       = '*',
-        xcom_vtype_ref       = '&',
-        xcom_vtype_array     = '[',
-        xcom_vtype_dict      = '{',
-//        xcom_vtype_var       = 'v',
-        
-        
-    } xcom_var_type;
     
-    const char *xcom_var_type_string(xcom_var_type type);
-    //======================================
-    
-    typedef struct xcom_var_buf{
-        void        *buf;
-        uint32_t    len;
-        
-    public:
-        xcom_var_buf();
-        xcom_var_buf(void *buf, uint32_t len);
-        ~xcom_var_buf();
-        
-    }xcom_var_buf;
-    
-    //======================================
-    struct xcom_var;
-    typedef std::map<std::string, std::shared_ptr<xcom_var>> xcom_var_dic;
-    typedef std::vector<std::shared_ptr<xcom_var>> xcom_var_vec;
-    
-    typedef union xcom_var_value
-    {
-        bool            bool_val;
-        int8_t          int8_val;
-        uint8_t         uint8_val;
-        int16_t         int16_val;
-        uint16_t        uint16_val;
-        int32_t         int32_val;
-        uint32_t        uint32_val;
-        int64_t         int64_val;
-        uint64_t        uint64_val;
-        float           float_val;
-        double          double_val;
-        std::string     string_val;
-        xcom_var_buf    buf_val;
-        void            *ptr_val;
-        void            *ref_val;
-        xcom_var_dic    *dic_val;
-        xcom_var_vec    *array_val;
-        xcom_var        *var_val;
-        
-    public:
-        xcom_var_value();
-        ~xcom_var_value();
-        void reset();
-        
-    public:
-        inline xcom_var_value &operator = (const xcom_var_value &value)
-        {
-            memcpy(this, &value, sizeof(value));
-            return *this;
-        }
-    }xcom_var_value;
-    
-    
+    union xcom_var_value;
     typedef struct xcom_var
     {
     public:
@@ -95,11 +21,12 @@ extern "C" {
     private:
         xcom_var_type   type = xcom_vtype_null;
         int             retaincount = 0;
+        bool            child;
     public:
         ~xcom_var();
         xcom_var();
     public:
-        
+        /* basic types */
         #define XCOM_VAR_FUNC(T, VT, VAL) \
         inline xcom_var(T value):xcom_var() { this->type = xcom_vtype_##VT;  this->obj->VT##_val = value; } \
         inline operator T() {return this->obj && this->type == xcom_vtype_##VT ? this->obj->VT##_val : VAL; } \
@@ -114,7 +41,7 @@ extern "C" {
             return this->type != xcom_vtype_##VT  ?  VAL : this->obj->VT##_val == value;\
         }
         
-        XCOM_VAR_FUNC(bool, bool, false)
+//        XCOM_VAR_FUNC(bool, bool, false)
         XCOM_VAR_FUNC(int8_t, int8, 0)
         XCOM_VAR_FUNC(uint8_t, uint8, 0)
         XCOM_VAR_FUNC(int16_t, int16, 0)
@@ -127,10 +54,22 @@ extern "C" {
         XCOM_VAR_FUNC(double, double, 0.0)
         XCOM_VAR_FUNC(void *, ref, NULL)
         
+        
+        inline xcom_var(bool value):xcom_var() { this->type = xcom_vtype_bool;  this->obj->bool_val = value; }
+        inline operator bool() {return this->obj && this->type == xcom_vtype_bool ? this->obj->bool_val : false; }
+        inline bool bool_val() const {return this->obj ? this->obj->bool_val : false; }
+        inline xcom_var &operator = (bool value) {
+            this->type = xcom_vtype_bool;
+            this->obj->reset();
+            this->obj->bool_val = value;
+            return *this;
+        }
+        inline bool operator == (const bool value) const {
+            return this->type != xcom_vtype_bool  ?  false : this->obj->bool_val == value;
+        }
+        
         xcom_var(const xcom_var &val) : xcom_var() { this->type = val.type;  *(this->obj) = *(val.obj);}
         xcom_var(xcom_var &&val) : xcom_var() { this->type = val.type;  this->obj = std::move(val.obj); val.type = xcom_vtype_null; val.obj = nullptr;}
-    
-        //inline xcom_var var_val() const {return this->obj && this->type == xcom_vtype_var ? this->obj->var_val : xcom_var(); }
         
         inline xcom_var &operator = (const xcom_var &value) {
             this->type = this->type = value.type;
@@ -167,9 +106,56 @@ extern "C" {
             return this->type != xcom_vtype_string  ?  false : this->obj->string_val == str;
         }
         
-//        xcom_var(void *buf, uint32_t len):xcom_var() { this->type = xcom_vtype_bytes; this->obj->buf_val = xcom_var_buf(buf, len); };
-//        xcom_var(void *ref):xcom_var() { this->type = xcom_vtype_bytes; this->obj->ref_val = ref; };
+    public:
+        /* dict */
+        xcom_var operator[](const char *key) {
+            if (!key || !*key)
+                return xcom_var();
+            
+            if (this->type != xcom_vtype_dict)
+                init_vdict();
+            
+            if (!this->contains(key))
+                put(key, xcom_var(0));
+            
+            xcom_var_ptr ptr = get(key);
+            printf("xcom_var_ptr get ptr = %p  str : %s\n", ptr, ptr->val_str());
+            return *ptr;
+        }
+        bool contains(const char *key)
+        {
+            if (this->type != xcom_vtype_dict) return false;
+            return this->obj->contains(key);
+        }
+
+    private:
+        void init_vdict()
+        {
+            if (this->type != xcom_vtype_dict)
+            {
+                this->type = xcom_vtype_dict;
+                delete this->obj;
+                this->obj = nullptr;
+                this->obj = new xcom_var_value;
+                this->obj->dict_val = new xcom_var_dict;
+            }
+        }
         
+        /* 'key-value' dictionary methods */
+        void put(const char *key, xcom_var data) {
+            init_vdict();
+            this->obj->put(key, data);
+        }
+        
+        xcom_var_ptr get(const char *key) {
+            auto ptr = this->obj->get(key);
+            printf("get ptr = %p\n", ptr);
+            return ptr;
+        }
+    public:
+        /* array */
+    public:
+        /* buffer */
     public:
         
         const char *to_type_json()
@@ -179,6 +165,14 @@ extern "C" {
         
         const char *to_json()
         {
+            if (this->is_number() )
+            {
+                return this->val_str();
+            }
+            else
+            {
+                
+            }
             return "";
         }
         
@@ -187,11 +181,10 @@ extern "C" {
             
             std::string typestr = xcom_var_type_string(this->type);
             std::string valstr = "" ;
-            switch(type)
+            switch(this->type)
             {
-                // case xcom_vtype_ptr:
                 case xcom_vtype_null: { valstr = "null"; break; };
-                case xcom_vtype_bool: { valstr = this->bool_val() ? "true" : "false"; break; };
+                case xcom_vtype_bool: { valstr = this->bool_val() ? 1 : 0; break; };
                 case xcom_vtype_int8: { valstr = std::to_string(this->int8_val()); break;};
                 case xcom_vtype_uint8: { valstr = std::to_string(this->uint8_val()); break;};
                 case xcom_vtype_int16: { valstr = std::to_string(this->int8_val()); break;};
@@ -202,17 +195,22 @@ extern "C" {
                 case xcom_vtype_uint64: { valstr = std::to_string(this->int64_val()); break;};
                 case xcom_vtype_float: { valstr = std::to_string(this->float_val()); break;};
                 case xcom_vtype_double: { valstr = std::to_string(this->double_val()); break;};
-                case xcom_vtype_string: { valstr = this->string_val(); break;};
+                case xcom_vtype_string: { valstr = "\""+this->string_val() + "\""; break;};
                 case xcom_vtype_bytes: {  break;};
                 case xcom_vtype_array: {  break;};
                 case xcom_vtype_dict: {  break;};
-//                case xcom_vtype_var: { valstr = this->obj->var_val->val_str(); break;};
+                case xcom_vtype_var: { valstr = this->obj->var_val->val_str(); break;};
                 case xcom_vtype_ref: { valstr = std::to_string(this->int8_val()); break;};
             }
             
-            std::string str = "{" + typestr + ":" + valstr + "}";
+            std::string str = "{ \"" + typestr + "\" : " + valstr + " }";
             return str.c_str();
         }
+        
+    public:
+        inline bool is_number() const { return this->type <= xcom_vtype_string; }
+        inline bool is_array() const { return this->type == xcom_vtype_array; }
+        inline bool is_dict() const { return this->type == xcom_vtype_dict;}
         
 
     }xcom_var, xcom_var_t;

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923FC75A2179E7FC002209F9 /* xcom_var_struct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923FC7582179E7FB002209F9 /* xcom_var_struct.cpp */; };
+		923FC75F217A0D2F002209F9 /* xcom_var_type.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923FC75E217A0D2F002209F9 /* xcom_var_type.cpp */; };
+		923FC762217A0E16002209F9 /* xcom_var_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923FC760217A0E16002209F9 /* xcom_var_value.cpp */; };
 		927ECA1B2178AE1D00B01D77 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927ECA1A2178AE1D00B01D77 /* main.cpp */; };
-		927ECA232178AEBC00B01D77 /* xcom_var_struct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927ECA212178AEBC00B01D77 /* xcom_var_struct.cpp */; };
 		927ECA272178B82E00B01D77 /* xcom_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927ECA252178B82E00B01D77 /* xcom_data.cpp */; };
 /* End PBXBuildFile section */
 
@@ -25,10 +27,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		923FC7582179E7FB002209F9 /* xcom_var_struct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_var_struct.cpp; sourceTree = "<group>"; };
+		923FC7592179E7FC002209F9 /* xcom_var_struct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcom_var_struct.h; sourceTree = "<group>"; };
+		923FC75D217A0CFC002209F9 /* xcom_var_type.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xcom_var_type.h; sourceTree = "<group>"; };
+		923FC75E217A0D2F002209F9 /* xcom_var_type.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_var_type.cpp; sourceTree = "<group>"; };
+		923FC760217A0E16002209F9 /* xcom_var_value.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_var_value.cpp; sourceTree = "<group>"; };
+		923FC761217A0E16002209F9 /* xcom_var_value.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xcom_var_value.h; sourceTree = "<group>"; };
 		927ECA172178AE1D00B01D77 /* xcomvar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = xcomvar; sourceTree = BUILT_PRODUCTS_DIR; };
 		927ECA1A2178AE1D00B01D77 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		927ECA212178AEBC00B01D77 /* xcom_var_struct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = xcom_var_struct.cpp; path = ../../../UnixSpace/XCom/new/xcom/xcom_var_struct.cpp; sourceTree = "<group>"; };
-		927ECA222178AEBC00B01D77 /* xcom_var_struct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xcom_var_struct.h; path = ../../../UnixSpace/XCom/new/xcom/xcom_var_struct.h; sourceTree = "<group>"; };
 		927ECA252178B82E00B01D77 /* xcom_data.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xcom_data.cpp; sourceTree = "<group>"; };
 		927ECA262178B82E00B01D77 /* xcom_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xcom_data.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,11 +69,15 @@
 		927ECA192178AE1D00B01D77 /* xcomvar */ = {
 			isa = PBXGroup;
 			children = (
-				927ECA212178AEBC00B01D77 /* xcom_var_struct.cpp */,
-				927ECA222178AEBC00B01D77 /* xcom_var_struct.h */,
+				923FC7582179E7FB002209F9 /* xcom_var_struct.cpp */,
+				923FC7592179E7FC002209F9 /* xcom_var_struct.h */,
 				927ECA1A2178AE1D00B01D77 /* main.cpp */,
 				927ECA252178B82E00B01D77 /* xcom_data.cpp */,
 				927ECA262178B82E00B01D77 /* xcom_data.h */,
+				923FC75D217A0CFC002209F9 /* xcom_var_type.h */,
+				923FC75E217A0D2F002209F9 /* xcom_var_type.cpp */,
+				923FC760217A0E16002209F9 /* xcom_var_value.cpp */,
+				923FC761217A0E16002209F9 /* xcom_var_value.h */,
 			);
 			path = xcomvar;
 			sourceTree = "<group>";
@@ -128,9 +138,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				927ECA232178AEBC00B01D77 /* xcom_var_struct.cpp in Sources */,
+				923FC762217A0E16002209F9 /* xcom_var_value.cpp in Sources */,
 				927ECA272178B82E00B01D77 /* xcom_data.cpp in Sources */,
 				927ECA1B2178AE1D00B01D77 /* main.cpp in Sources */,
+				923FC75F217A0D2F002209F9 /* xcom_var_type.cpp in Sources */,
+				923FC75A2179E7FC002209F9 /* xcom_var_struct.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
