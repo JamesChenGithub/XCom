@@ -35,11 +35,11 @@ xcom_data::xcom_data(const xcom_data &val)
     this->_core = new xcom_var(val._core);
 }
 
-xcom_data::xcom_data(xcom_data &&val)
-{
-    this->_core = std::move(val._core);
-    val._core = nullptr;
-}
+//xcom_data::xcom_data(xcom_data &&val)
+//{
+//    this->_core = std::move(val._core);
+//    val._core = nullptr;
+//}
 
 void xcom_data::reset_core()
 {
@@ -56,13 +56,13 @@ xcom_data& xcom_data::operator = (const xcom_data &value)
     this->_core = new xcom_var(value._core);
     return *this;
 }
-xcom_data& xcom_data::operator = (xcom_data &&value)
-{
-    this->reset_core();
-    this->_core = std::move(value._core);
-    value._core = nullptr;
-    return *this;
-}
+//xcom_data& xcom_data::operator = (xcom_data &&value)
+//{
+//    this->reset_core();
+//    this->_core = std::move(value._core);
+//    value._core = nullptr;
+//    return *this;
+//}
 
 #define XCOM_DATA_IMPL(T, VT, VAL) \
     xcom_data::xcom_data(T value):xcom_data() { _core->type = xcom_vtype_##VT;  _core->obj->VT##_val = value; } \
@@ -91,9 +91,14 @@ XCOM_DATA_IMPL(float, float, 0.0)
 XCOM_DATA_IMPL(double, double, 0.0)
 XCOM_DATA_IMPL(void *, ref, NULL)
 
-xcom_data::xcom_data(xcom_var &&var):xcom_data()
+xcom_data::xcom_data(xcom_var *var)
 {
-    *_core = std::move(var);
+    if (_core)
+    {
+        delete _core;
+        _core = nullptr;
+    }
+    _core = var;
 }
 
 xcom_data::xcom_data(const char *value)
@@ -121,21 +126,14 @@ bool xcom_data::operator == (const char* value) const
 
 const char *xcom_data::to_json()
 {
-    if (_core->is_number())
-    {
-        return _core->val_str();
-    }
-    else
-    {
-        
-    }
-    return "";
+    const char *str = _core->val_str();
+    return str;
 }
 
 xcom_data xcom_data::operator[](const char *key)
 {
-    xcom_var *var = *_core[key];
-    return xcom_data(var);
+    xcom_var_ptr var = (*_core)[key];
+    return xcom_data(var.get());
 }
 bool xcom_data::contains(const char *key)
 {

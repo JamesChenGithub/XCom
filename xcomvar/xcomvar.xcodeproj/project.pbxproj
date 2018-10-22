@@ -71,13 +71,13 @@
 			children = (
 				923FC7582179E7FB002209F9 /* xcom_var_struct.cpp */,
 				923FC7592179E7FC002209F9 /* xcom_var_struct.h */,
-				927ECA1A2178AE1D00B01D77 /* main.cpp */,
 				927ECA252178B82E00B01D77 /* xcom_data.cpp */,
 				927ECA262178B82E00B01D77 /* xcom_data.h */,
 				923FC75D217A0CFC002209F9 /* xcom_var_type.h */,
 				923FC75E217A0D2F002209F9 /* xcom_var_type.cpp */,
 				923FC760217A0E16002209F9 /* xcom_var_value.cpp */,
 				923FC761217A0E16002209F9 /* xcom_var_value.h */,
+				927ECA1A2178AE1D00B01D77 /* main.cpp */,
 			);
 			path = xcomvar;
 			sourceTree = "<group>";

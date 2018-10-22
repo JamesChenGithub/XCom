@@ -19,8 +19,7 @@ extern "C" {
 
 //======================================
 struct xcom_var;
-//    typedef std::shared_ptr<xcom_var> xcom_var_ptr;
-typedef xcom_var * xcom_var_ptr;
+typedef std::shared_ptr<xcom_var> xcom_var_ptr;
 typedef std::map<std::string, xcom_var_ptr> xcom_var_dict;
 typedef std::vector<xcom_var_ptr> xcom_var_vec;
 

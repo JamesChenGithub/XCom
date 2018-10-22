@@ -41,7 +41,28 @@ extern "C" {
             return this->type != xcom_vtype_##VT  ?  VAL : this->obj->VT##_val == value;\
         }
         
-        XCOM_VAR_FUNC(bool, bool, false)
+        inline xcom_var(bool value):xcom_var() {
+            this->type = xcom_vtype_bool;
+            this->obj->bool_val = value;
+        }
+        inline operator bool() {
+            return this->obj && this->type == xcom_vtype_bool ? this->obj->bool_val : false;
+        }
+        inline bool bool_val() const {
+            return this->obj ? this->obj->bool_val : false;
+        }
+        inline xcom_var &operator = (bool value) {
+            this->type = xcom_vtype_bool;
+            this->obj->reset();
+            this->obj->bool_val = value;
+            return *this;
+        }
+        inline bool operator == (const bool value) const {
+            return this->type != xcom_vtype_bool  ?  false : this->obj->bool_val == value;
+        }
+        
+        
+//        XCOM_VAR_FUNC(bool, bool, false)
         XCOM_VAR_FUNC(int8_t, int8, 0)
         XCOM_VAR_FUNC(uint8_t, uint8, 0)
         XCOM_VAR_FUNC(int16_t, int16, 0)
@@ -56,7 +77,7 @@ extern "C" {
         
         xcom_var(const xcom_var *val) : xcom_var() { if(val) { this->type = val->type; *(this->obj) = *(val->obj); } }
         xcom_var(const xcom_var &val) : xcom_var() { this->type = val.type;  *(this->obj) = *(val.obj);}
-        xcom_var(xcom_var &&val) : xcom_var() { this->type = val.type;  this->obj = std::move(val.obj); val.type = xcom_vtype_null; val.obj = nullptr;}
+//        xcom_var(xcom_var &&val) : xcom_var() { this->type = val.type;  this->obj = std::move(val.obj); val.type = xcom_vtype_null; val.obj = nullptr;}
         
         inline xcom_var &operator = (const xcom_var &value) {
             this->type = this->type = value.type;
@@ -64,15 +85,14 @@ extern "C" {
             *(this->obj) = *(value.obj);
             return *this;
         }
-        inline xcom_var &operator = (xcom_var &&value) {
-            this->type = value.type;
-            this->obj->reset();
-            this->obj = std::move(value.obj);
-            value.type = xcom_vtype_null;
-            value.obj = nullptr;
-            return *this;
-        }
-        
+//        inline xcom_var &operator = (xcom_var &&value) {
+//            this->type = value.type;
+//            this->obj->reset();
+//            this->obj = std::move(value.obj);
+//            value.type = xcom_vtype_null;
+//            value.obj = nullptr;
+//            return *this;
+//        }
     
         inline xcom_var(const std::string &str):xcom_var() { this->type = xcom_vtype_string; this->obj->string_val = str; };
         inline xcom_var(const char *cstr):xcom_var() { this->type = xcom_vtype_string; this->obj->string_val = cstr; };
@@ -94,8 +114,29 @@ extern "C" {
         }
         
     public:
+//        inline xcom_var *retain()
+//        {
+//            this->retaincount++;
+//            return this;
+//        }
+//        
+//        inline int retainCount() const
+//        {
+//            return this->retaincount;
+//        }
+//        
+//        inline void release()
+//        {
+//            this->retaincount--;
+//            if(this->retaincount <= 0)
+//            {
+//                delete this;
+//            }
+//        }
+        
+    public:
         /* dict */
-        xcom_var* operator[](const char *key) {
+        xcom_var_ptr operator[](const char *key) {
             if (!key || !*key)
                 return nullptr;
             
@@ -103,10 +144,13 @@ extern "C" {
                 init_vdict();
             
             if (!this->contains(key))
-                put(key, xcom_var(0));
-            
+            {
+                printf("\ntest put \n");
+                xcom_var emp = xcom_var(false);
+                this->put(key, emp);
+            }
+            printf("test put done\n");
             xcom_var_ptr ptr = get(key);
-            printf("xcom_var_ptr get ptr = %p  str : %s\n", ptr, ptr->val_str());
             return ptr;
         }
         bool contains(const char *key)
@@ -136,7 +180,6 @@ extern "C" {
         
         xcom_var_ptr get(const char *key) {
             auto ptr = this->obj->get(key);
-            printf("get ptr = %p\n", ptr);
             return ptr;
         }
     public:
@@ -171,7 +214,7 @@ extern "C" {
             switch(this->type)
             {
                 case xcom_vtype_null: { valstr = "null"; break; };
-                case xcom_vtype_bool: { valstr = this->bool_val() ? 1 : 0; break; };
+                case xcom_vtype_bool: { valstr = this->bool_val() ? "true" : "false"; break; };
                 case xcom_vtype_int8: { valstr = std::to_string(this->int8_val()); break;};
                 case xcom_vtype_uint8: { valstr = std::to_string(this->uint8_val()); break;};
                 case xcom_vtype_int16: { valstr = std::to_string(this->int8_val()); break;};
@@ -185,7 +228,24 @@ extern "C" {
                 case xcom_vtype_string: { valstr = "\""+this->string_val() + "\""; break;};
                 case xcom_vtype_bytes: {  break;};
                 case xcom_vtype_array: {  break;};
-                case xcom_vtype_dict: {  break;};
+                case xcom_vtype_dict: {
+                    std::ostringstream ostr;
+                    ostr << "{";
+                    auto it = this->obj->dict_val->begin();
+                    auto end = this->obj->dict_val->end();
+                    while(it != end){
+                        ostr << "\""<<it->first << "\":" << it->second->val_str();
+                        it++;
+                        if (it != end)
+                        {
+                            ostr << ",";
+                        }
+                    }
+                    ostr << "}";
+                    std::string str = ostr.str();
+                    return str.c_str();
+                    break;
+                };
                 case xcom_vtype_var: { valstr = this->obj->var_val->val_str(); break;};
                 case xcom_vtype_ref: { valstr = std::to_string(this->int8_val()); break;};
             }

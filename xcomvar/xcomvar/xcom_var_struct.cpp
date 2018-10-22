@@ -6,9 +6,10 @@ extern "C" {
 
     
     //==============================
+    static int xcom_var_new_count = 0;
     xcom_var::~xcom_var()
     {
-        printf("[%p] dealloc : %s\n", this, this->val_str());
+        printf("var_struct dealloc [%d]: [%p]  : [obj = %p]\n", --xcom_var_new_count, this, this->obj);
         switch(this->type)
         {
                 
@@ -33,7 +34,18 @@ extern "C" {
             }
             case xcom_vtype_dict:
             {
-                
+                if (this->obj->dict_val)
+                {
+                    auto it = this->obj->dict_val->begin();
+                    auto end = this->obj->dict_val->end();
+                    while(it != end){
+                        it->second.reset();
+                        it++;
+                    }
+                    this->obj->dict_val->clear();
+                    delete this->obj->dict_val;
+                    this->obj->dict_val = nullptr;
+                }
                 break;
             }
                 break;
@@ -64,8 +76,6 @@ extern "C" {
                     }
                     
                 }
-                
-                
                 break;
             }
                 
@@ -77,8 +87,9 @@ extern "C" {
     {
         this->obj = new xcom_var_value;
         this->type = xcom_vtype_null;
-        this->retaincount = 1;
+        this->retaincount = 0;
         this->child = false;
+        printf("var_struct new [%d]: [%p] \n", ++xcom_var_new_count, this);
     }
 #ifdef __cplusplus
 }

@@ -27,10 +27,10 @@
         
         xcom_data(const xcom_data *val);
         xcom_data(const xcom_data &val);
-        xcom_data(xcom_data &&val);
+//        xcom_data(xcom_data &&val);
         
         xcom_data &operator = (const xcom_data &value);
-        xcom_data &operator = (xcom_data &&value);
+//        xcom_data &operator = (xcom_data &&value);
         
     public:
         // basic type delc
@@ -74,7 +74,7 @@
     private:
         xcom_var *_core = NULL;
         void reset_core();
-        xcom_data(xcom_var &&var);
+        xcom_data(xcom_var *var);
     };
     
 //}

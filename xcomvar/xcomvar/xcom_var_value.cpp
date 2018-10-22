@@ -12,13 +12,15 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+    static int xcom_var_value_new_count = 0;
     xcom_var_value::xcom_var_value()
     {
+         printf("var_value new [%d] : [%p] \n", ++xcom_var_value_new_count, this);
         //memset(this, 0, sizeof(xcom_var_value));
     }
     xcom_var_value::~xcom_var_value()
     {
-        
+        printf("var_value dealloc [%d] : [%p] \n", --xcom_var_value_new_count, this);
     }
     void xcom_var_value::reset()
     {
@@ -54,13 +56,13 @@ extern "C" {
         {
             return nullptr;
         }
-        printf("xcom_var_value get ptr = %p  str : %s\n", it->second, it->second->val_str());
+        
         return it->second;
     }
     void xcom_var_value::put(const char *key, xcom_var value)
     {
-        xcom_var_ptr var_ptr = new xcom_var(std::move(value));
-        printf("put ptr = %p  str : %s\n", var_ptr, var_ptr->val_str());
+        xcom_var *ptr = new xcom_var(value);
+        xcom_var_ptr var_ptr(ptr);
         dict_val->insert(std::make_pair(key, var_ptr));
     }
 #ifdef __cplusplus
