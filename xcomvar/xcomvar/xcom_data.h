@@ -89,6 +89,7 @@
         
     private:
         xcom_var *_core = NULL;
+        bool _isref = false;
         void reset_core();
         xcom_data(xcom_var *var);
     };

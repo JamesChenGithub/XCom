@@ -13,11 +13,12 @@
 xcom_data::xcom_data():_core(nullptr)
 {
     _core = new xcom_var;
+    _isref = false;
 }
 
 xcom_data::~xcom_data()
 {
-    if (_core)
+    if (_core && !_isref)
     {
         delete _core;
         _core = nullptr;
@@ -27,12 +28,14 @@ xcom_data::xcom_data(const xcom_data *val)
 {
     if (val)
     {
-        this->_core = new xcom_var(val->_core);
+        _core = new xcom_var(val->_core);
+        _isref = false;
     }
 }
 xcom_data::xcom_data(const xcom_data &val)
 {
-    this->_core = new xcom_var(val._core);
+    _core = new xcom_var(val._core);
+    _isref = false;
 }
 
 //xcom_data::xcom_data(xcom_data &&val)
@@ -43,17 +46,26 @@ xcom_data::xcom_data(const xcom_data &val)
 
 void xcom_data::reset_core()
 {
-    if (_core)
+    if (_isref)
     {
-        delete _core;
         _core = nullptr;
     }
+    else
+    {
+        if (_core)
+        {
+            delete _core;
+            _core = nullptr;
+        }
+    }
+    this->_isref = false;
 }
 
 xcom_data& xcom_data::operator = (const xcom_data &value)
 {
     this->reset_core();
-    this->_core = new xcom_var(value._core);
+    _core = new xcom_var(value._core);
+    _isref = false;
     return *this;
 }
 //xcom_data& xcom_data::operator = (xcom_data &&value)
@@ -65,20 +77,45 @@ xcom_data& xcom_data::operator = (const xcom_data &value)
 //}
 
 #define XCOM_DATA_IMPL(T, VT, VAL) \
-    xcom_data::xcom_data(T value):xcom_data() { _core->type = xcom_vtype_##VT;  _core->obj->VT##_val = value; } \
-    xcom_data::operator T() const {return _core->obj && _core->type == xcom_vtype_##VT ? _core->obj->VT##_val : VAL; } \
-    T xcom_data::VT##_val() const {return _core->obj ? _core->obj->VT##_val : VAL; } \
-    xcom_data& xcom_data::operator = (T value) { \
-        _core->type = xcom_vtype_##VT;\
-        _core->obj->reset(); \
-        _core->obj->VT##_val = value;\
-        return *this;\
-    }\
-    bool xcom_data::operator == (const T value) const { \
-       return _core->type != xcom_vtype_##VT  ?  VAL : _core->obj->VT##_val == value;\
-    }
+xcom_data::xcom_data(T value):xcom_data() { _core->type = xcom_vtype_##VT;  _core->obj->VT##_val = value;  _isref = false; } \
+xcom_data::operator T() const {return _core->obj && _core->type == xcom_vtype_##VT ? _core->obj->VT##_val : VAL; } \
+T xcom_data::VT##_val() const {return _core->obj ? _core->obj->VT##_val : VAL; } \
+xcom_data& xcom_data::operator = (T value) { \
+_core->type = xcom_vtype_##VT;\
+_core->obj->reset(); \
+_core->obj->VT##_val = value;\
+ _isref = false; \
+return *this;\
+}\
+bool xcom_data::operator == (const T value) const { \
+return _core->type != xcom_vtype_##VT  ?  VAL : _core->obj->VT##_val == value;\
+}
 
-XCOM_DATA_IMPL(bool, bool, false)
+
+xcom_data::xcom_data(bool value):xcom_data() {
+    _core->type = xcom_vtype_bool;
+    _core->obj->bool_val = value;
+     _isref = false;
+}
+xcom_data::operator bool() const{
+    return _core->obj && _core->type == xcom_vtype_bool ? _core->obj->bool_val : false;
+}
+bool xcom_data::bool_val() const {
+    return _core->obj ? _core->obj->bool_val : false;
+}
+xcom_data& xcom_data::operator = (bool value) {
+    _core->type = xcom_vtype_bool;
+    _core->obj->reset();
+    _core->obj->bool_val = value;
+     _isref = false;
+    return *this;
+}
+bool xcom_data::operator == (const bool value) const {
+    return _core->type != xcom_vtype_bool  ?  false : _core->obj->bool_val == value;
+}
+
+
+//XCOM_DATA_IMPL(bool, bool, false)
 XCOM_DATA_IMPL(int8_t, int8, 0)
 XCOM_DATA_IMPL(uint8_t, uint8, 0)
 XCOM_DATA_IMPL(int16_t, int16, 0)
@@ -93,17 +130,15 @@ XCOM_DATA_IMPL(void *, ref, NULL)
 
 xcom_data::xcom_data(xcom_var *var)
 {
-    if (_core)
-    {
-        delete _core;
-        _core = nullptr;
-    }
+    reset_core();
     _core = var;
+    _isref = true;
 }
 
 xcom_data::xcom_data(const char *value)
 {
     *_core = value;
+    _isref = false;
 }
 xcom_data::operator const char *() const
 {
@@ -116,6 +151,7 @@ const char * xcom_data::string_val() const
 xcom_data &xcom_data::operator = (const char *value)
 {
     *_core = value;
+     _isref = false;
     return *this;
 }
 bool xcom_data::operator == (const char* value) const
