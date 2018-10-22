@@ -19,9 +19,8 @@ extern "C" {
     public:
         xcom_var_value  *obj = nullptr;
         xcom_var_type   type = xcom_vtype_null;
-    private:
         int             retaincount = 0;
-        bool            child;
+
     public:
         ~xcom_var();
         xcom_var();
@@ -41,28 +40,28 @@ extern "C" {
             return this->type != xcom_vtype_##VT  ?  VAL : this->obj->VT##_val == value;\
         }
         
-        inline xcom_var(bool value):xcom_var() {
-            this->type = xcom_vtype_bool;
-            this->obj->bool_val = value;
-        }
-        inline operator bool() {
-            return this->obj && this->type == xcom_vtype_bool ? this->obj->bool_val : false;
-        }
-        inline bool bool_val() const {
-            return this->obj ? this->obj->bool_val : false;
-        }
-        inline xcom_var &operator = (bool value) {
-            this->type = xcom_vtype_bool;
-            this->obj->reset();
-            this->obj->bool_val = value;
-            return *this;
-        }
-        inline bool operator == (const bool value) const {
-            return this->type != xcom_vtype_bool  ?  false : this->obj->bool_val == value;
-        }
+//        inline xcom_var(bool value):xcom_var() {
+//            this->type = xcom_vtype_bool;
+//            this->obj->bool_val = value;
+//        }
+//        inline operator bool() {
+//            return this->obj && this->type == xcom_vtype_bool ? this->obj->bool_val : false;
+//        }
+//        inline bool bool_val() const {
+//            return this->obj ? this->obj->bool_val : false;
+//        }
+//        inline xcom_var &operator = (bool value) {
+//            this->type = xcom_vtype_bool;
+//            this->obj->reset();
+//            this->obj->bool_val = value;
+//            return *this;
+//        }
+//        inline bool operator == (const bool value) const {
+//            return this->type != xcom_vtype_bool  ?  false : this->obj->bool_val == value;
+//        }
         
         
-//        XCOM_VAR_FUNC(bool, bool, false)
+        XCOM_VAR_FUNC(bool, bool, false)
         XCOM_VAR_FUNC(int8_t, int8, 0)
         XCOM_VAR_FUNC(uint8_t, uint8, 0)
         XCOM_VAR_FUNC(int16_t, int16, 0)
@@ -75,24 +74,41 @@ extern "C" {
         XCOM_VAR_FUNC(double, double, 0.0)
         XCOM_VAR_FUNC(void *, ref, NULL)
         
-        xcom_var(const xcom_var *val) : xcom_var() { if(val) { this->type = val->type; *(this->obj) = *(val->obj); } }
-        xcom_var(const xcom_var &val) : xcom_var() { this->type = val.type;  *(this->obj) = *(val.obj);}
-//        xcom_var(xcom_var &&val) : xcom_var() { this->type = val.type;  this->obj = std::move(val.obj); val.type = xcom_vtype_null; val.obj = nullptr;}
+        xcom_var(xcom_var *val) : xcom_var() {
+            if(val) {
+                this->type = val->type;
+                *(this->obj) = *(val->obj);
+                val->retaincount++;
+            }
+        }
+        xcom_var(xcom_var &val) : xcom_var() {
+            this->type = val.type;
+            *(this->obj) = *(val.obj);
+            val.retaincount++;
+        }
+        xcom_var(xcom_var &&val) : xcom_var() {
+            this->type = val.type;
+            this->obj = std::move(val.obj);
+            val.type = xcom_vtype_null;
+            val.retaincount = 1;
+            val.obj = new xcom_var_value;
+        }
         
-        inline xcom_var &operator = (const xcom_var &value) {
+        inline xcom_var &operator = (xcom_var &value) {
             this->type = this->type = value.type;
             this->obj->reset();
             *(this->obj) = *(value.obj);
+            value.retaincount++;
             return *this;
         }
-//        inline xcom_var &operator = (xcom_var &&value) {
-//            this->type = value.type;
-//            this->obj->reset();
-//            this->obj = std::move(value.obj);
-//            value.type = xcom_vtype_null;
-//            value.obj = nullptr;
-//            return *this;
-//        }
+        inline xcom_var &operator = (xcom_var &&value) {
+            this->type = value.type;
+            this->obj->reset();
+            this->obj = std::move(value.obj);
+            value.type = xcom_vtype_null;
+            value.obj = nullptr;
+            return *this;
+        }
     
         inline xcom_var(const std::string &str):xcom_var() { this->type = xcom_vtype_string; this->obj->string_val = str; };
         inline xcom_var(const char *cstr):xcom_var() { this->type = xcom_vtype_string; this->obj->string_val = cstr; };
