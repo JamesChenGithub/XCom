@@ -66,10 +66,26 @@
         // dict delc
         xcom_data operator[](const char *key);
         bool contains(const char *key);
+        bool erase(const char *key);
+        
+    public:
+        // array
+        xcom_data operator[](uint32_t index);
+    public:
+        // buf
+        void set_buf(const void *buf, uint32_t len);
         
     public:
         // tool
         const char *to_json();
+        
+        // just array or dict vaild, return empty;
+        // other return false
+        bool empty();
+        
+        // just array or dict vaild, return size;
+        // other return 1
+        uint32_t size();
         
     private:
         xcom_var *_core = NULL;

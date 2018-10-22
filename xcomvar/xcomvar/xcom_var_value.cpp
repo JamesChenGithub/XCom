@@ -49,6 +49,17 @@ extern "C" {
     {
         return dict_val->find(key) != dict_val->end();
     }
+    
+    bool xcom_var_value::erase(const char *key)
+    {
+        auto it = dict_val->find(key);
+        if (it != dict_val->end())
+        {
+            it->second.reset();
+            dict_val->erase(it);
+        }
+        return true;
+    }
     xcom_var_ptr xcom_var_value::get(const char *key)
     {
         auto it = dict_val->find(key);

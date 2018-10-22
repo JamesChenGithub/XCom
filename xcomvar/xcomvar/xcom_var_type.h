@@ -51,7 +51,7 @@ const char *xcom_var_type_string(xcom_var_type type);
         
     public:
         xcom_var_buf();
-        xcom_var_buf(void *buf, uint32_t len);
+        xcom_var_buf(const void *buf, uint32_t len);
         ~xcom_var_buf();
         const char *to_json() const
         {

@@ -158,7 +158,57 @@ extern "C" {
             if (this->type != xcom_vtype_dict) return false;
             return this->obj->contains(key);
         }
+        
+        bool erase(const char *key) {
+            if (this->type != xcom_vtype_dict) return false;
+            return this->obj->erase(key);
+        }
+    public:
+        /* array */
+        xcom_var_ptr operator[](uint32_t index) {
+            if (this->type != xcom_vtype_array) return nullptr;
+            return at(index);
+        }
+        
+        /* 'index' based array methods */
+        void append(xcom_var data)
+        {
+            if (data.type == xcom_vtype_null)
+                return;
+            
+            init_varray();
+            if (this->type == xcom_vtype_array)
+            {
+                xcom_var *ptr = new xcom_var(data);
+                xcom_var_ptr var_ptr(ptr);
+                this->obj->array_val->emplace_back(ptr);
+            }
+        }
+        
+    private:
 
+        /* 'index' based array methods */
+        xcom_var_ptr at(uint32_t index) {
+            
+            if(this->obj && index >=0 && index < this->obj->array_val->size())
+            {
+                return (*this->obj->array_val)[index];
+            }
+            
+            return nullptr;
+        }
+        
+        void init_varray()
+        {
+            if (this->type != xcom_vtype_array)
+            {
+                this->type = xcom_vtype_array;
+                delete this->obj;
+                this->obj = nullptr;
+                this->obj = new xcom_var_value;
+                this->obj->array_val = new xcom_var_vec;
+            }
+        }
     private:
         void init_vdict()
         {
@@ -182,10 +232,25 @@ extern "C" {
             auto ptr = this->obj->get(key);
             return ptr;
         }
-    public:
-        /* array */
+   
     public:
         /* buffer */
+        void set_buffer(const void *data, uint32_t len) {
+            if (this->type != xcom_vtype_bytes)
+            {
+                this->type = xcom_vtype_bytes;
+                delete this->obj;
+                this->obj = nullptr;
+                this->obj = new xcom_var_value;
+                this->obj->buf_val = new xcom_var_buf(data, len);
+            }
+            else
+            {
+                delete this->obj->buf_val;
+                this->obj->buf_val = new xcom_var_buf(data, len);
+            }
+            
+        }
     public:
         
         const char *to_type_json()
@@ -226,8 +291,30 @@ extern "C" {
                 case xcom_vtype_float: { valstr = std::to_string(this->float_val()); break;};
                 case xcom_vtype_double: { valstr = std::to_string(this->double_val()); break;};
                 case xcom_vtype_string: { valstr = "\""+this->string_val() + "\""; break;};
-                case xcom_vtype_bytes: {  break;};
-                case xcom_vtype_array: {  break;};
+                case xcom_vtype_bytes: {
+                    valstr = this->obj->buf_val->to_json();
+                    break;
+                };
+                case xcom_vtype_array:
+                {
+                    std::ostringstream ostr;
+                    ostr << "[";
+                    auto it = this->obj->dict_val->begin();
+                    auto end = this->obj->dict_val->end();
+                    while(it != end){
+                        ostr << "\""<<it->first << "\":" << it->second->val_str();
+                        it++;
+                        if (it != end)
+                        {
+                            ostr << ",";
+                        }
+                    }
+                    ostr << "]";
+                    std::string str = ostr.str();
+                    return str.c_str();
+                    break;
+                    
+                };
                 case xcom_vtype_dict: {
                     std::ostringstream ostr;
                     ostr << "{";
@@ -247,7 +334,12 @@ extern "C" {
                     break;
                 };
                 case xcom_vtype_var: { valstr = this->obj->var_val->val_str(); break;};
-                case xcom_vtype_ref: { valstr = std::to_string(this->int8_val()); break;};
+                case xcom_vtype_ref: {
+                    char buf[32];
+                    sprintf(buf, "%p", this->obj->ref_val);
+                    valstr = buf;
+                    break;
+                };
             }
             
             std::string str = "{ \"" + typestr + "\" : " + valstr + " }";
@@ -258,6 +350,42 @@ extern "C" {
         inline bool is_number() const { return this->type <= xcom_vtype_string; }
         inline bool is_array() const { return this->type == xcom_vtype_array; }
         inline bool is_dict() const { return this->type == xcom_vtype_dict;}
+        
+        // just array or dict vaild, return empty;
+        // other return false
+        bool empty()
+        {
+            if (this->type == xcom_vtype_array )
+            {
+                return this->obj->array_val->empty();
+            }
+            else if (this->type == xcom_vtype_dict)
+            {
+                return this->obj->dict_val->empty();
+            }
+            else
+            {
+                return true;
+            }
+        }
+        
+        // just array or dict vaild, return size;
+        // other return 1
+        uint32_t size()
+        {
+            if (this->type == xcom_vtype_array )
+            {
+                return (uint32_t)this->obj->array_val->size();
+            }
+            else if (this->type == xcom_vtype_dict)
+            {
+                return (uint32_t)this->obj->dict_val->size();
+            }
+            else
+            {
+                return 1;
+            }
+        }
         
 
     }xcom_var, xcom_var_t;

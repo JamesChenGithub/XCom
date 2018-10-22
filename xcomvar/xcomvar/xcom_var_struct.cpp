@@ -29,6 +29,18 @@ extern "C" {
             }
             case xcom_vtype_array:
             {
+                if (this->obj->dict_val)
+                {
+//                    auto it = this->obj->array_val->begin();
+//                    auto end = this->obj->array_val->end();
+//                    while(it != end){
+//                        it->reset();
+//                        it++;
+//                    }
+                    this->obj->array_val->clear();
+                    delete this->obj->array_val;
+                    this->obj->array_val = nullptr;
+                }
                 
                 break;
             }
@@ -36,19 +48,27 @@ extern "C" {
             {
                 if (this->obj->dict_val)
                 {
-                    auto it = this->obj->dict_val->begin();
-                    auto end = this->obj->dict_val->end();
-                    while(it != end){
-                        it->second.reset();
-                        it++;
-                    }
+//                    auto it = this->obj->dict_val->begin();
+//                    auto end = this->obj->dict_val->end();
+//                    while(it != end){
+//                        it->second.reset();
+//                        it++;
+//                    }
                     this->obj->dict_val->clear();
                     delete this->obj->dict_val;
                     this->obj->dict_val = nullptr;
                 }
                 break;
             }
+            case xcom_vtype_bytes:
+            {
+                 if (this->obj->buf_val)
+                 {
+                     delete this->obj->buf_val;
+                     this->obj->buf_val = nullptr;
+                 }
                 break;
+            }
             case xcom_vtype_null:
             case xcom_vtype_bool:
             case xcom_vtype_int8:
@@ -62,7 +82,7 @@ extern "C" {
             case xcom_vtype_float:
             case xcom_vtype_double:
             case xcom_vtype_string:
-            case xcom_vtype_bytes:
+            
 //            case xcom_vtype_variant:
             default:
             {

@@ -45,7 +45,7 @@ extern "C" {
         this->buf = 0;
     }
     
-    xcom_var_buf::xcom_var_buf(void *buf, uint32_t len) {
+    xcom_var_buf::xcom_var_buf(const void *buf, uint32_t len) {
         this->buf = nullptr;
         this->buf = 0;
         

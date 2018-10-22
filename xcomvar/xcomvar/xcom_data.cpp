@@ -126,8 +126,20 @@ bool xcom_data::operator == (const char* value) const
 
 const char *xcom_data::to_json()
 {
+    if (_core == nullptr)
+    {
+        return nullptr;
+    }
     const char *str = _core->val_str();
     return str;
+}
+bool xcom_data::empty()
+{
+    return _core ? _core->empty() : true;
+}
+uint32_t xcom_data::size()
+{
+    return _core ? _core->size() : true;
 }
 
 xcom_data xcom_data::operator[](const char *key)
@@ -139,6 +151,19 @@ bool xcom_data::contains(const char *key)
 {
     return _core->contains(key);
 }
+bool xcom_data::erase(const char *key)
+{
+    return _core->erase(key);
+}
 
+void xcom_data::set_buf(const void *buf, uint32_t len)
+{
+    return _core->set_buffer(buf, len);
+}
+
+xcom_data xcom_data::operator[](uint32_t index)
+{
+    return xcom_data();
+}
 
 //}

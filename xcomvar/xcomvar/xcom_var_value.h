@@ -37,8 +37,8 @@ typedef union xcom_var_value
     float           float_val;
     double          double_val;
     std::string     string_val;
-    xcom_var_buf    buf_val;
-    void            *ptr_val;
+    xcom_var_buf    *buf_val;
+//    void            *ptr_val;
     void            *ref_val;
     xcom_var_dict   *dict_val;
     xcom_var_vec    *array_val;
@@ -59,6 +59,7 @@ public:
     
     // dict action
     bool contains(const char *key);
+    bool erase(const char *key);
     xcom_var_ptr get(const char *key);
     void put(const char *key, xcom_var value);
 }xcom_var_value;
