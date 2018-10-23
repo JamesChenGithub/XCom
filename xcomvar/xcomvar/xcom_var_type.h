@@ -32,14 +32,11 @@ typedef enum {
     xcom_vtype_float     = 'f',
     xcom_vtype_double    = 'D',
     xcom_vtype_string    = 'c',
-    xcom_vtype_bytes     = 'm',
-    //        xcom_vtype_ptr       = '*',
     xcom_vtype_ref       = '&',
+    //        xcom_vtype_ptr       = '*',
+    xcom_vtype_bytes     = 'm',
     xcom_vtype_array     = '[',
     xcom_vtype_dict      = '{',
-    xcom_vtype_var       = 'v',
-    
-    
 } xcom_var_type;
 
 const char *xcom_var_type_string(xcom_var_type type);

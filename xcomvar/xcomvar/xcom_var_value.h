@@ -37,9 +37,10 @@ typedef union xcom_var_value
     float           float_val;
     double          double_val;
     std::string     string_val;
-    xcom_var_buf    *buf_val;
-//    void            *ptr_val;
     void            *ref_val;
+    
+    // 需要分配内存
+    xcom_var_buf    *buf_val;
     xcom_var_dict   *dict_val;
     xcom_var_vec    *array_val;
     xcom_var_ptr    var_val;
@@ -47,22 +48,11 @@ typedef union xcom_var_value
 public:
     xcom_var_value();
     ~xcom_var_value();
-    void reset();
-    
-public:
-    inline xcom_var_value &operator = (const xcom_var_value &value)
-    {
-        memcpy(this, &value, sizeof(value));
-        return *this;
-    }
-public:
-    
-    // dict action
-    bool contains(const char *key);
-    bool erase(const char *key);
-    xcom_var_ptr get(const char *key);
-    void put(const char *key, xcom_var value);
+
 }xcom_var_value;
+    
+    
+#define kDefault_Xcom_Var_Value = {.int32_val{0}}
     
 #ifdef __cplusplus
 }

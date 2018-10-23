@@ -34,7 +34,6 @@ extern "C" {
             case xcom_vtype_double: return "double";
             case xcom_vtype_string: return "string";
             case xcom_vtype_bytes: return "byte";
-            case xcom_vtype_var: return "var";
         }
         return "";
     }

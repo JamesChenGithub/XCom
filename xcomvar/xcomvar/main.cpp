@@ -59,8 +59,10 @@ int main(int argc, const char * argv[])
 //    }
     
     {
-        xcom_data var;
+        xcom_data var;        
         var["enable"] = true;
+        const char *str = var.to_json();
+        std::cout << str << std::endl;
     }
     
     getchar();

@@ -25,12 +25,11 @@
         xcom_data();
         ~xcom_data();
         
-        xcom_data(const xcom_data *val);
-        xcom_data(const xcom_data &val);
-//        xcom_data(xcom_data &&val);
+        xcom_data(const xcom_data &data);
+        xcom_data(xcom_data &&data);
         
-        xcom_data &operator = (const xcom_data &value);
-//        xcom_data &operator = (xcom_data &&value);
+        xcom_data &operator = (const xcom_data &data);
+        xcom_data &operator = (xcom_data &&data);
         
     public:
         // basic type delc
@@ -56,11 +55,11 @@
         
     public:
         // string delc
-        xcom_data(const char *value);
+        xcom_data(const char *data);
         operator const char *() const;
         const char * string_val() const;
-        xcom_data &operator = (const char *value);
-        bool operator == (const char* value) const;
+        xcom_data &operator = (const char *data);
+        bool operator == (const char* data) const;
         
     public:
         // dict delc
@@ -88,9 +87,7 @@
         uint32_t size();
         
     private:
-        xcom_var *_core = NULL;
-        bool _isref = false;
-        void reset_core();
+        xcom_var *_core;
         xcom_data(xcom_var *var);
     };
     

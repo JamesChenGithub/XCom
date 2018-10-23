@@ -12,43 +12,47 @@
 
 xcom_data::xcom_data():_core(nullptr)
 {
-    _core = new xcom_var;
-    _isref = false;
+
 }
 
 xcom_data::~xcom_data()
 {
-    if (_core && !_isref)
+    if (_core)
     {
         delete _core;
         _core = nullptr;
     }
 }
-xcom_data::xcom_data(const xcom_data *val)
+xcom_data::xcom_data(const xcom_data &data):_core(nullptr)
 {
-    if (val)
+    if (data._core)
     {
-        _core = new xcom_var(val->_core);
-        _isref = false;
+        _core = new xcom_var(*data._core);
     }
 }
-xcom_data::xcom_data(const xcom_data &val)
+
+xcom_data::xcom_data(xcom_data &&data):_core(nullptr)
 {
-    _core = new xcom_var(val._core);
-    _isref = false;
+    if (data._core)
+    {
+        xcom_var var = *data._core;
+        _core = new xcom_var(std::move(var));
+        data._core = nullptr;
+    }
 }
 
-//xcom_data::xcom_data(xcom_data &&val)
-//{
-//    this->_core = std::move(val._core);
-//    val._core = nullptr;
-//}
-
-void xcom_data::reset_core()
+xcom_data& xcom_data::operator = (const xcom_data &data)
 {
-    if (_isref)
+    if (data._core)
     {
-        _core = nullptr;
+        if (_core)
+        {
+            *_core = *data._core;
+        }
+        else
+        {
+            _core = new xcom_var(*data._core);
+        }
     }
     else
     {
@@ -58,64 +62,61 @@ void xcom_data::reset_core()
             _core = nullptr;
         }
     }
-    this->_isref = false;
+    return *this;
+   
 }
-
-xcom_data& xcom_data::operator = (const xcom_data &value)
+xcom_data& xcom_data::operator = (xcom_data &&data)
 {
-    this->reset_core();
-    _core = new xcom_var(value._core);
-    _isref = false;
+    if (_core)
+    {
+        delete _core;
+        _core = nullptr;
+    }
+    _core = data._core;
+    data._core = nullptr;
     return *this;
 }
-//xcom_data& xcom_data::operator = (xcom_data &&value)
-//{
-//    this->reset_core();
-//    this->_core = std::move(value._core);
-//    value._core = nullptr;
-//    return *this;
-//}
 
 #define XCOM_DATA_IMPL(T, VT, VAL) \
-xcom_data::xcom_data(T value):xcom_data() { _core->type = xcom_vtype_##VT;  _core->obj->VT##_val = value;  _isref = false; } \
-xcom_data::operator T() const {return _core->obj && _core->type == xcom_vtype_##VT ? _core->obj->VT##_val : VAL; } \
-T xcom_data::VT##_val() const {return _core->obj ? _core->obj->VT##_val : VAL; } \
+xcom_data::xcom_data(T value):_core(nullptr) { _core = new xcom_var(value); } \
+xcom_data::operator T() const {return _core ? _core->obj.VT##_val : VAL; } \
+T xcom_data::VT##_val() const {return _core ? _core->obj.VT##_val : VAL; } \
 xcom_data& xcom_data::operator = (T value) { \
-_core->type = xcom_vtype_##VT;\
-_core->obj->reset(); \
-_core->obj->VT##_val = value;\
- _isref = false; \
+if (_core)  *_core = value;\
+else  _core = new xcom_var(value);\
 return *this;\
 }\
 bool xcom_data::operator == (const T value) const { \
-return _core->type != xcom_vtype_##VT  ?  VAL : _core->obj->VT##_val == value;\
+return _core && _core->type != xcom_vtype_##VT  ? _core->obj.VT##_val == value : false ;\
 }
 
 
-xcom_data::xcom_data(bool value):xcom_data() {
-    _core->type = xcom_vtype_bool;
-    _core->obj->bool_val = value;
-     _isref = false;
-}
-xcom_data::operator bool() const{
-    return _core->obj && _core->type == xcom_vtype_bool ? _core->obj->bool_val : false;
-}
-bool xcom_data::bool_val() const {
-    return _core->obj ? _core->obj->bool_val : false;
-}
-xcom_data& xcom_data::operator = (bool value) {
-    _core->type = xcom_vtype_bool;
-    _core->obj->reset();
-    _core->obj->bool_val = value;
-     _isref = false;
-    return *this;
-}
-bool xcom_data::operator == (const bool value) const {
-    return _core->type != xcom_vtype_bool  ?  false : _core->obj->bool_val == value;
-}
+//xcom_data::xcom_data(bool value):_core(nullptr) {
+//    _core = new xcom_var(value);
+//}
+//xcom_data::operator bool() const{
+//    return _core ? _core->obj.bool_val : false;
+//}
+//bool xcom_data::bool_val() const {
+//    return _core ? _core->obj.bool_val : false;
+//}
+//xcom_data& xcom_data::operator = (bool value) {
+//    if (_core)
+//    {
+//        *_core = value;
+//    }
+//    else
+//    {
+//        _core = new xcom_var(value);
+//    }
+//    return *this;
+//}
+//bool xcom_data::operator == (const bool value) const {
+//    return _core && _core->type != xcom_vtype_bool  ?  _core->obj.bool_val == value : false;
+//}
 
 
-//XCOM_DATA_IMPL(bool, bool, false)
+XCOM_DATA_IMPL(bool, bool, false)
 XCOM_DATA_IMPL(int8_t, int8, 0)
 XCOM_DATA_IMPL(uint8_t, uint8, 0)
 XCOM_DATA_IMPL(int16_t, int16, 0)
@@ -128,35 +129,38 @@ XCOM_DATA_IMPL(float, float, 0.0)
 XCOM_DATA_IMPL(double, double, 0.0)
 XCOM_DATA_IMPL(void *, ref, NULL)
 
-xcom_data::xcom_data(xcom_var *var)
+xcom_data::xcom_data(xcom_var *var):_core(nullptr)
 {
-    reset_core();
-    _core = var;
-    _isref = true;
+    if (var)
+    {
+        _core = new xcom_var(*var);
+    }
 }
 
-xcom_data::xcom_data(const char *value)
-{
-    *_core = value;
-    _isref = false;
+xcom_data::xcom_data(const char *value):_core(nullptr) {
+    _core = new xcom_var(value);
 }
 xcom_data::operator const char *() const
 {
-    return *_core;
+    return _core ? _core->string_val().c_str() : nullptr;
 }
 const char * xcom_data::string_val() const
 {
-    return *_core;
+    return _core ? _core->string_val().c_str() : nullptr;
 }
 xcom_data &xcom_data::operator = (const char *value)
 {
-    *_core = value;
-     _isref = false;
+    if (_core)  {
+        *_core = value;
+    }
+    else {
+        _core = new xcom_var(value);
+    }
     return *this;
 }
 bool xcom_data::operator == (const char* value) const
 {
-    return *_core == value;
+    return _core && _core->type != xcom_vtype_string ?  *_core == value : false;
 }
 
 
@@ -166,7 +170,7 @@ const char *xcom_data::to_json()
     {
         return nullptr;
     }
-    const char *str = _core->val_str();
+    const char *str = _core->to_json();
     return str;
 }
 bool xcom_data::empty()
@@ -175,31 +179,55 @@ bool xcom_data::empty()
 }
 uint32_t xcom_data::size()
 {
-    return _core ? _core->size() : true;
+    return _core ? _core->size() : 0;
 }
 
 xcom_data xcom_data::operator[](const char *key)
 {
+    if (!key || !*key)
+        return xcom_data();
+    
+    if (_core == nullptr) {
+        _core = new xcom_var();
+    }
     xcom_var_ptr var = (*_core)[key];
     return xcom_data(var.get());
 }
 bool xcom_data::contains(const char *key)
 {
-    return _core->contains(key);
+    if (!key || !*key)
+        return false;
+    return _core ? _core->contains(key) : false;
 }
 bool xcom_data::erase(const char *key)
 {
-    return _core->erase(key);
+    if (!key || !*key)
+        return false;
+    return _core ? _core->erase(key) : false;
 }
 
 void xcom_data::set_buf(const void *buf, uint32_t len)
 {
+    if (buf == nullptr || len < 0)
+    {
+        return;
+    }
+    
+    if (_core == nullptr)
+    {
+        _core = new xcom_var();
+    }
     return _core->set_buffer(buf, len);
 }
 
 xcom_data xcom_data::operator[](uint32_t index)
 {
-    return xcom_data();
+    if (_core == nullptr)
+    {
+        _core = new xcom_var();
+    }
+    xcom_var_ptr ptr = (*_core)[index];
+    return xcom_data(ptr.get());
 }
 
 //}
