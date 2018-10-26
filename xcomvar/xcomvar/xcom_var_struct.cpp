@@ -45,7 +45,11 @@ extern "C" {
                     }
                     break;
                 }
-                
+                case xcom_vtype_vptr:
+                {
+                    this->obj.var_val.reset();
+                    break;
+                }
                 case xcom_vtype_null:
                 case xcom_vtype_bool:
                 case xcom_vtype_int8:
@@ -71,6 +75,7 @@ extern "C" {
                     
             }
         }
+//        this->type = xcom_vtype_null;
     }
     
     void xcom_var::reset(const xcom_var &var)
@@ -102,6 +107,14 @@ extern "C" {
                         this->obj.dict_val->insert(std::make_pair(it->first, it->second));
                         it++;
                     }
+                }
+                break;
+            }
+            case xcom_vtype_vptr:
+            {
+                if (var.obj.var_val)
+                {
+                    this->obj.var_val = var.obj.var_val;
                 }
                 break;
             }
@@ -160,6 +173,14 @@ extern "C" {
                 {
                     this->obj.dict_val = var.obj.dict_val;
                     var.obj.dict_val = nullptr;
+                }
+                break;
+            }
+            case xcom_vtype_vptr:
+            {
+                if (var.obj.var_val) {
+                    this->obj.var_val = var.obj.var_val;
+                    var.obj.var_val = nullptr;
                 }
                 break;
             }
@@ -262,6 +283,13 @@ extern "C" {
                 return str.c_str();
                 break;
             };
+            case xcom_vtype_vptr:
+            {
+                if (this->obj.var_val)
+                {
+                    return this->obj.var_val->to_json();
+                }
+            }
             
             case xcom_vtype_ref: {
                 char buf[32];
