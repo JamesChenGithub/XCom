@@ -135,6 +135,33 @@ extern "C" {
             this->reset(std::move(value));
             return *this;
         }
+        
+        
+        inline xcom_var(xcom_var_ptr value):xcom_var() {
+            this->type = xcom_vtype_vptr;
+            this->obj.var_val = value;
+        }
+        inline operator xcom_var_ptr() {
+            if (this->type == xcom_vtype_vptr) {
+                return this->obj.var_val;
+            }
+            return nullptr;
+        }
+        inline xcom_var_ptr var_val() const {
+            if (this->type == xcom_vtype_vptr) {
+                return this->obj.var_val;
+            }
+            return nullptr;
+        }
+        inline xcom_var &operator = (xcom_var_ptr value) {
+            this->type = xcom_vtype_vptr;
+            this->reset();
+            this->obj.var_val = value;
+            return *(this->obj.var_val.get());
+        }
+        inline bool operator == (const xcom_var_ptr value) const {
+            return this->type != xcom_vtype_vptr  ?  false : this->obj.var_val == value;
+        }
     
         
         
