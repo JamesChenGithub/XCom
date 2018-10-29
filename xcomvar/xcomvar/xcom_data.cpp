@@ -91,32 +91,32 @@ return _core && _core->type != xcom_vtype_##VT  ? _core->obj.VT##_val == value :
 }
 
 
-//xcom_data::xcom_data(bool value):_core(nullptr) {
-//    _core = new xcom_var(value);
-//}
-//xcom_data::operator bool() const{
-//    return _core ? _core->obj.bool_val : false;
-//}
-//bool xcom_data::bool_val() const {
-//    return _core ? _core->obj.bool_val : false;
-//}
-//xcom_data& xcom_data::operator = (bool value) {
-//    if (_core)
-//    {
-//        *_core = value;
-//    }
-//    else
-//    {
-//        _core = new xcom_var(value);
-//    }
-//    return *this;
-//}
-//bool xcom_data::operator == (const bool value) const {
-//    return _core && _core->type != xcom_vtype_bool  ?  _core->obj.bool_val == value : false;
-//}
+xcom_data::xcom_data(bool value):_core(nullptr) {
+    _core = new xcom_var(value);
+}
+xcom_data::operator bool() const{
+    return _core ? _core->obj.bool_val : false;
+}
+bool xcom_data::bool_val() const {
+    return _core ? _core->obj.bool_val : false;
+}
+xcom_data& xcom_data::operator = (bool value) {
+    if (_core)
+    {
+        *_core = value;
+    }
+    else
+    {
+        _core = new xcom_var(value);
+    }
+    return *this;
+}
+bool xcom_data::operator == (const bool value) const {
+    return _core && _core->type != xcom_vtype_bool  ?  _core->obj.bool_val == value : false;
+}
 
 
-XCOM_DATA_IMPL(bool, bool, false)
+//XCOM_DATA_IMPL(bool, bool, false)
 XCOM_DATA_IMPL(int8_t, int8, 0)
 XCOM_DATA_IMPL(uint8_t, uint8, 0)
 XCOM_DATA_IMPL(int16_t, int16, 0)
@@ -191,6 +191,7 @@ xcom_data xcom_data::operator[](const char *key)
         _core = new xcom_var();
     }
     xcom_var_ptr var = (*_core)[key];
+    printf("get var : %p : %s \n", var.get(), var->to_json());
     return xcom_data(var.get());
 }
 bool xcom_data::contains(const char *key)

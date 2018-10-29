@@ -62,7 +62,19 @@ int main(int argc, const char * argv[])
         xcom_data var;        
         var["enable"] = true;
         const char *str = var.to_json();
-        std::cout << str << std::endl;
+        std::cout << "enable :" <<  str << std::endl;
+        
+        xcom_data content;
+        {
+            content["age"]=18;
+            content["size"]=28;
+            content["house"]=38;
+            content["house"]=48;
+            
+            std::cout << content.to_json() << std::endl;
+        }
+        
+        var["content"] = content;
     }
     
     getchar();

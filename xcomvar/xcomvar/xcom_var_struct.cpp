@@ -45,7 +45,7 @@ extern "C" {
                     }
                     break;
                 }
-                
+                    
                 case xcom_vtype_null:
                 case xcom_vtype_bool:
                 case xcom_vtype_int8:
@@ -76,6 +76,7 @@ extern "C" {
     void xcom_var::reset(const xcom_var &var)
     {
         reset();
+        this->type = var.type;
         switch(var.type)
         {
             case xcom_vtype_array:
@@ -89,7 +90,7 @@ extern "C" {
                         it++;
                     }
                 }
-
+                
                 break;
             }
             case xcom_vtype_dict:
@@ -113,35 +114,78 @@ extern "C" {
                 }
                 break;
             }
-
+                
             case xcom_vtype_null:
             {
                 break;
             }
-            case xcom_vtype_bool: this->obj.bool_val = var.obj.bool_val; break;
-            case xcom_vtype_int8: this->obj.int8_val = var.obj.int8_val; break;
-            case xcom_vtype_uint8: this->obj.uint8_val = var.obj.uint8_val; break;
-            case xcom_vtype_int16: this->obj.int16_val = var.obj.int16_val; break;
-            case xcom_vtype_uint16: this->obj.uint16_val = var.obj.uint16_val; break;
-            case xcom_vtype_int32: this->obj.int32_val = var.obj.int32_val; break;
-            case xcom_vtype_uint32: this->obj.uint32_val = var.obj.uint32_val; break;
-            case xcom_vtype_int64: this->obj.int64_val = var.obj.int64_val; break;
-            case xcom_vtype_uint64: this->obj.uint64_val = var.obj.uint64_val; break;
-            case xcom_vtype_float: this->obj.float_val = var.obj.float_val; break;
-            case xcom_vtype_double: this->obj.double_val = var.obj.double_val; break;
-            case xcom_vtype_string: this->obj.string_val = var.obj.string_val; break;
-            case xcom_vtype_ref: this->obj.ref_val = var.ref_val(); break;
+            case xcom_vtype_bool: {
+                this->obj.bool_val = var.obj.bool_val;
+                break;
+            }
+            case xcom_vtype_int8: {
+                this->obj.int8_val = var.obj.int8_val;
+                break;
+            }
+            case xcom_vtype_uint8: {
+                this->obj.uint8_val = var.obj.uint8_val;
+                break;
+            }
+            case xcom_vtype_int16: {
+                this->obj.int16_val = var.obj.int16_val;
+                break;
+                
+            }
+            case xcom_vtype_uint16: {
+                this->obj.uint16_val = var.obj.uint16_val;
+                break;
+            }
+            case xcom_vtype_int32: {
+                this->obj.int32_val = var.obj.int32_val;
+                break;
+            }
+            case xcom_vtype_uint32: {
+                this->obj.uint32_val = var.obj.uint32_val;
+                break;
+            }
+            case xcom_vtype_int64: {
+                this->obj.int64_val = var.obj.int64_val;
+                break;
+            }
+            case xcom_vtype_uint64: {
+                this->obj.uint64_val = var.obj.uint64_val;
+                break;
+            }
+            case xcom_vtype_float: {
+                this->obj.float_val = var.obj.float_val;
+                break;
+            }
+            case xcom_vtype_double: {
+                this->obj.double_val = var.obj.double_val;
+                break;
+            }
+            case xcom_vtype_string: {
+                this->obj.string_val = var.obj.string_val;
+                break;
+            }
+            case xcom_vtype_ref: {
+                this->obj.ref_val = var.ref_val();
+                break;
+            }
             default:
             {
                 break;
             }
-
+                
+                
+                
         }
-    
+        
     }
     void xcom_var::reset(xcom_var &&var)
     {
         reset();
+        this->type = var.type;
         switch(var.type)
         {
             case xcom_vtype_array:
@@ -231,7 +275,8 @@ extern "C" {
                 auto it = this->obj.dict_val->begin();
                 auto end = this->obj.dict_val->end();
                 while(it != end){
-                    ostr << "\""<<it->first << "\":" << it->second->to_json();
+                    const char *json = it->second->to_json();
+                    ostr << "\""<<it->first << "\":" << json;
                     it++;
                     if (it != end)
                     {
@@ -250,7 +295,9 @@ extern "C" {
                 auto it = this->obj.dict_val->begin();
                 auto end = this->obj.dict_val->end();
                 while(it != end){
-                    ostr << "\""<<it->first << "\":" << it->second->to_json();
+                    const char *json = it->second->to_json();
+                    printf("dic_str : %p : %s \n", this, json);
+                    ostr << "\""<<it->first << "\":" << json;
                     it++;
                     if (it != end)
                     {
@@ -262,7 +309,7 @@ extern "C" {
                 return str.c_str();
                 break;
             };
-            
+                
             case xcom_vtype_ref: {
                 char buf[32];
                 sprintf(buf, "%p", this->obj.ref_val);
@@ -287,19 +334,19 @@ extern "C" {
         this->obj.string_val = cstr;
     }
     
-     xcom_var::operator const char *() const {
-         return this->type == xcom_vtype_string ? this->obj.string_val.c_str() : "";
-     }
-     xcom_var::operator std::string () const {
-         return this->type == xcom_vtype_string ? this->obj.string_val.c_str() : std::string("");
-     }
+    xcom_var::operator const char *() const {
+        return this->type == xcom_vtype_string ? this->obj.string_val.c_str() : "";
+    }
+    xcom_var::operator std::string () const {
+        return this->type == xcom_vtype_string ? this->obj.string_val.c_str() : std::string("");
+    }
     
-     const char *xcom_var::cstr_val() const  {
-         return this->type == xcom_vtype_string ? this->obj.string_val.c_str() : "";
-     }
-     std::string xcom_var::string_val() const {
-         return this->type == xcom_vtype_string ? this->obj.string_val : std::string("");
-     }
+    const char *xcom_var::cstr_val() const  {
+        return this->type == xcom_vtype_string ? this->obj.string_val.c_str() : "";
+    }
+    std::string xcom_var::string_val() const {
+        return this->type == xcom_vtype_string ? this->obj.string_val : std::string("");
+    }
     
     xcom_var & xcom_var::operator= (const char *cstr) {
         this->reset();
@@ -344,7 +391,7 @@ extern "C" {
         }
     }
     
-
+    
     
     /* 'index' based array methods */
     xcom_var_ptr xcom_var::at(uint32_t index) {
@@ -378,11 +425,12 @@ extern "C" {
         if (!this->contains(key))
         {
             printf("\ntest put \n");
-            xcom_var emp = xcom_var(false);
-            this->put(key, emp);
+            xcom_var&& var = xcom_var(false);
+            this->put(key, std::move(var));
         }
         printf("test put done\n");
         xcom_var_ptr ptr = get(key);
+        printf("get ptr : %p : %s\n", ptr.get(), ptr->to_json());
         return ptr;
     }
     bool xcom_var::contains(const char *key)
@@ -407,7 +455,7 @@ extern "C" {
         }
         return false;
     }
-
+    
     void xcom_var::init_vdict()
     {
         if (this->type != xcom_vtype_dict)
@@ -419,9 +467,9 @@ extern "C" {
     }
     
     /* 'key-value' dictionary methods */
-    void xcom_var::put(const char *key, const xcom_var data) {
+    void xcom_var::put(const char *key,  xcom_var&& data) {
         init_vdict();
-        xcom_var *ptr = new xcom_var(data);
+        xcom_var *ptr = new xcom_var(std::move(data));
         xcom_var_ptr var_ptr(ptr);
         this->obj.dict_val->insert(std::make_pair(key, var_ptr));
     }

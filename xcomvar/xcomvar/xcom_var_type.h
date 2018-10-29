@@ -37,6 +37,7 @@ typedef enum {
     xcom_vtype_bytes     = 'm',
     xcom_vtype_array     = '[',
     xcom_vtype_dict      = '{',
+    xcom_vtype_vptr      = 'v',     
 } xcom_var_type;
 
 const char *xcom_var_type_string(xcom_var_type type);

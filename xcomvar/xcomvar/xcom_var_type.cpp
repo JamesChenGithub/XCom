@@ -16,10 +16,6 @@ extern "C" {
     {
         switch(type)
         {
-                // case xcom_vtype_ptr:
-            case xcom_vtype_ref:  return "ref";
-            case xcom_vtype_array: return "array";
-            case xcom_vtype_dict: return "dic";
             case xcom_vtype_null: return "null";
             case xcom_vtype_bool: return "bool";
             case xcom_vtype_int8: return "int8";
@@ -34,6 +30,10 @@ extern "C" {
             case xcom_vtype_double: return "double";
             case xcom_vtype_string: return "string";
             case xcom_vtype_bytes: return "byte";
+            case xcom_vtype_ref:  return "ref";
+            case xcom_vtype_array: return "array";
+            case xcom_vtype_dict: return "dic";
+            case xcom_vtype_vptr : return "vptr";
         }
         return "";
     }

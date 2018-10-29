@@ -39,33 +39,54 @@ extern "C" {
             return this->type != xcom_vtype_##VT  ?  false : this->obj.VT##_val == value;\
         }
         
-//        inline xcom_var(bool value):xcom_var() {
-//            this->type = xcom_vtype_bool;
-//            this->obj.bool_val = value;
-//        }
-//        inline operator bool() {
-//            return this->obj.bool_val;
-//        }
-//        inline bool bool_val() const {
-//            return this->obj.bool_val;
-//        }
-//        inline xcom_var &operator = (bool value) {
-//            this->type = xcom_vtype_bool;
-//            this->reset();
-//            this->obj.bool_val = value;
-//            return *this;
-//        }
-//        inline bool operator == (const bool value) const {
-//            return this->type != xcom_vtype_bool  ?  false : this->obj.bool_val == value;
-//        }
+        inline xcom_var(bool value):xcom_var() {
+            this->type = xcom_vtype_bool;
+            this->obj.bool_val = value;
+        }
+        inline operator bool() {
+            return this->obj.bool_val;
+        }
+        inline bool bool_val() const {
+            return this->obj.bool_val;
+        }
+        inline xcom_var &operator = (bool value) {
+            this->reset();
+            this->type = xcom_vtype_bool;
+            this->obj.bool_val = value;
+            return *this;
+        }
+        inline bool operator == (const bool value) const {
+            return this->type != xcom_vtype_bool  ?  false : this->obj.bool_val == value;
+        }
         
         
-        XCOM_VAR_FUNC(bool, bool, false)
+        inline xcom_var(int32_t value):xcom_var() {
+            this->type = xcom_vtype_int32;
+            this->obj.int32_val = value;
+        }
+        inline operator int32_t() {
+            return this->obj.int32_val;
+        }
+        inline int32_t int32_val() const {
+            return this->obj.int32_val;
+        }
+        inline xcom_var &operator = (int32_t value) {
+            this->reset();
+            this->type = xcom_vtype_int32;
+            this->obj.int32_val = value;
+            return *this;
+        }
+        inline bool operator == (const int32_t value) const {
+            return this->type != xcom_vtype_int32  ?  false : this->obj.int32_val == value;
+        }
+        
+        
+//        XCOM_VAR_FUNC(bool, bool, false)
         XCOM_VAR_FUNC(int8_t, int8, 0)
         XCOM_VAR_FUNC(uint8_t, uint8, 0)
         XCOM_VAR_FUNC(int16_t, int16, 0)
         XCOM_VAR_FUNC(uint16_t, uint16, 0)
-        XCOM_VAR_FUNC(int32_t, int32, 0)
+//        XCOM_VAR_FUNC(int32_t, int32, 0)
         XCOM_VAR_FUNC(uint32_t, uint32, 0)
         XCOM_VAR_FUNC(int64_t, int64, 0)
         XCOM_VAR_FUNC(uint64_t, uint64, 0)
@@ -145,7 +166,7 @@ extern "C" {
         void init_vdict();
         
         /* 'key-value' dictionary methods */
-        void put(const char *key, xcom_var data);
+        void put(const char *key, xcom_var &&data);
         
         xcom_var_ptr get(const char *key);
    
