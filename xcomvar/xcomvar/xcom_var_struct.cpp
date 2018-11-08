@@ -81,9 +81,27 @@ extern "C" {
 //        this->type = xcom_vtype_null;
     }
     
-    void xcom_var::reset(const xcom_var &var)
+    void xcom_var::reset(const xcom_var &var, bool isconst)
     {
-        this->type = var.type;
+        if (isconst)
+        {
+            this->type = var.type;
+        }
+        else
+        {
+            if (this->type == xcom_vtype_vptr)
+            {
+                xcom_var_ptr ptr = this->obj.var_val;
+                ptr->reset(var, isconst);
+                return;
+            }
+            else
+            {
+                reset();
+                this->type = var.type;
+            }
+        }
+        
         switch(var.type)
         {
             case xcom_vtype_array:
@@ -197,10 +215,26 @@ extern "C" {
         }
         
     }
-    void xcom_var::reset(xcom_var &&var)
+    void xcom_var::reset(xcom_var &&var, bool isconst)
     {
-        reset();
-        this->type = var.type;
+        if (!isconst)
+        {
+            this->type = var.type;
+        }
+        else
+        {
+            if (this->type == xcom_vtype_vptr)
+            {
+                xcom_var_ptr ptr = this->obj.var_val;
+                ptr->reset(var, isconst);
+                return;
+            }
+            else
+            {
+                reset();
+                this->type = var.type;
+            }
+        }
         switch(var.type)
         {
             case xcom_vtype_array:

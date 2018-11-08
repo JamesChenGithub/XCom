@@ -109,25 +109,25 @@ extern "C" {
         
         // copy and =
         xcom_var(const xcom_var &val) : xcom_var() {
-            this->reset(val);
+            this->reset(val, true);
         }
         xcom_var(xcom_var *val) : xcom_var() {
             if (val)
             {
-                this->reset(*val);
+                this->reset(*val, true);
             }
         }
         
         xcom_var(xcom_var &&val) : xcom_var() {
-            this->reset(std::move(val));
+            this->reset(std::move(val), true);
         }
         
         inline xcom_var &operator = (const xcom_var &value) {
-            this->reset(value);
+            this->reset(value, false);
             return *this;
         }
         inline xcom_var &operator = (xcom_var &&value) {
-            this->reset(std::move(value));
+            this->reset(std::move(value), false);
             return *this;
         }
         
@@ -163,8 +163,8 @@ extern "C" {
         
     private:
         void reset();
-        void reset(const xcom_var &var);
-        void reset(xcom_var &&var);
+        void reset(const xcom_var &var, bool iscons);
+        void reset(xcom_var &&var, bool iscons);
         
     
     public:
