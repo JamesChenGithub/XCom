@@ -88,7 +88,7 @@
         
     private:
         xcom_var *_core;
-        xcom_data(xcom_var *var);
+        xcom_data(const xcom_var *var, bool isvp);
     };
     
 //}

@@ -40,6 +40,17 @@ xcom_data::xcom_data(xcom_data &&data):_core(nullptr)
         data._core = nullptr;
     }
 }
+xcom_data::xcom_data(const xcom_var *var, bool isvp):_core(nullptr)
+{
+    if (var != nullptr) {
+        xcom_var_ptr ptr = std::make_shared<xcom_var>(var);
+        _core = new xcom_var(ptr);
+        
+        xcom_var_ptr nptr = _core->var_val();
+        printf("get var : %p  [ %p]: %s \n", nptr.get(), var, _core->to_json());
+    }
+}
+
 
 xcom_data& xcom_data::operator = (const xcom_data &data)
 {
@@ -129,14 +140,6 @@ XCOM_DATA_IMPL(float, float, 0.0)
 XCOM_DATA_IMPL(double, double, 0.0)
 XCOM_DATA_IMPL(void *, ref, NULL)
 
-xcom_data::xcom_data(xcom_var *var):_core(nullptr)
-{
-    if (var)
-    {
-        _core = new xcom_var(*var);
-    }
-}
-
 xcom_data::xcom_data(const char *value):_core(nullptr) {
     _core = new xcom_var(value);
 }
@@ -182,6 +185,7 @@ uint32_t xcom_data::size()
     return _core ? _core->size() : 0;
 }
 
+
 xcom_data xcom_data::operator[](const char *key)
 {
     if (!key || !*key)
@@ -192,7 +196,7 @@ xcom_data xcom_data::operator[](const char *key)
     }
     xcom_var_ptr var = (*_core)[key];
     printf("get var : %p : %s \n", var.get(), var->to_json());
-    return xcom_data(var.get());
+    return xcom_data(var.get(), true);
 }
 bool xcom_data::contains(const char *key)
 {

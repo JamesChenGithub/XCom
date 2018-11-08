@@ -8,7 +8,7 @@ extern "C" {
     xcom_var::~xcom_var()
     {
         printf("var_struct dealloc [%d]: [%p] [%s] \n", --xcom_var_new_count, this, this->to_json());
-        this->reset();
+        //this->reset();
     }
     
     void xcom_var::reset()

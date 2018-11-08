@@ -140,6 +140,7 @@ extern "C" {
         inline xcom_var(xcom_var_ptr value):xcom_var() {
             this->type = xcom_vtype_vptr;
             this->obj.var_val = value;
+            printf("var ptr construct:%s  %s\n", this->to_json(), this->var_val()->to_json());
         }
         inline operator xcom_var_ptr() {
             if (this->type == xcom_vtype_vptr) {
