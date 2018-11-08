@@ -7,8 +7,8 @@ extern "C" {
     static int xcom_var_new_count = 0;
     xcom_var::~xcom_var()
     {
-        printf("var_struct dealloc [%d]: [%p] [%s] \n", --xcom_var_new_count, this, this->to_json());
-        //this->reset();
+        //printf("var_struct dealloc [%d]: [%p] [%s] \n", --xcom_var_new_count, this, this->to_json());
+        --xcom_var_new_count;
     }
     
     void xcom_var::reset()
@@ -47,7 +47,10 @@ extern "C" {
                 }
                 case xcom_vtype_vptr:
                 {
-                    this->obj.var_val.reset();
+                    xcom_var_ptr ptr = this->obj.var_val;
+                    if (ptr != nullptr) {
+                        ptr->reset();
+                    }
                     break;
                 }
                 case xcom_vtype_null:
@@ -80,7 +83,6 @@ extern "C" {
     
     void xcom_var::reset(const xcom_var &var)
     {
-        reset();
         this->type = var.type;
         switch(var.type)
         {
@@ -261,11 +263,12 @@ extern "C" {
     xcom_var::xcom_var()
     {
         this->type = xcom_vtype_null;
-        printf("var_struct new [%d]: [%p] \n", ++xcom_var_new_count, this);
+//        printf("var_struct new [%d]: [%p] \n", ++xcom_var_new_count, this);
+        ++xcom_var_new_count;
     }
     
     //================
-    const char *xcom_var::to_json() const
+    std::string xcom_var::to_json() const
     {
         
         std::string typestr = xcom_var_type_string(this->type);
@@ -296,7 +299,7 @@ extern "C" {
                 auto it = this->obj.dict_val->begin();
                 auto end = this->obj.dict_val->end();
                 while(it != end){
-                    const char *json = it->second->to_json();
+                    std::string json = it->second->to_json();
                     ostr << "\""<<it->first << "\":" << json;
                     it++;
                     if (it != end)
@@ -306,7 +309,7 @@ extern "C" {
                 }
                 ostr << "]";
                 std::string str = ostr.str();
-                return str.c_str();
+                return str;
                 break;
                 
             };
@@ -316,8 +319,7 @@ extern "C" {
                 auto it = this->obj.dict_val->begin();
                 auto end = this->obj.dict_val->end();
                 while(it != end){
-                    const char *json = it->second->to_json();
-                    printf("dic_str : %p : %s \n", this, json);
+                    std::string json = it->second->to_json();
                     ostr << "\""<<it->first << "\":" << json;
                     it++;
                     if (it != end)
@@ -327,14 +329,15 @@ extern "C" {
                 }
                 ostr << "}";
                 std::string str = ostr.str();
-                return str.c_str();
+                return str;
                 break;
             }
             case xcom_vtype_vptr:
             {
                 if (this->obj.var_val)
                 {
-                    return this->obj.var_val->to_json();
+                    std::string str = this->obj.var_val->to_json();
+                    return str;
                 }
             }
             case xcom_vtype_ref: {
@@ -451,13 +454,13 @@ extern "C" {
         
         if (!this->contains(key))
         {
-            printf("\ntest put \n");
+//            printf("\ntest put \n");
             xcom_var&& var = xcom_var(false);
             this->put(key, std::move(var));
         }
-        printf("test put done\n");
+//        printf("test put done\n");
         xcom_var_ptr ptr = get(key);
-        printf("get ptr : %p : %s\n", ptr.get(), ptr->to_json());
+//        printf("get ptr : %p : %s\n", ptr.get(), ptr->to_json());
         return ptr;
     }
     bool xcom_var::contains(const char *key)

@@ -31,62 +31,57 @@ extern "C" {
         inline T VT##_val() const {return this->obj.VT##_val; } \
         xcom_var &operator = (T value) { \
             this->reset();\
-            this->type = xcom_vtype_##VT;\
-            this->obj.VT##_val = value;\
+            if (this->type == xcom_vtype_vptr) {\
+                xcom_var_ptr ptr = this->var_val();\
+                *ptr = value;\
+            } else {\
+                this->type = xcom_vtype_##VT;\
+                this->obj.VT##_val = value;\
+            }\
             return *this;\
         }\
         inline bool operator == (const T value) const { \
             return this->type != xcom_vtype_##VT  ?  false : this->obj.VT##_val == value;\
         }
         
-        inline xcom_var(bool value):xcom_var() {
-            this->type = xcom_vtype_bool;
-            this->obj.bool_val = value;
-        }
-        inline operator bool() {
-            return this->obj.bool_val;
-        }
-        inline bool bool_val() const {
-            return this->obj.bool_val;
-        }
-        inline xcom_var &operator = (bool value) {
-            this->reset();
-            this->type = xcom_vtype_bool;
-            this->obj.bool_val = value;
-            return *this;
-        }
-        inline bool operator == (const bool value) const {
-            return this->type != xcom_vtype_bool  ?  false : this->obj.bool_val == value;
-        }
+//        inline xcom_var(bool value):xcom_var() {
+//            this->type = xcom_vtype_bool;
+//            this->obj.bool_val = value;
+//        }
+//        inline operator bool() {
+//            return this->obj.bool_val;
+//        }
+//        inline bool bool_val() const {
+//            return this->obj.bool_val;
+//        }
+//        inline xcom_var &operator = (bool value) {
+//            this->reset();
+//            if (this->type == xcom_vtype_vptr)
+//            {
+//                xcom_var_ptr ptr = this->var_val();
+//                printf("ptr = %p  %s\n", ptr.get(), ptr->to_json());
+//                *ptr = value;
+//                printf("ptr = %p  %s\n", ptr.get(), ptr->to_json());
+//            }
+//            else
+//            {
+//                this->type = xcom_vtype_bool;
+//                this->obj.bool_val = value;
+//            }
+//            return *this;
+//        }
+//
+//        inline bool operator == (const bool value) const {
+//            return this->type != xcom_vtype_bool  ?  false : this->obj.bool_val == value;
+//        }
         
         
-        inline xcom_var(int32_t value):xcom_var() {
-            this->type = xcom_vtype_int32;
-            this->obj.int32_val = value;
-        }
-        inline operator int32_t() {
-            return this->obj.int32_val;
-        }
-        inline int32_t int32_val() const {
-            return this->obj.int32_val;
-        }
-        inline xcom_var &operator = (int32_t value) {
-            this->reset();
-            this->type = xcom_vtype_int32;
-            this->obj.int32_val = value;
-            return *this;
-        }
-        inline bool operator == (const int32_t value) const {
-            return this->type != xcom_vtype_int32  ?  false : this->obj.int32_val == value;
-        }
-        
-        
-//        XCOM_VAR_FUNC(bool, bool, false)
+        XCOM_VAR_FUNC(bool, bool, false)
         XCOM_VAR_FUNC(int8_t, int8, 0)
         XCOM_VAR_FUNC(uint8_t, uint8, 0)
         XCOM_VAR_FUNC(int16_t, int16, 0)
         XCOM_VAR_FUNC(uint16_t, uint16, 0)
-//        XCOM_VAR_FUNC(int32_t, int32, 0)
+        XCOM_VAR_FUNC(int32_t, int32, 0)
         XCOM_VAR_FUNC(uint32_t, uint32, 0)
         XCOM_VAR_FUNC(int64_t, int64, 0)
         XCOM_VAR_FUNC(uint64_t, uint64, 0)
@@ -140,7 +135,7 @@ extern "C" {
         inline xcom_var(xcom_var_ptr value):xcom_var() {
             this->type = xcom_vtype_vptr;
             this->obj.var_val = value;
-            printf("var ptr construct:%s  %s\n", this->to_json(), this->var_val()->to_json());
+//            printf("var ptr construct:%s  %s\n", this->to_json(), this->var_val()->to_json());
         }
         inline operator xcom_var_ptr() {
             if (this->type == xcom_vtype_vptr) {
@@ -203,7 +198,7 @@ extern "C" {
         void set_buffer(const void *data, uint32_t len);
     public:
         
-        const char *to_json() const;
+        std::string to_json() const;
         
     public:
         inline bool is_number() const { return this->type <= xcom_vtype_string; }
