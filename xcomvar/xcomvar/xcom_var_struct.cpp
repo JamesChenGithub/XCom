@@ -7,7 +7,7 @@ extern "C" {
     static int xcom_var_new_count = 0;
     xcom_var::~xcom_var()
     {
-        //printf("var_struct dealloc [%d]: [%p] [%s] \n", --xcom_var_new_count, this, this->to_json());
+        //printf("var_struct dealloc [%d]: [%p] [%s] \n", --xcom_var_new_count, this, this->to_var_json());
         --xcom_var_new_count;
     }
     
@@ -302,9 +302,8 @@ extern "C" {
     }
     
     //================
-    std::string xcom_var::to_json() const
+    std::string xcom_var::to_var_json() const
     {
-        
         std::string typestr = xcom_var_type_string(this->type);
         std::string valstr = "" ;
         switch(this->type)
@@ -323,18 +322,18 @@ extern "C" {
             case xcom_vtype_double: { valstr = std::to_string(this->double_val()); break;};
             case xcom_vtype_string: { valstr = "\""+this->string_val() + "\""; break;};
             case xcom_vtype_bytes: {
-                valstr = this->obj.buf_val->to_json();
+                valstr = this->obj.buf_val->to_var_json();
                 break;
             };
             case xcom_vtype_array:
             {
                 std::ostringstream ostr;
                 ostr << "[";
-                auto it = this->obj.dict_val->begin();
-                auto end = this->obj.dict_val->end();
+                auto it = this->obj.array_val->begin();
+                auto end = this->obj.array_val->end();
                 while(it != end){
-                    std::string json = it->second->to_json();
-                    ostr << "\""<<it->first << "\":" << json;
+                    std::string json = (*it)->to_var_json();
+                    ostr << json;
                     it++;
                     if (it != end)
                     {
@@ -344,8 +343,6 @@ extern "C" {
                 ostr << "]";
                 std::string str = ostr.str();
                 return str;
-                break;
-                
             };
             case xcom_vtype_dict: {
                 std::ostringstream ostr;
@@ -353,6 +350,105 @@ extern "C" {
                 auto it = this->obj.dict_val->begin();
                 auto end = this->obj.dict_val->end();
                 while(it != end){
+                    std::string json = it->second->to_var_json();
+                    ostr << "\""<<it->first << "\":" << json;
+                    it++;
+                    if (it != end)
+                    {
+                        ostr << ",";
+                    }
+                }
+                ostr << "}";
+                std::string str = ostr.str();
+                return str;
+                break;
+            }
+            case xcom_vtype_vptr:
+            {
+                if (this->obj.var_val)
+                {
+                    std::string str = this->obj.var_val->to_var_json();
+                    return str;
+                }
+            }
+            case xcom_vtype_ref: {
+                char buf[32];
+                sprintf(buf, "%p", this->obj.ref_val);
+                valstr = buf;
+                break;
+            };
+        }
+        
+        std::string str = "{ \"" + typestr + "\" : " + valstr + " }";
+        return str;
+    }
+    
+    std::string xcom_var::to_json() const
+    {
+        std::string typestr = xcom_var_type_string(this->type);
+        std::string valstr = "" ;
+        switch(this->type)
+        {
+            case xcom_vtype_null: { valstr = "null"; std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str; };
+            case xcom_vtype_bool: { valstr = this->bool_val() ? "true" : "false"; std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str; };
+            case xcom_vtype_int8: { valstr = std::to_string(this->int8_val()); std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;};
+            case xcom_vtype_uint8: { valstr = std::to_string(this->uint8_val()); std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;};
+            case xcom_vtype_int16: { valstr = std::to_string(this->int8_val()); std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;}
+            case xcom_vtype_uint16: { valstr = std::to_string(this->int16_val()); std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;}
+            case xcom_vtype_int32: { valstr = std::to_string(this->int32_val()); std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;}
+            case xcom_vtype_uint32: { valstr = std::to_string(this->uint32_val()); std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;}
+            case xcom_vtype_int64: { valstr = std::to_string(this->uint64_val()); std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;}
+            case xcom_vtype_uint64: { valstr = std::to_string(this->int64_val()); std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;}
+            case xcom_vtype_float: { valstr = std::to_string(this->float_val()); std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;}
+            case xcom_vtype_double: { valstr = std::to_string(this->double_val()); std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;}
+            case xcom_vtype_string: { valstr = "\""+this->string_val() + "\""; std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;}
+            case xcom_vtype_bytes: {
+                valstr = this->obj.buf_val->to_var_json();
+                std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;
+                break;
+            }
+            case xcom_vtype_ref: {
+                char buf[32];
+                sprintf(buf, "%p", this->obj.ref_val);
+                valstr = buf;
+                std::string str = "{ \"" + typestr + "\" : " + valstr + " }"; return str;
+                break;
+            }
+            case xcom_vtype_array:
+            {
+                std::ostringstream ostr;
+                ostr << "[";
+                auto it = this->obj.array_val->begin();
+                auto end = this->obj.array_val->end();
+                while(it != end){
+                    std::string json = (*it)->to_json();
+                    ostr << json;
+                    it++;
+                    if (it != end)
+                    {
+                        ostr << ",";
+                    }
+                }
+                ostr << "]";
+                std::string str = ostr.str();
+                return str;
+                
+            };
+            case xcom_vtype_dict: {
+                std::ostringstream ostr;
+                ostr << "{";
+                auto it = this->obj.dict_val->begin();
+                auto end = this->obj.dict_val->end();
+                while(it != end) {
+                    xcom_var_ptr ptr = it->second;
+                    if (ptr->type == xcom_vtype_dict || ptr->type == xcom_vtype_array)
+                    {
+                        
+                    }
+                    else
+                    {
+                        
+                    }
                     std::string json = it->second->to_json();
                     ostr << "\""<<it->first << "\":" << json;
                     it++;
@@ -373,17 +469,13 @@ extern "C" {
                     std::string str = this->obj.var_val->to_json();
                     return str;
                 }
+                return "";
             }
-            case xcom_vtype_ref: {
-                char buf[32];
-                sprintf(buf, "%p", this->obj.ref_val);
-                valstr = buf;
-                break;
-            };
+            default:
+                return "";
+                
         }
-        
-        std::string str = "{ \"" + typestr + "\" : " + valstr + " }";
-        return str.c_str();
+        return "";
     }
     
     //=====================
@@ -494,7 +586,7 @@ extern "C" {
         }
 //        printf("test put done\n");
         xcom_var_ptr ptr = get(key);
-//        printf("get ptr : %p : %s\n", ptr.get(), ptr->to_json());
+//        printf("get ptr : %p : %s\n", ptr.get(), ptr->to_var_json());
         return ptr;
     }
     bool xcom_var::contains(const char *key)

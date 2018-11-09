@@ -59,9 +59,9 @@ extern "C" {
 //            if (this->type == xcom_vtype_vptr)
 //            {
 //                xcom_var_ptr ptr = this->var_val();
-//                printf("ptr = %p  %s\n", ptr.get(), ptr->to_json());
+//                printf("ptr = %p  %s\n", ptr.get(), ptr->to_var_json());
 //                *ptr = value;
-//                printf("ptr = %p  %s\n", ptr.get(), ptr->to_json());
+//                printf("ptr = %p  %s\n", ptr.get(), ptr->to_var_json());
 //            }
 //            else
 //            {
@@ -135,7 +135,7 @@ extern "C" {
         inline xcom_var(xcom_var_ptr value):xcom_var() {
             this->type = xcom_vtype_vptr;
             this->obj.var_val = value;
-//            printf("var ptr construct:%s  %s\n", this->to_json(), this->var_val()->to_json());
+//            printf("var ptr construct:%s  %s\n", this->to_var_json(), this->var_val()->to_var_json());
         }
         inline operator xcom_var_ptr() {
             if (this->type == xcom_vtype_vptr) {
@@ -198,6 +198,7 @@ extern "C" {
         void set_buffer(const void *data, uint32_t len);
     public:
         
+        std::string to_var_json() const;
         std::string to_json() const;
         
     public:

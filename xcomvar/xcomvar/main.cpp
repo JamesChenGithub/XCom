@@ -61,10 +61,10 @@ int main(int argc, const char * argv[])
     {
         xcom_data var;        
         var["enable"] = true;
-        std::string str = var.to_json();
+        std::string str = var.to_var_json();
         var["age"] = 100;
         std::cout << "var :" <<  str << std::endl;
-        str = var.to_json();
+        str = var.to_var_json();
         std::cout << "var :" <<  str << std::endl;
         
         xcom_data content;
@@ -74,15 +74,13 @@ int main(int argc, const char * argv[])
             content["house"]=38;
             content["house"]=48;
             
-            std::cout << "content : " << content.to_json() << std::endl;
+            std::cout << "content : " << content.to_var_json() << std::endl;
         }
         
         var["content"] = content;
         
-        std::cout << "var :" << var.to_json() << std::endl;
-        
-        xcom_data arr;
-        arr.
+        std::cout << "var :" << var.to_var_json() << std::endl;
+    
     }
     
     getchar();

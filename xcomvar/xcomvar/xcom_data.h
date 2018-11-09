@@ -76,7 +76,7 @@
         
     public:
         // tool
-        const char *to_json();
+        const char *to_var_json();
         
         // just array or dict vaild, return empty;
         // other return false

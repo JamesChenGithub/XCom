@@ -45,11 +45,11 @@ xcom_data::xcom_data(xcom_var *var, bool isvp):_core(nullptr)
     if (var != nullptr) {
         xcom_var_ptr ptr(var);
 //        xcom_var *ptrget = ptr.get();
-//        printf("ptr.get : %p  [ %p]: %s  retaincount = %d\n", ptr.get(), var, ptr->to_json(), ptr.use_count());
+//        printf("ptr.get : %p  [ %p]: %s  retaincount = %d\n", ptr.get(), var, ptr->to_var_json(), ptr.use_count());
         _core = new xcom_var(ptr);
         
         xcom_var_ptr nptr = _core->var_val();
-//        printf("get var : %p  [ %p]: %s \n", nptr.get(), var, _core->to_json());
+//        printf("get var : %p  [ %p]: %s \n", nptr.get(), var, _core->to_var_json());
     }
 }
 
@@ -117,9 +117,9 @@ xcom_data& xcom_data::operator = (bool value) {
     if (_core)
     {
         xcom_var_ptr ptr = _core->var_val();
-//        printf("ptr = %p  %s\n", ptr.get(), ptr->to_json());
+//        printf("ptr = %p  %s\n", ptr.get(), ptr->to_var_json());
         *_core = value;
-//        printf("ptr = %p  %s\n", ptr.get(), ptr->to_json());
+//        printf("ptr = %p  %s\n", ptr.get(), ptr->to_var_json());
     }
     else
     {
@@ -172,13 +172,13 @@ bool xcom_data::operator == (const char* value) const
 }
 
 
-const char *xcom_data::to_json()
+const char *xcom_data::to_var_json()
 {
     if (_core == nullptr)
     {
         return nullptr;
     }
-    std::string str = _core->to_json();
+    std::string str = _core->to_var_json();
     return str.c_str();
 }
 bool xcom_data::empty()
@@ -200,7 +200,7 @@ xcom_data xcom_data::operator[](const char *key)
         _core = new xcom_var();
     }
     xcom_var_ptr var = (*_core)[key];
-//    printf("get var : %p : %s \n", var.get(), var->to_json());
+//    printf("get var : %p : %s \n", var.get(), var->to_var_json());
     return xcom_data(var.get(), true);
 }
 bool xcom_data::contains(const char *key)

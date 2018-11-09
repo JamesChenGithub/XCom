@@ -51,7 +51,7 @@ const char *xcom_var_type_string(xcom_var_type type);
         xcom_var_buf();
         xcom_var_buf(const void *buf, uint32_t len);
         ~xcom_var_buf();
-        const char *to_json() const
+        const char *to_var_json() const
         {
             char buf[128];
             sprintf(buf, "{\"buf\" : \"%p\", \"len\" : \"%u\"}", buf, len);
