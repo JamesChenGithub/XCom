@@ -10,13 +10,13 @@
 #define xcom_data_hpp
 
 #include <string>
-#include <map>
+#include <unordered_map>
 #include <vector>
 #include <sstream>
 
 
-//namespace xcom {
-
+namespace xcom {
+    
     struct xcom_var;
     class xcom_data
     {
@@ -33,12 +33,12 @@
         
     public:
         // basic type delc
-        #define XCOM_DATA_DELC(T, VT, VAL) \
-        xcom_data(T value);\
-        operator T() const;  \
-        T VT##_val() const;  \
-        xcom_data &operator = (T value); \
-        bool operator == (const T value) const; \
+#define XCOM_DATA_DELC(T, VT, VAL) \
+xcom_data(T value);\
+operator T() const;  \
+T VT##_val() const;  \
+xcom_data &operator = (T value); \
+bool operator == (const T value) const; \
 
         XCOM_DATA_DELC(bool, bool, false)
         XCOM_DATA_DELC(int8_t, int8, 0)
@@ -77,6 +77,7 @@
     public:
         // tool
         const char *to_var_json();
+        const char *to_json();
         
         // just array or dict vaild, return empty;
         // other return false
@@ -91,6 +92,6 @@
         xcom_data(xcom_var *var, bool isvp);
     };
     
-//}
+}
 
 #endif /* xcom_data_hpp */

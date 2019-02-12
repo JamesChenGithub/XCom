@@ -10,19 +10,21 @@
 #include "xcom_var_struct.h"
 
 #ifdef __cplusplus
-extern "C" {
+namespace xcom {
+    extern "C" {
 #endif
-    xcom_var_value::xcom_var_value()
-    {
-        memset(this, 0, sizeof(xcom_var_value));
+        xcom_var_value::xcom_var_value()
+        {
+            memset(this, 0, sizeof(xcom_var_value));
+            
+        }
+        xcom_var_value::~xcom_var_value()
+        {
+            
+        }
         
-    }
-    xcom_var_value::~xcom_var_value()
-    {
         
-    }
-    
-    
 #ifdef __cplusplus
+    }
 }
 #endif
