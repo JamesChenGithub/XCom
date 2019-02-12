@@ -15,6 +15,39 @@ int main(int argc, const char * argv[])
 {
     {
         xcom_data var;
+        
+        xcom_data content;
+        {
+            content["sage"]=18;
+            content["age"]=18;
+        }
+        
+        var.append(content);
+        std::cout << "var :" << var.to_var_json() << std::endl << std::endl;
+        return 0;
+        
+        content["sage"]=28;
+        content["age"]=28;
+        var.append(content);
+        
+        content["sage"]=38;
+        content["age"]=38;
+        var.append(content);
+        
+        content["sage"]=48;
+        content["age"]=48;
+        var.append(content);
+        
+        
+        std::cout << "var :" << var.to_var_json() << std::endl << std::endl;
+        std::cout << "var :" << var.to_json() << std::endl << std::endl;
+        
+    }
+    getchar();
+    return 0;
+    
+    {
+        xcom_data var;
         var["enable"] = true;
         xcom_data content;
         {
@@ -25,6 +58,9 @@ int main(int argc, const char * argv[])
         var["content"] = content;
         var["content2"] = content;
         var["content3"] = content;
+        
+        content.erase("sage");
+        var["haha"] = content;
         
         std::cout << "var :" << var.to_var_json() << std::endl << std::endl;
         std::cout << "var :" << var.to_json() << std::endl << std::endl;

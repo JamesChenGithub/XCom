@@ -243,4 +243,26 @@ return _core && _core->type != xcom_vtype_##VT  ? _core->obj.VT##_val == value :
         return xcom_data(ptr.get());
     }
     
+    void xcom_data::append(xcom_data data)
+    {
+        if (_core == nullptr)
+        {
+            _core = new xcom_var();
+        }
+        
+        if (data._core == nullptr) {
+            return;
+        }
+        return _core->append(*data._core);
+    }
+    
+    bool xcom_data::erase(uint32_t index)
+    {
+        if (_core == nullptr)
+        {
+            _core = new xcom_var();
+        }
+        return _core->erase(index);
+    }
+    
 }

@@ -174,6 +174,7 @@ return this->type != xcom_vtype_##VT  ?  false : this->obj.VT##_val == value;\
             
             /* 'index' based array methods */
             void append(xcom_var data);
+            bool erase(uint32_t index);
         private:
             
             /* 'index' based array methods */

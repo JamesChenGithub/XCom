@@ -69,7 +69,9 @@ bool operator == (const T value) const; \
         
     public:
         // array
+        void append(xcom_data data);
         xcom_data operator[](uint32_t index);
+        bool erase(uint32_t index);
     public:
         // buf
         void set_buf(const void *buf, uint32_t len);

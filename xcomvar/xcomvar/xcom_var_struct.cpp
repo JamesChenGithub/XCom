@@ -649,11 +649,28 @@ namespace xcom {
             if (this->type == xcom_vtype_array)
             {
                 xcom_var *ptr = new xcom_var(data);
+                std::string json = ptr->to_json();
+                
                 xcom_var_ptr var_ptr(ptr);
+                std::string json2 = var_ptr->to_json();
                 this->obj.array_val->emplace_back(ptr);
             }
         }
         
+        
+        bool xcom_var::erase(uint32_t index)
+        {
+            if (this->type == xcom_vtype_array)
+            {
+                if(index >=0 && index < this->obj.array_val->size())
+                {
+                    
+                    this->obj.array_val->erase(this->obj.array_val->begin() + index);
+                    return true;
+                }
+            }
+            return false;
+        }
         
         
         /* 'index' based array methods */
